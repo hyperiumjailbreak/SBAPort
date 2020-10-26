@@ -1,0 +1,6 @@
+{
+  "name": "SkyblockAddons",
+  "version": "1.0.0",
+  "mainClass": "codes.biscuit.skyblockaddons.SkyblockAddonsHyperiumJB",
+  "transformerClass": "codes.biscuit.skyblockaddons.tweaker.SkyblockAddonsTransformer"
+}

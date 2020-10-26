@@ -1,0 +1,37 @@
+{
+  "bannerImageURL": null,
+  "bannerLink": null,
+
+  "videoLink": "https://youtu.be/_BZMJm6JD4Q",
+  "directDownload": "https://biscuit.codes/mods/skyblockaddons/downloadversion/?v=1.5.4",
+
+  "languageJSONFormat": "https://raw.githubusercontent.com/BiscuitDevelopment/SkyblockAddons/development/src/main/resources/lang/%s.json",
+
+  "disabledFeatures": {
+    "all": [31, 41, 44],
+    "1.5.0": [],
+    "1.5.1": []
+  },
+
+  "dropSettings": {
+    "minimumInventoryRarity": "RARE",
+    "minimumHotbarRarity": "RARE",
+    "dontDropTheseItems": [
+      "PIGGY_BANK",
+      "SMALL_BACKPACK",
+      "RADIANT_POWER_ORB",
+      "GRAPPLING_HOOK",
+      "WAND_OF_HEALING",
+      "ENCHANTED_GLOWSTONE",
+      "AATROX_BATPHONE",
+      "PERSONAL_COMPACTOR_4000"
+    ],
+    "allowDroppingTheseItems": [
+      "RUNE",
+      "REMNANT_OF_THE_EYE",
+      "DUNGEON_LORE_PAPER",
+      "WINTER_DISC",
+      "DUNGEON_STONE"
+    ]
+  }
+}
