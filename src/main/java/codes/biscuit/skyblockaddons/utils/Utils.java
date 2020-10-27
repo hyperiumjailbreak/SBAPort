@@ -155,7 +155,7 @@ public class Utils {
     public void sendMessage(String text, boolean prefix) {
         ChatEvent event = new ChatEvent(new ChatComponentText((prefix ? MESSAGE_PREFIX : "") + text));
         EventBus.INSTANCE.post(event);
-        if (!event.isCanceled()) {
+        if (!event.isCancelled()) {
             Minecraft.getMinecraft().thePlayer.addChatMessage(event.getChat()); // Just for logs
         }
     }
@@ -171,10 +171,10 @@ public class Utils {
             text = newText;
         }
 
-        ClientChatReceivedEvent event = new ClientChatReceivedEvent((byte) 1, text);
-        MinecraftForge.EVENT_BUS.post(event); // Let other mods pick up the new message
-        if (!event.isCanceled()) {
-            Minecraft.getMinecraft().thePlayer.addChatMessage(event.message); // Just for logs
+        ChatEvent event = new ChatEvent(text);
+        EventBus.INSTANCE.post(event); // Let other mods pick up the new message
+        if (!event.isCancelled()) {
+            Minecraft.getMinecraft().thePlayer.addChatMessage(event.getChat()); // Just for logs
         }
     }
 
