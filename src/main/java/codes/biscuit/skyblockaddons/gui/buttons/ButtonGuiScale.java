@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.MathHelper;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class ButtonGuiScale extends ButtonFeature {
 
@@ -41,9 +42,7 @@ public class ButtonGuiScale extends ButtonFeature {
         drawRect(this.xPosition, this.yPosition, this.xPosition+this.width, this.yPosition+this.height, main.getUtils().getDefaultColor(boxAlpha));
         this.mouseDragged(mc, mouseX, mouseY);
         int j = 14737632;
-        if (packedFGColour != 0) {
-            j = packedFGColour;
-        } else if (!this.enabled) {
+        if (!this.enabled) {
             j = 10526880;
         } else if (this.hovered) {
             j = 16777120;
@@ -88,7 +87,7 @@ public class ButtonGuiScale extends ButtonFeature {
     }
 
     private float getRoundedValue(float value) {
-        return new BigDecimal(String.valueOf(value)).setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
+        return new BigDecimal(String.valueOf(value)).setScale(2, RoundingMode.HALF_UP).floatValue();
     }
 }
 

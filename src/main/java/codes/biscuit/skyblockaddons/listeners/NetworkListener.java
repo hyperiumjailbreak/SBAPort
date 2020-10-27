@@ -1,14 +1,13 @@
 package codes.biscuit.skyblockaddons.listeners;
 
 import codes.biscuit.skyblockaddons.SkyblockAddons;
-import codes.biscuit.skyblockaddons.core.Feature;
 import codes.biscuit.skyblockaddons.events.SkyblockJoinedEvent;
 import codes.biscuit.skyblockaddons.events.SkyblockLeftEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.network.FMLNetworkEvent;
 import org.apache.logging.log4j.Logger;
 
-import static net.minecraftforge.common.MinecraftForge.EVENT_BUS;
+import cc.hyperium.event.EventBus;
+import cc.hyperium.event.InvokeEvent;
+import cc.hyperium.event.network.server.ServerLeaveEvent;
 
 public class NetworkListener {
     private final SkyblockAddons main;
@@ -19,27 +18,21 @@ public class NetworkListener {
         logger = main.getLogger();
     }
 
-    @SubscribeEvent
-    public void onDisconnect(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
+    @InvokeEvent
+    public void onLeave(ServerLeaveEvent event) {
         // Leave Skyblock when the player disconnects
-        EVENT_BUS.post(new SkyblockLeftEvent());
+        EventBus.INSTANCE.post(new SkyblockLeftEvent());
     }
 
-    @SubscribeEvent
+    @InvokeEvent
     public void onSkyblockJoined(SkyblockJoinedEvent event) {
         logger.info("Joined Skyblock");
         main.getUtils().setOnSkyblock(true);
-        if (main.getConfigValues().isEnabled(Feature.DISCORD_RPC)) {
-            main.getDiscordRPCManager().start();
-        }
     }
 
-    @SubscribeEvent
+    @InvokeEvent
     public void onSkyblockLeft(SkyblockLeftEvent event) {
         logger.info("Left Skyblock");
         main.getUtils().setOnSkyblock(false);
-        if (main.getDiscordRPCManager().isActive()) {
-            main.getDiscordRPCManager().stop();
-        }
     }
 }

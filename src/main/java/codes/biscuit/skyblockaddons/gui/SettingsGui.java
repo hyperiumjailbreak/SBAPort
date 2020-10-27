@@ -14,6 +14,8 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.input.Keyboard;
 
+import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
+
 import java.awt.*;
 import java.io.IOException;
 import java.util.Arrays;
@@ -171,9 +173,9 @@ public class SettingsGui extends GuiScreen {
             } else {
                 main.getConfigValues().getDisabledFeatures().add(feature);
                 if (feature == Feature.HIDE_FOOD_ARMOR_BAR) { // Reset the vanilla bars when disabling these two features.
-                    GuiIngameForge.renderArmor = true; // The food gets automatically enabled, no need to include it.
+                    HyperiumGuiIngame.renderArmor = true; // The food gets automatically enabled, no need to include it.
                 } else if (feature == Feature.HIDE_HEALTH_BAR) {
-                    GuiIngameForge.renderHealth = true;
+                    HyperiumGuiIngame.renderHealth = true;
                 } else if (feature == Feature.REPEAT_FULL_INVENTORY_WARNING) {
                     // Remove queued warnings when the repeat setting is turned off.
                     main.getScheduler().removeQueuedFullInventoryWarnings();

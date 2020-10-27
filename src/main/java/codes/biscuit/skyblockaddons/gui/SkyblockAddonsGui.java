@@ -16,9 +16,10 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.GuiIngameForge;
 import org.apache.commons.lang3.StringUtils;
 import org.lwjgl.input.Keyboard;
+
+import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
 
 import java.awt.*;
 import java.io.IOException;
@@ -98,16 +99,6 @@ public class SkyblockAddonsGui extends GuiScreen {
         }
 
         features.sort(Comparator.comparing(feature -> feature.getMessage()));
-
-//        features.sort((o1, o2) -> { // TODO put all new features on the first page? or nah?
-//            if (o1.isNew() && !o2.isNew()) {
-//                return -1;
-//            } else if (o2.isNew() && !o1.isNew()) {
-//                return 1;
-//            } else {
-//                return 0;
-//            }
-//        });
 
         if (tab != EnumUtils.GuiTab.GENERAL_SETTINGS) {
             for (Feature feature : Feature.values())
@@ -223,22 +214,18 @@ public class SkyblockAddonsGui extends GuiScreen {
                 if (main.getConfigValues().isRemoteDisabled(feature)) return;
                 if (main.getConfigValues().isDisabled(feature)) {
                     main.getConfigValues().getDisabledFeatures().remove(feature);
-                    if(feature == Feature.DISCORD_RPC) {
-                        main.getDiscordRPCManager().start();
-                    } else if (feature == Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT) {
+                    if (feature == Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT) {
                         main.getConfigValues().getDisabledFeatures().remove(Feature.DISABLE_ENDERMAN_TELEPORTATION_EFFECT);
                     }
                 } else {
                     main.getConfigValues().getDisabledFeatures().add(feature);
                     if (feature == Feature.HIDE_FOOD_ARMOR_BAR) { // Reset the vanilla bars when disabling these two features.
-                        GuiIngameForge.renderArmor = true; // The food gets automatically enabled, no need to include it.
+                        HyperiumGuiIngame.renderArmor = true; // The food gets automatically enabled, no need to include it.
                     } else if (feature == Feature.HIDE_HEALTH_BAR) {
-                        GuiIngameForge.renderHealth = true;
+                        HyperiumGuiIngame.renderHealth = true;
                     } else if (feature == Feature.FULL_INVENTORY_WARNING) {
                         main.getInventoryUtils().setInventoryWarningShown(false);
                         main.getScheduler().removeQueuedFullInventoryWarnings();
-                    } else if(feature == Feature.DISCORD_RPC) {
-                        main.getDiscordRPCManager().stop();
                     } else if (feature == Feature.DISABLE_ENDERMAN_TELEPORTATION_EFFECT) {
                         main.getConfigValues().getDisabledFeatures().remove(Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT);
                     }

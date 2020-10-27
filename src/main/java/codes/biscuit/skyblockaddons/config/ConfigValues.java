@@ -3,7 +3,6 @@ package codes.biscuit.skyblockaddons.config;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.core.Feature;
 import codes.biscuit.skyblockaddons.core.Language;
-import codes.biscuit.skyblockaddons.features.discordrpc.DiscordStatus;
 import codes.biscuit.skyblockaddons.misc.ChromaManager;
 import codes.biscuit.skyblockaddons.utils.EnumUtils;
 import codes.biscuit.skyblockaddons.utils.ColorCode;
@@ -59,9 +58,6 @@ public class ConfigValues {
     private MutableFloat chromaSpeed = new MutableFloat(0.19354838F); // 2.0
     private MutableObject<EnumUtils.ChromaMode> chromaMode = new MutableObject<>(EnumUtils.ChromaMode.FADE);
     private MutableFloat chromaFadeWidth = new MutableFloat(0.22580644F); // 10° Hue
-    private MutableObject<DiscordStatus> discordDetails =  new MutableObject<>(DiscordStatus.LOCATION);
-    private MutableObject<DiscordStatus> discordStatus = new MutableObject<>(DiscordStatus.AUTO_STATUS);
-    private MutableObject<DiscordStatus> discordAutoDefault = new MutableObject<>(DiscordStatus.NONE);
     @Getter private List<String> discordCustomStatuses = new ArrayList<>();
 
     public ConfigValues(File settingsConfigFile) {
@@ -93,7 +89,7 @@ public class ConfigValues {
                     String languageKey = settingsConfig.get("language").getAsString();
                     Language configLanguage = Language.getFromPath(languageKey);
                     if (configLanguage != null) {
-                        setLanguage(configLanguage); // TODO Will this crash?
+                        setLanguage(configLanguage);
 //                        language.setValue(configLanguage);
                     }
                 }
@@ -108,7 +104,7 @@ public class ConfigValues {
             deserializeEnumNumberMapFromID(guiScales, "guiScales", Feature.class, float.class);
 
             try {
-                for (Feature feature : Feature.getGuiFeatures()) { // TODO Legacy format from 1.3.4, remove in the future.
+                for (Feature feature : Feature.getGuiFeatures()) {
                     String property = Introspector.decapitalize(WordUtils.capitalizeFully(feature.toString().replace("_", " "))).replace(" ", "");
                     String x = property+"X";
                     String y = property+"Y";
@@ -124,11 +120,11 @@ public class ConfigValues {
             if (settingsConfig.has("coordinates")) {
                 deserializeFeatureFloatCoordsMapFromID(coordinates, "coordinates");
             } else {
-                deserializeFeatureFloatCoordsMapFromID(coordinates, "guiPositions"); // TODO Legacy format from 1.4.2/1.5-betas, remove in the future.
+                deserializeFeatureFloatCoordsMapFromID(coordinates, "guiPositions"); 
             }
             deserializeFeatureIntCoordsMapFromID(barSizes, "barSizes");
 
-            if (settingsConfig.has("featureColors")) { // TODO Legacy format from 1.3.4, remove in the future.
+            if (settingsConfig.has("featureColors")) {
                 try {
                     for (Map.Entry<String, JsonElement> element : settingsConfig.getAsJsonObject("featureColors").entrySet()) {
                         Feature feature = Feature.fromId(Integer.parseInt(element.getKey()));
@@ -152,9 +148,6 @@ public class ConfigValues {
             deserializeNumber(chromaSpeed, "chromaSpeed", float.class);
             deserializeEnumValueFromOrdinal(chromaMode, "chromaMode");
             deserializeNumber(chromaFadeWidth, "chromaFadeWidth", float.class);
-            deserializeEnumValueFromOrdinal(discordStatus, "discordStatus");
-            deserializeEnumValueFromOrdinal(discordDetails, "discordDetails");
-            deserializeEnumValueFromOrdinal(discordAutoDefault, "discordAutoDefault");
             deserializeStringCollection(discordCustomStatuses, "discordCustomStatuses");
 
             int configVersion;
@@ -341,16 +334,6 @@ public class ConfigValues {
             settingsConfig.addProperty("chromaSpeed", chromaSpeed);
             settingsConfig.addProperty("chromaMode", chromaMode.getValue().ordinal());
             settingsConfig.addProperty("chromaFadeWidth", chromaFadeWidth);
-
-            settingsConfig.addProperty("discordStatus", discordStatus.getValue().ordinal());
-            settingsConfig.addProperty("discordDetails", discordDetails.getValue().ordinal());
-            settingsConfig.addProperty("discordAutoDefault", discordAutoDefault.getValue().ordinal());
-
-            JsonArray discordCustomStatusesArray = new JsonArray();
-            for (String string : discordCustomStatuses) {
-                discordCustomStatusesArray.add(new GsonBuilder().create().toJsonTree(string));
-            }
-            settingsConfig.add("discordCustomStatuses", discordCustomStatusesArray);
 
             settingsConfig.addProperty("configVersion", CONFIG_VERSION);
             int largestFeatureID = 0;
@@ -883,45 +866,5 @@ public class ConfigValues {
 
     public float getChromaFadeWidth() {
         return chromaFadeWidth.getValue();
-    }
-
-    public void setDiscordDetails(DiscordStatus discordDetails) {
-        this.discordDetails.setValue(discordDetails);
-    }
-
-    public void setDiscordStatus(DiscordStatus discordStatus) {
-        this.discordStatus.setValue(discordStatus);
-    }
-
-    public DiscordStatus getDiscordStatus() {
-        return discordStatus != null ? discordStatus.getValue() : DiscordStatus.NONE;
-    }
-
-    public DiscordStatus getDiscordDetails() {
-        return discordDetails != null ? discordDetails.getValue() : DiscordStatus.NONE;
-    }
-
-    public DiscordStatus getDiscordAutoDefault() {
-        return discordAutoDefault != null ? discordAutoDefault.getValue() : DiscordStatus.NONE;
-    }
-
-    public void setDiscordAutoDefault(DiscordStatus discordAutoDefault) {
-        this.discordAutoDefault.setValue(discordAutoDefault);
-    }
-
-    public String getCustomStatus(EnumUtils.DiscordStatusEntry statusEntry) {
-        while (main.getConfigValues().getDiscordCustomStatuses().size() < 2) {
-            main.getConfigValues().getDiscordCustomStatuses().add("");
-        }
-
-        return discordCustomStatuses.get(statusEntry.getId());
-    }
-
-    public String setCustomStatus(EnumUtils.DiscordStatusEntry statusEntry, String text) {
-        while (main.getConfigValues().getDiscordCustomStatuses().size() < 2) {
-            main.getConfigValues().getDiscordCustomStatuses().add("");
-        }
-
-        return discordCustomStatuses.set(statusEntry.getId(), text);
     }
 }

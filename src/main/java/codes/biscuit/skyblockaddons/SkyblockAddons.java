@@ -8,7 +8,6 @@ import codes.biscuit.skyblockaddons.core.Message;
 import codes.biscuit.skyblockaddons.core.OnlineData;
 import codes.biscuit.skyblockaddons.gui.IslandWarpGui;
 import codes.biscuit.skyblockaddons.gui.SkyblockAddonsGui;
-import codes.biscuit.skyblockaddons.listeners.GuiScreenListener;
 import codes.biscuit.skyblockaddons.listeners.NetworkListener;
 import codes.biscuit.skyblockaddons.listeners.PlayerListener;
 import codes.biscuit.skyblockaddons.listeners.RenderListener;
@@ -51,7 +50,6 @@ public class SkyblockAddons implements IAddon {
     private ConfigValues configValues;
     private PersistentValues persistentValues;
     private PlayerListener playerListener;
-    private GuiScreenListener guiScreenListener;
     private RenderListener renderListener;
     private InventoryUtils inventoryUtils;
     private Utils utils;
@@ -71,7 +69,6 @@ public class SkyblockAddons implements IAddon {
         logger = LogManager.getLogger();
 
         playerListener = new PlayerListener();
-        guiScreenListener = new GuiScreenListener();
         renderListener = new RenderListener();
         inventoryUtils = new InventoryUtils();
         utils = new Utils();
@@ -89,7 +86,6 @@ public class SkyblockAddons implements IAddon {
     public void init(InitializationEvent e) {
         EventBus.INSTANCE.register(new NetworkListener());
         EventBus.INSTANCE.register(playerListener);
-        EventBus.INSTANCE.register(guiScreenListener);
         EventBus.INSTANCE.register(renderListener);
         EventBus.INSTANCE.register(scheduler);
         EventBus.INSTANCE.register(newScheduler);
