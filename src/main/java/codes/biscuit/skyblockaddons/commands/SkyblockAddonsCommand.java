@@ -27,7 +27,7 @@ public class SkyblockAddonsCommand implements BaseCommand {
 
     @Override
     public String getName() {
-        return "sba";
+        return "/skyblockaddons";
     }
 
     /**
@@ -35,7 +35,7 @@ public class SkyblockAddonsCommand implements BaseCommand {
      */
     public List<String> getCommandAliases()
     {
-        return Collections.singletonList("sba");
+        return Collections.singletonList("/sba");
     }
 
     /**

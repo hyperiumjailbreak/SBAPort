@@ -3,11 +3,10 @@ package codes.biscuit.skyblockaddons.asm;
 import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
 import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
 import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.tree.*;
+import org.spongepowered.asm.lib.Opcodes;
+import org.spongepowered.asm.lib.tree.*;
 
 public class PlayerControllerMPTransformer implements ITransformer {
-
 
     /**
      * {@link net.minecraft.client.multiplayer.PlayerControllerMP}

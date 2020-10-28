@@ -1,5 +1,6 @@
 package codes.biscuit.skyblockaddons.asm.hooks;
 
+import cc.hyperium.event.world.item.ItemTooltipEvent;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
 import codes.biscuit.skyblockaddons.features.backpacks.Backpack;
@@ -15,7 +16,6 @@ import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IChatComponent;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import org.lwjgl.input.Keyboard;
 
 public class GuiScreenHook {
@@ -80,7 +80,7 @@ public class GuiScreenHook {
                 if (!GuiContainerHook.isFreezeBackpack()) {
                     main.getUtils().setBackpackToPreview(backpack);
                 }
-                main.getPlayerListener().onItemTooltip(new ItemTooltipEvent(stack, null, null, false));
+                main.getPlayerListener().onItemTooltip(new ItemTooltipEvent(stack, null));
                 returnValue.cancel();
             }
         }
@@ -92,8 +92,6 @@ public class GuiScreenHook {
     private static boolean isFreezeKeyDown() {
         SkyblockAddons main = SkyblockAddons.getInstance();
 
-        if (main.getFreezeBackpackKey().isKeyDown()) return true;
-        if (main.getFreezeBackpackKey().isPressed()) return true;
         try {
             if (Keyboard.isKeyDown(main.getFreezeBackpackKey().getKeyCode())) return true;
         } catch (Exception ignored) {}

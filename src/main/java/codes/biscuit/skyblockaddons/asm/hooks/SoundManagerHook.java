@@ -1,5 +1,6 @@
 package codes.biscuit.skyblockaddons.asm.hooks;
 
+import codes.biscuit.skyblockaddons.Reflector;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.SoundCategory;
@@ -13,7 +14,11 @@ public class SoundManagerHook {
         if (main != null && main.getUtils() != null && main.getUtils().isPlayingSound()) {
             return 1;
         } else {
-            return soundManager.getNormalizedVolume(sound, entry, category);
+            Object o = Reflector.invoke(SoundManager.class, soundManager, "getNormalizedVolume", new Class[]{ISound.class, SoundPoolEntry.class, SoundCategory.class}, new Object[]{sound, entry, category});
+            if (o == null) {
+                System.err.println("AAAHHHHH WTF");
+            }
+            return (float) o;
         }
     }
 }

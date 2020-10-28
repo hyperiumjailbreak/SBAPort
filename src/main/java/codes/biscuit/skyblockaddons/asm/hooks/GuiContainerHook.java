@@ -1,5 +1,6 @@
 package codes.biscuit.skyblockaddons.asm.hooks;
 
+import codes.biscuit.skyblockaddons.Reflector;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
 import codes.biscuit.skyblockaddons.core.Feature;
@@ -12,6 +13,7 @@ import lombok.Getter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
@@ -23,6 +25,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 import javax.lang.model.type.NullType;
+import java.util.List;
 
 public class GuiContainerHook {
 
@@ -103,11 +106,11 @@ public class GuiContainerHook {
                         int itemX = x+8 + ((i % 9) * 18);
                         int itemY = y+18 + ((i / 9) * 18);
                         RenderItem renderItem = mc.getRenderItem();
-                        guiContainer.zLevel = 200;
+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 200);
                         renderItem.zLevel = 200;
                         renderItem.renderItemAndEffectIntoGUI(item, itemX, itemY);
                         renderItem.renderItemOverlayIntoGUI(mc.fontRendererObj, item, itemX, itemY, null);
-                        guiContainer.zLevel = 0;
+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 0);
                         renderItem.zLevel = 0;
 
                         if (freezeBackpack && mouseX > itemX && mouseX < itemX+16 && mouseY > itemY && mouseY < itemY+16) {
@@ -141,11 +144,11 @@ public class GuiContainerHook {
                         int itemX = x + ((i % 9) * 16);
                         int itemY = y + ((i / 9) * 16);
                         RenderItem renderItem = mc.getRenderItem();
-                        guiContainer.zLevel = 200;
+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 200);
                         renderItem.zLevel = 200;
                         renderItem.renderItemAndEffectIntoGUI(item, itemX, itemY);
                         renderItem.renderItemOverlayIntoGUI(mc.fontRendererObj, item, itemX, itemY, null);
-                        guiContainer.zLevel = 0;
+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 0);
                         renderItem.zLevel = 0;
 
                         if (freezeBackpack && mouseX > itemX && mouseX < itemX+16 && mouseY > itemY && mouseY < itemY+16) {
@@ -155,7 +158,7 @@ public class GuiContainerHook {
                 }
             }
             if (tooltipItem != null) {
-                guiContainer.drawHoveringText(tooltipItem.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips), mouseX, mouseY);
+                Reflector.invoke(GuiScreen.class, guiContainer, "drawHoveringText", new Class[]{List.class, int.class, int.class}, new Object[]{tooltipItem.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips), mouseX, mouseY});
             }
             if (!freezeBackpack) {
                 main.getUtils().setBackpackToPreview(null);
@@ -180,11 +183,11 @@ public class GuiContainerHook {
             if (main.getConfigValues().isEnabled(Feature.LOCK_SLOTS) &&
                     main.getUtils().isOnSkyblock() && main.getConfigValues().getLockedSlots().contains(slotNum)
                     && (slotNum >= 9 || container instanceof ContainerPlayer && slotNum >= 5)) {
-                guiContainer.drawGradientRect(left, top, right, bottom, OVERLAY_RED, OVERLAY_RED);
+                Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{left, top, right, bottom, OVERLAY_RED, OVERLAY_RED});
                 return;
             }
         }
-        guiContainer.drawGradientRect(left, top, right, bottom, startColor, endColor);
+        Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{left, top, right, bottom, OVERLAY_RED, OVERLAY_RED});
     }
 
     public static void drawSlot(GuiContainer guiContainer, Slot slot) {
@@ -198,7 +201,8 @@ public class GuiContainerHook {
                     && slot.inventory.getDisplayName().getUnformattedText().equals(CraftingPattern.CRAFTING_TABLE_DISPLAYNAME)
                     && main.getPersistentValues().getSelectedCraftingPattern() != CraftingPattern.FREE) {
 
-                int craftingGridIndex = CraftingPattern.slotToCraftingGridIndex(slot.getSlotIndex());
+                int slotIndex = (int) Reflector.getFieldValue(Slot.class, slot, "slotIndex");
+                int craftingGridIndex = CraftingPattern.slotToCraftingGridIndex(slotIndex);
                 if (craftingGridIndex >= 0) {
                     int slotLeft = slot.xDisplayPosition;
                     int slotTop = slot.yDisplayPosition;
@@ -206,11 +210,11 @@ public class GuiContainerHook {
                     int slotBottom = slotTop + 16;
                     if (main.getPersistentValues().getSelectedCraftingPattern().isSlotInPattern(craftingGridIndex)) {
                         if (!slot.getHasStack()) {
-                            guiContainer.drawGradientRect(slotLeft, slotTop, slotRight, slotBottom, OVERLAY_GREEN, OVERLAY_GREEN);
+                            Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{slotLeft, slotTop, slotRight, slotBottom, OVERLAY_GREEN, OVERLAY_GREEN});
                         }
                     } else {
                         if (slot.getHasStack()) {
-                            guiContainer.drawGradientRect(slotLeft, slotTop, slotRight, slotBottom, OVERLAY_RED, OVERLAY_RED);
+                            Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{slotLeft, slotTop, slotRight, slotBottom, OVERLAY_RED, OVERLAY_RED});
                         }
                     }
                 }

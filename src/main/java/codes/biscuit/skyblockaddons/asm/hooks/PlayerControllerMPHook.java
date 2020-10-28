@@ -1,5 +1,6 @@
 package codes.biscuit.skyblockaddons.asm.hooks;
 
+import codes.biscuit.skyblockaddons.Reflector;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
 import codes.biscuit.skyblockaddons.core.Feature;
@@ -18,6 +19,7 @@ import codes.biscuit.skyblockaddons.utils.Utils;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
+import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -238,7 +240,7 @@ public class PlayerControllerMPHook {
                                 returnValue.cancel();
                             }
                         } else {
-                            if (slotIn.getSlotIndex() == CraftingPattern.CRAFTING_RESULT_INDEX
+                            if ((int) Reflector.getFieldValue(Slot.class, slotIn, "slotIndex") == CraftingPattern.CRAFTING_RESULT_INDEX
                                     && !result.isSatisfied()
                                     && main.getPersistentValues().isBlockCraftingIncompletePatterns()) {
                                 // cancel clicking the result if the pattern isn't satisfied

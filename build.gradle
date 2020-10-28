@@ -19,6 +19,8 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+compileJava.options.encoding = "utf-8"
+
 minecraft {
     version = "1.8.9"
     tweakClass = "cc.hyperium.launch.HyperiumTweaker"

@@ -1,5 +1,6 @@
 package codes.biscuit.skyblockaddons.asm.hooks;
 
+import codes.biscuit.skyblockaddons.Reflector;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
 import codes.biscuit.skyblockaddons.core.Feature;
@@ -297,7 +298,8 @@ public class GuiChestHook {
         if (main.getUtils().isOnSkyblock()) {
             if (main.getUtils().getEnchantmentMatches().size() > 0) {
                 if (slotIn != null && !slotIn.inventory.equals(Minecraft.getMinecraft().thePlayer.inventory) && slotIn.getHasStack()) {
-                    if (slotIn.getSlotIndex() == 13 && main.getInventoryUtils().getInventoryType() == InventoryType.ENCHANTMENT_TABLE) {
+                    int slotIndex = (int) Reflector.getFieldValue(slotIn.getClass(), slotIn, "slotIndex");
+                    if (slotIndex == 13 && main.getInventoryUtils().getInventoryType() == InventoryType.ENCHANTMENT_TABLE) {
                         ItemStack[] enchantBottles = {slots.getSlot(29).getStack(), slots.getSlot(31).getStack(), slots.getSlot(33).getStack()};
                         for (ItemStack bottle : enchantBottles) {
                             if (bottle != null && bottle.hasDisplayName()) {
@@ -322,7 +324,7 @@ public class GuiChestHook {
                                 }
                             }
                         }
-                    } else if (slotIn.getSlotIndex() == 22 && (main.getInventoryUtils().getInventoryType() == InventoryType.BASIC_REFORGING
+                    } else if (slotIndex == 22 && (main.getInventoryUtils().getInventoryType() == InventoryType.BASIC_REFORGING
                             || main.getInventoryUtils().getInventoryType() == InventoryType.BASIC_ACCESSORY_BAG_REFORGING)) {
                         Slot itemSlot = slots.getSlot(13);
                         if (itemSlot != null && itemSlot.getHasStack()) {

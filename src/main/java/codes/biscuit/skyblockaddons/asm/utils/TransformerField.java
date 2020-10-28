@@ -1,8 +1,8 @@
 package codes.biscuit.skyblockaddons.asm.utils;
 
 import codes.biscuit.skyblockaddons.tweaker.PreTransformationChecks;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.tree.FieldInsnNode;
+import org.spongepowered.asm.lib.Opcodes;
+import org.spongepowered.asm.lib.tree.*;
 
 public enum TransformerField {
 

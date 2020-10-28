@@ -1,9 +1,8 @@
 package codes.biscuit.skyblockaddons.asm.utils;
 
 import codes.biscuit.skyblockaddons.tweaker.PreTransformationChecks;
-import org.objectweb.asm.Opcodes;
-import org.objectweb.asm.tree.MethodInsnNode;
-import org.objectweb.asm.tree.MethodNode;
+import org.spongepowered.asm.lib.Opcodes;
+import org.spongepowered.asm.lib.tree.*;
 
 public enum TransformerMethod {
 

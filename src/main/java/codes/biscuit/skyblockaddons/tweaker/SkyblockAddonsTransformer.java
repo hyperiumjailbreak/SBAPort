@@ -8,9 +8,9 @@ import net.minecraft.launchwrapper.IClassTransformer;
 import org.apache.commons.lang3.mutable.MutableInt;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.objectweb.asm.ClassReader;
-import org.objectweb.asm.ClassWriter;
-import org.objectweb.asm.tree.ClassNode;
+import org.spongepowered.asm.lib.ClassReader;
+import org.spongepowered.asm.lib.ClassWriter;
+import org.spongepowered.asm.lib.tree.ClassNode;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,7 +26,6 @@ public class SkyblockAddonsTransformer implements IClassTransformer {
     private final Multimap<String, ITransformer> transformerMap = ArrayListMultimap.create();
 
     public SkyblockAddonsTransformer() {
-        registerTransformer(new TileEntityEnderChestRendererTransformer());
         registerTransformer(new MouseHelperTransformer());
         registerTransformer(new EntityPlayerSPTransformer());
         registerTransformer(new EntityRendererTransformer());
@@ -41,12 +40,9 @@ public class SkyblockAddonsTransformer implements IClassTransformer {
         registerTransformer(new GuiChestTransformer());
         registerTransformer(new GuiNewChatTransformer());
         registerTransformer(new RendererLivingEntityTransformer());
-        registerTransformer(new GuiDisconnectedTransformer());
 
         registerTransformer(new GuiIngameMenuTransformer());
 
-        registerTransformer(new FontRendererTransformer());
-        registerTransformer(new RenderItemTransformer());
         registerTransformer(new EntityLivingBaseTransformer());
         registerTransformer(new InventoryPlayerTransformer());
         registerTransformer(new GuiIngameCustomTransformer());
@@ -79,10 +75,6 @@ public class SkyblockAddonsTransformer implements IClassTransformer {
         transformers.forEach(transformer -> {
             logger.info("Applying transformer {} on {}...", transformer.getClass().getName(), transformedName);
             transformer.transform(node, transformedName);
-
-            if (transformer instanceof FontRendererTransformer) {
-                classWriterFlags.setValue(0);
-            }
         });
 
         ClassWriter writer = new ClassWriter(classWriterFlags.getValue());

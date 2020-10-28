@@ -44,7 +44,12 @@ public class SkyblockAddons implements IAddon {
     public static final String MOD_NAME = "SkyblockAddons";
     public static String VERSION = "@VERSION@";
 
-    @Getter private static SkyblockAddons instance;
+    private static SkyblockAddons instance;
+
+    public static SkyblockAddons getInstance() {
+        return instance;
+    }
+
     private Logger logger;
 
     private ConfigValues configValues;

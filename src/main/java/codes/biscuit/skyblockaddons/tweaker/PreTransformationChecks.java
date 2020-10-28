@@ -1,7 +1,7 @@
 package codes.biscuit.skyblockaddons.tweaker;
 
+import cc.hyperium.Hyperium;
 import lombok.Getter;
-import net.minecraft.launchwrapper.Launch;
 
 public class PreTransformationChecks {
 
@@ -14,7 +14,7 @@ public class PreTransformationChecks {
         // Environment Obfuscation checks
         deobfuscated = false;
 
-        deobfuscated = (boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment");
+        deobfuscated = Hyperium.INSTANCE.isDevEnv();
 
         usingNotchMappings = !deobfuscated;
     }

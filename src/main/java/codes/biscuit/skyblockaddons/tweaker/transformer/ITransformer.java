@@ -1,6 +1,6 @@
 package codes.biscuit.skyblockaddons.tweaker.transformer;
 
-import org.objectweb.asm.tree.ClassNode;
+import org.spongepowered.asm.lib.tree.ClassNode;
 
 public interface ITransformer {
 

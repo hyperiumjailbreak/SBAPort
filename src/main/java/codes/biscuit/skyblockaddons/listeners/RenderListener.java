@@ -1,5 +1,10 @@
 package codes.biscuit.skyblockaddons.listeners;
 
+import cc.hyperium.event.InvokeEvent;
+import cc.hyperium.event.Priority;
+import cc.hyperium.event.client.TickEvent;
+import cc.hyperium.event.render.RenderHUDEvent;
+import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.core.Attribute;
 import codes.biscuit.skyblockaddons.core.Feature;
@@ -19,7 +24,6 @@ import codes.biscuit.skyblockaddons.gui.SettingsGui;
 import codes.biscuit.skyblockaddons.gui.SkyblockAddonsGui;
 import codes.biscuit.skyblockaddons.gui.buttons.ButtonLocation;
 import codes.biscuit.skyblockaddons.misc.ChromaManager;
-import codes.biscuit.skyblockaddons.misc.Updater;
 import codes.biscuit.skyblockaddons.misc.scheduler.Scheduler;
 import codes.biscuit.skyblockaddons.utils.EnumUtils;
 import codes.biscuit.skyblockaddons.utils.TextUtils;
@@ -41,12 +45,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.GuiIngameForge;
-import net.minecraftforge.client.event.RenderGameOverlayEvent;
-import net.minecraftforge.client.event.RenderLivingEvent;
-import net.minecraftforge.fml.client.GuiNotification;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.awt.*;
 import java.math.BigDecimal;
@@ -103,63 +101,13 @@ public class RenderListener {
     /**
      * Render overlays and warnings for clients without labymod.
      */
-    @SubscribeEvent()
-    public void onRenderRegular(RenderGameOverlayEvent.Post e) {
-        if ((!main.isUsingLabymod() || Minecraft.getMinecraft().ingameGUI instanceof GuiIngameForge)) {
-            if (e.type == RenderGameOverlayEvent.ElementType.EXPERIENCE || e.type == RenderGameOverlayEvent.ElementType.JUMPBAR) {
-                if (main.getUtils().isOnSkyblock()) {
-                    renderOverlays();
-                    renderWarnings(e.resolution);
-                } else {
-                    renderTimersOnly();
-                }
-                drawUpdateMessage();
-            }
-        }
-    }
-
-    /**
-     * Render overlays and warnings for clients with labymod.
-     * Labymod creates its own ingame gui and replaces the forge one, and changes the events that are called.
-     * This is why the above method can't work for both.
-     */
-    @SubscribeEvent()
-    public void onRenderLabyMod(RenderGameOverlayEvent e) {
-        if (e.type == null && main.isUsingLabymod()) {
-            if (main.getUtils().isOnSkyblock()) {
-                renderOverlays();
-                renderWarnings(e.resolution);
-            } else {
-                renderTimersOnly();
-            }
-            drawUpdateMessage();
-        }
-    }
-
-    @SubscribeEvent()
-    public void onRenderLiving(RenderLivingEvent.Specials.Pre<EntityLivingBase> e) {
-        Entity entity = e.entity;
-        if (entity.hasCustomName()) {
-            if (main.getConfigValues().isEnabled(Feature.MINION_DISABLE_LOCATION_WARNING)) {
-                if (entity.getCustomNameTag().startsWith("§cThis location isn't perfect! :(")) {
-                    e.setCanceled(true);
-                }
-                if (entity.getCustomNameTag().startsWith("§c/!\\")) {
-                    for (Entity listEntity : Minecraft.getMinecraft().theWorld.loadedEntityList) {
-                        if (listEntity.hasCustomName() && listEntity.getCustomNameTag().startsWith("§cThis location isn't perfect! :(") &&
-                                listEntity.posX == entity.posX && listEntity.posZ == entity.posZ && listEntity.posY + 0.375 == entity.posY) {
-                            e.setCanceled(true);
-                            break;
-                        }
-                    }
-                }
-            }
-
-            if (main.getConfigValues().isEnabled(Feature.HIDE_SVEN_PUP_NAMETAGS)) {
-                if (entity instanceof EntityArmorStand && entity.hasCustomName() && entity.getCustomNameTag().contains("Sven Pup")) {
-                    e.setCanceled(true);
-                }
-            }
+    @InvokeEvent
+    public void onRenderRegular() {
+        if (main.getUtils().isOnSkyblock()) {
+            renderOverlays();
+            renderWarnings(new ScaledResolution(Minecraft.getMinecraft()));
+        } else {
+            renderTimersOnly();
         }
     }
 
@@ -168,7 +116,7 @@ public class RenderListener {
      */
     private void renderTimersOnly() {
         Minecraft mc = Minecraft.getMinecraft();
-        if (!(mc.currentScreen instanceof LocationEditGui) && !(mc.currentScreen instanceof GuiNotification)) {
+        if (!(mc.currentScreen instanceof LocationEditGui)) {
             GlStateManager.disableBlend();
             if (main.getConfigValues().isEnabled(Feature.MAGMA_BOSS_TIMER) && main.getConfigValues().isEnabled(Feature.SHOW_MAGMA_TIMER_IN_OTHER_GAMES) &&
                     main.getPlayerListener().getMagmaAccuracy() != EnumUtils.MagmaTimerAccuracy.NO_DATA) {
@@ -298,7 +246,7 @@ public class RenderListener {
      */
     private void renderOverlays() {
         Minecraft mc = Minecraft.getMinecraft();
-        if (!(mc.currentScreen instanceof LocationEditGui) && !(mc.currentScreen instanceof GuiNotification)) {
+        if (!(mc.currentScreen instanceof LocationEditGui)) {
             GlStateManager.disableBlend();
 
             for (Feature feature : Feature.getGuiFeatures()) {
@@ -456,37 +404,6 @@ public class RenderListener {
 
         for (int i = 0; i < barHeight; i++) {
             gui.drawTexturedModalRect(x, y + 2 + i, textureX, baseTextureY + 3, fillWidth, rowHeight);
-        }
-    }
-
-    /**
-     * Renders the messages from the SkyblockAddons Updater
-     */
-    private void drawUpdateMessage() {
-        Updater updater = main.getUpdater();
-        String message = updater.getMessageToRender();
-
-        if (updater.hasUpdate() && message != null && !updateMessageDisplayed) {
-            Minecraft mc = Minecraft.getMinecraft();
-            String[] textList = main.getUtils().wrapSplitText(message, 36);
-
-            int halfWidth = new ScaledResolution(mc).getScaledWidth() / 2;
-            Gui.drawRect(halfWidth - 110, 20, halfWidth + 110, 53 + textList.length * 10, main.getUtils().getDefaultBlue(140));
-            String title = SkyblockAddons.MOD_NAME;
-            GlStateManager.pushMatrix();
-            float scale = 1.5F;
-            GlStateManager.scale(scale, scale, 1);
-            main.getUtils().drawCenteredString(title, (int) (halfWidth / scale), (int) (30 / scale), ColorCode.WHITE.getRGB());
-            GlStateManager.popMatrix();
-            int y = 45;
-            for (String line : textList) {
-                main.getUtils().drawCenteredString(line, halfWidth, y, ColorCode.WHITE.getRGB());
-                y += 10;
-            }
-
-            main.getScheduler().schedule(Scheduler.CommandType.ERASE_UPDATE_MESSAGE, 10);
-
-            main.getUpdater().sendUpdateMessage();
         }
     }
 
@@ -1392,33 +1309,31 @@ public class RenderListener {
         return main.getUtils().getAttributes().get(attribute).getValue();
     }
 
-    @SubscribeEvent()
-    public void onRenderRemoveBars(RenderGameOverlayEvent.Pre e) {
-        if (e.type == RenderGameOverlayEvent.ElementType.ALL) {
-            if (main.getUtils().isOnSkyblock()) {
-                if (main.getConfigValues().isEnabled(Feature.HIDE_FOOD_ARMOR_BAR)) {
-                    GuiIngameForge.renderFood = false;
-                    GuiIngameForge.renderArmor = false;
-                }
-                if (main.getConfigValues().isEnabled(Feature.HIDE_HEALTH_BAR)) {
-                    GuiIngameForge.renderHealth = false;
-                }
-                if (main.getConfigValues().isEnabled(Feature.HIDE_PET_HEALTH_BAR)) {
-                    GuiIngameForge.renderHealthMount = false;
-                }
-            } else {
-                if (main.getConfigValues().isEnabled(Feature.HIDE_HEALTH_BAR)) {
-                    GuiIngameForge.renderHealth = true;
-                }
-                if (main.getConfigValues().isEnabled(Feature.HIDE_FOOD_ARMOR_BAR)) {
-                    GuiIngameForge.renderArmor = true;
-                }
+    @InvokeEvent(priority = Priority.HIGH)
+    public void onRenderRemoveBars(RenderHUDEvent e) {
+        if (main.getUtils().isOnSkyblock()) {
+            if (main.getConfigValues().isEnabled(Feature.HIDE_FOOD_ARMOR_BAR)) {
+                HyperiumGuiIngame.renderFood = false;
+                HyperiumGuiIngame.renderArmor = false;
+            }
+            if (main.getConfigValues().isEnabled(Feature.HIDE_HEALTH_BAR)) {
+                HyperiumGuiIngame.renderHealth = false;
+            }
+            if (main.getConfigValues().isEnabled(Feature.HIDE_PET_HEALTH_BAR)) {
+                HyperiumGuiIngame.renderHealthMount = false;
+            }
+        } else {
+            if (main.getConfigValues().isEnabled(Feature.HIDE_HEALTH_BAR)) {
+                HyperiumGuiIngame.renderHealth = true;
+            }
+            if (main.getConfigValues().isEnabled(Feature.HIDE_FOOD_ARMOR_BAR)) {
+                HyperiumGuiIngame.renderArmor = true;
             }
         }
     }
 
-    @SubscribeEvent()
-    public void onRender(TickEvent.RenderTickEvent e) {
+    @InvokeEvent
+    public void onRender(TickEvent e) {
         if (guiToOpen == EnumUtils.GUIType.MAIN) {
             Minecraft.getMinecraft().displayGuiScreen(new SkyblockAddonsGui(guiPageToOpen, guiTabToOpen));
         } else if (guiToOpen == EnumUtils.GUIType.EDIT_LOCATIONS) {
