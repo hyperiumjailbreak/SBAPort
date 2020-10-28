@@ -1,5 +1,6 @@
 package codes.biscuit.skyblockaddons.listeners;
 
+import codes.biscuit.skyblockaddons.Reflector;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.asm.hooks.GuiChestHook;
 import codes.biscuit.skyblockaddons.core.Attribute;
@@ -63,7 +64,6 @@ import cc.hyperium.event.network.chat.ServerChatEvent;
 import cc.hyperium.event.world.ChunkLoadEvent;
 import cc.hyperium.event.world.item.ItemTooltipEvent;
 
-import java.lang.reflect.Field;
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Matcher;
@@ -107,9 +107,9 @@ public class PlayerListener {
     private boolean oldBobberIsInWater;
     private double oldBobberPosY = 0;
 
-    @Getter private Set<UUID> countedEndermen = new HashSet<>();
+    @Getter private final Set<UUID> countedEndermen = new HashSet<>();
 
-    @Getter private Set<IntPair> recentlyLoadedChunks = new HashSet<>();
+    @Getter private final Set<IntPair> recentlyLoadedChunks = new HashSet<>();
 
     @Getter @Setter private EnumUtils.MagmaTimerAccuracy magmaAccuracy = EnumUtils.MagmaTimerAccuracy.NO_DATA;
     @Getter @Setter private int magmaTime = 0;
@@ -439,7 +439,7 @@ public class PlayerListener {
         }
     }
 
-    @Getter private TreeMap<Long, Set<Vec3>> recentlyKilledZealots = new TreeMap<>();
+    @Getter private final TreeMap<Long, Set<Vec3>> recentlyKilledZealots = new TreeMap<>();
 
     @InvokeEvent
     public void onDeath(LivingDeathEvent e) {
@@ -545,9 +545,8 @@ public class PlayerListener {
 
     // Between these two coordinates is the whole "arena" area where all the magmas and stuff are.
     private static final AxisAlignedBB magmaBossSpawnArea = new AxisAlignedBB(-244, 0, -566, -379, 255, -635);
-    @Getter private TreeMap<Long, Vec3> explosiveBowExplosions = new TreeMap<>();
+    @Getter private final TreeMap<Long, Vec3> explosiveBowExplosions = new TreeMap<>();
 
-    @SuppressWarnings("deprecation")
     @InvokeEvent
     public void onEntitySpawn(EntityEnterChunkEvent e) {
         Entity entity = e.getEntity();
@@ -564,17 +563,7 @@ public class PlayerListener {
                     main.getNewScheduler().scheduleRepeatingTask(new SkyblockRunnable() {
                         @Override
                         public void run() {
-                            boolean inGround;
-                            try {
-                                Field f = arrow.getClass().getField("inGround");
-                                if (!f.isAccessible()) {
-                                    f.setAccessible(true);
-                                }
-                                inGround = f.getBoolean(arrow);
-                            } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e) {
-                                e.printStackTrace();
-                                inGround = false;
-                            }
+                            final boolean inGround = (boolean) Reflector.getFieldValue(EntityArrow.class, arrow, "inGround");
 
                             if (arrow.isDead || arrow.isCollided || inGround) {
                                 cancel();
@@ -788,15 +777,7 @@ public class PlayerListener {
 
             if (e.getGui() instanceof GuiChest) {
                 Minecraft mc = Minecraft.getMinecraft();
-                IInventory chestInventory;
-                try {
-                    Field f = GuiChest.class.getField("lowerChestInventory");
-                    f.setAccessible(true);
-                    chestInventory = (IInventory) f.get((GuiChest) e.getGui());
-                } catch (IllegalArgumentException | IllegalAccessException | NoSuchFieldException | SecurityException ex) {
-                    ex.printStackTrace();
-                    chestInventory = null;
-                }
+                IInventory chestInventory = (IInventory) Reflector.getFieldValue(GuiChest.class, e.getGui(), "lowerChestInventory");
                 if (chestInventory.hasCustomName()) {
                     if (chestInventory.getDisplayName().getUnformattedText().contains("Backpack")) {
                         if (ThreadLocalRandom.current().nextInt(0, 2) == 0) {

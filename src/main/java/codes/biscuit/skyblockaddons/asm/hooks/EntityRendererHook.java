@@ -1,7 +1,6 @@
 package codes.biscuit.skyblockaddons.asm.hooks;
 
 import codes.biscuit.skyblockaddons.SkyblockAddons;
-import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
 import codes.biscuit.skyblockaddons.core.Feature;
 import codes.biscuit.skyblockaddons.core.npc.NPCUtils;
 import net.minecraft.client.Minecraft;
@@ -41,13 +40,6 @@ public class EntityRendererHook {
         }
         if (main.getConfigValues().isEnabled(Feature.HIDE_PLAYERS_NEAR_NPCS)) {
             list.removeIf(entity -> entity instanceof EntityOtherPlayerMP && !NPCUtils.isNPC(entity) && NPCUtils.isNearNPC(entity));
-        }
-    }
-
-    public static void preventBlink(ReturnValue<Float> returnValue) {
-        SkyblockAddons main = SkyblockAddons.getInstance();
-        if (main.getConfigValues().isEnabled(Feature.AVOID_BLINKING_NIGHT_VISION)) {
-            returnValue.cancel(1.0F);
         }
     }
 }

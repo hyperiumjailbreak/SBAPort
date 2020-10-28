@@ -38,17 +38,6 @@ public class EntityRendererTransformer implements ITransformer {
                         }
                     }
                 }
-            } else if (TransformerMethod.getNightVisionBrightness.matches(methodNode)) {
-
-                // Objective:
-                // Find: Method head.
-                // Insert:   ReturnValue returnValue = new ReturnValue();
-                //           EntityPlayerSPHook.preventBlink(returnValue);
-                //           if (returnValue.isCancelled()) {
-                //               return 1.0F;
-                //           }
-
-                methodNode.instructions.insertBefore(methodNode.instructions.getFirst(), insertNightVision());
             }
         }
     }
@@ -59,31 +48,6 @@ public class EntityRendererTransformer implements ITransformer {
         list.add(new VarInsnNode(Opcodes.ALOAD, 14)); // EntityRendererHook.removeEntities(list);
         list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook", "removeEntities",
                 "(Ljava/util/List;)V", false));
-
-        return list;
-    }
-
-    private InsnList insertNightVision() {
-        InsnList list = new InsnList();
-
-        list.add(new TypeInsnNode(Opcodes.NEW, "codes/biscuit/skyblockaddons/asm/utils/ReturnValue"));
-        list.add(new InsnNode(Opcodes.DUP)); // ReturnValue returnValue = new ReturnValue();
-        list.add(new MethodInsnNode(Opcodes.INVOKESPECIAL, "codes/biscuit/skyblockaddons/asm/utils/ReturnValue", "<init>", "()V", false));
-        list.add(new VarInsnNode(Opcodes.ASTORE, 4));
-
-        list.add(new VarInsnNode(Opcodes.ALOAD, 4)); // EntityRendererHook.preventBlink(returnValue);
-        list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook", "preventBlink",
-                "(Lcodes/biscuit/skyblockaddons/asm/utils/ReturnValue;)V", false));
-
-        list.add(new VarInsnNode(Opcodes.ALOAD, 4));
-        list.add(new MethodInsnNode(Opcodes.INVOKEVIRTUAL, "codes/biscuit/skyblockaddons/asm/utils/ReturnValue", "isCancelled",
-                "()Z", false));
-        LabelNode notCancelled = new LabelNode(); // if (returnValue.isCancelled())
-        list.add(new JumpInsnNode(Opcodes.IFEQ, notCancelled));
-
-        list.add(new InsnNode(Opcodes.FCONST_1)); // return 1.0F;
-        list.add(new InsnNode(Opcodes.FRETURN));
-        list.add(notCancelled);
 
         return list;
     }

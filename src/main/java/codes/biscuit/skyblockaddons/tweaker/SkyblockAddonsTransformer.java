@@ -18,14 +18,11 @@ import java.io.IOException;
 import java.util.Collection;
 
 public class SkyblockAddonsTransformer implements IClassTransformer {
-    static {
-        PreTransformationChecks.runChecks();
-    }
-
     private final Logger logger = LogManager.getLogger("SkyblockAddons Transformer");
     private final Multimap<String, ITransformer> transformerMap = ArrayListMultimap.create();
 
     public SkyblockAddonsTransformer() {
+        PreTransformationChecks.runChecks();
         registerTransformer(new MouseHelperTransformer());
         registerTransformer(new EntityPlayerSPTransformer());
         registerTransformer(new EntityRendererTransformer());
@@ -38,7 +35,6 @@ public class SkyblockAddonsTransformer implements IClassTransformer {
 
         registerTransformer(new GuiContainerTransformer());
         registerTransformer(new GuiChestTransformer());
-        registerTransformer(new GuiNewChatTransformer());
         registerTransformer(new RendererLivingEntityTransformer());
 
         registerTransformer(new GuiIngameMenuTransformer());

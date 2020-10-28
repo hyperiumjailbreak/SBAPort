@@ -4,30 +4,23 @@ import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.utils.EnumUtils;
 import codes.biscuit.skyblockaddons.utils.DevUtils;
 import codes.biscuit.skyblockaddons.utils.ColorCode;
+import codes.biscuit.skyblockaddons.utils.Utils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.scoreboard.Scoreboard;
-import org.apache.logging.log4j.Logger;
 
 import cc.hyperium.commands.BaseCommand;
 
 import java.awt.*;
 import java.io.IOException;
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public class SkyblockAddonsCommand implements BaseCommand {
-
-    private SkyblockAddons main;
-    private Logger logger;
-
-    public SkyblockAddonsCommand() {
-        main = SkyblockAddons.getInstance();
-        logger = main.getLogger();
-    }
+    private final SkyblockAddons main = SkyblockAddons.getInstance();
 
     @Override
     public String getName() {
-        return "/skyblockaddons";
+        return "skyblockaddons";
     }
 
     /**
@@ -35,37 +28,12 @@ public class SkyblockAddonsCommand implements BaseCommand {
      */
     public List<String> getCommandAliases()
     {
-        return Collections.singletonList("/sba");
+        return Arrays.asList("sba", "sbaddons");
     }
 
-    /**
-     * Gets the usage string for the command.
-     */
     @Override
     public String getUsage() {
-        if (main.isDevMode()) return getDevCommandUsage();
-
-        return "§7§m------------§7[§b§l SkyblockAddons §7]§7§m------------" + "\n" +
-        "§b● /sba §7- Open the main menu" + "\n" +
-        "§b● /sba edit §7- Edit GUI locations" + "\n" +
-        "§b● /sba set <zealots|eyes|totalzealots §eor§b total> <number> §7- Manually set your zealot counts" + "\n" +
-        "§b● /sba folder §7- Open your mods folder" + "\n" +
-        "§7§m------------------------------------------";
-    }
-
-    /**
-     * Gets the usage string for the developer mode sub-command.
-     */
-    public String getDevCommandUsage() { return
-        "§7§m------------§7[§b§l SkyblockAddons §7]§7§m------------" + "\n" +
-        "§b● /sba §7- Open the main menu" + "\n" +
-        "§b● /sba edit §7- Edit GUI locations" + "\n" +
-        "§b● /sba set <zealots | eyes | totalzealots §7or§b total> <number> §7- Manually set your zealot counts" + "\n" +
-        "§b● /sba folder §7- Open your mods folder" + "\n" +
-        "§b● /sba dev §7- Toggle developer mode" + "\n" +
-        "§b● /sba sidebar [formatted] §7- §e(Dev) §7Copy the scoreboard text. \"formatted\" §7keeps the color codes when copying" + "\n" +
-        "§b● /sba brand §7- §e(Dev) §7Show the server brand" + "\n" +
-        "§7§m------------------------------------------";
+        return "skyblockaddons";
     }
 
     /**
@@ -115,9 +83,9 @@ public class SkyblockAddonsCommand implements BaseCommand {
                 }
             }  else if (args[0].equalsIgnoreCase("folder")) {
                 try {
-                    Desktop.getDesktop().open(main.getUtils().getSBAFolder());
+                    Desktop.getDesktop().open(Utils.getSBAFolder());
                 } catch (IOException e) {
-                    logger.catching(e);
+                    e.printStackTrace();
                     main.getUtils().sendErrorMessage("Failed to open mods folder.");
                 }
             }  else if (args[0].equalsIgnoreCase("warp")) {

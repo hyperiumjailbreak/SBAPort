@@ -32,12 +32,8 @@ public enum TransformerMethod {
     // RenderItem
     renderItemAndEffectIntoGUI("renderItemAndEffectIntoGUI", "func_180450_b", "b", "(Lnet/minecraft/item/ItemStack;II)V", "("+TransformerClass.ItemStack.getName()+"II)V"),
     drawGuiContainerForegroundLayer("drawGuiContainerForegroundLayer", "func_146979_b", "b", "(II)V"),
-//    renderItemModelForEntity("renderItemModelForEntity", "func_175049_a", "a", "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/client/renderer/block/model/ItemCameraTransforms$TransformType;)V",
-//            "("+TransformerClass.ItemStack.getName()+TransformerClass.EntityLivingBase.getName()+TransformerClass.ItemCameraTransforms$TransformType.getName()+")V"),
     renderItemModelTransform("renderItemModelTransform", "func_175040_a", "a", "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/resources/model/IBakedModel;Lnet/minecraft/client/renderer/block/model/ItemCameraTransforms$TransformType;)V",
         "("+TransformerClass.ItemStack.getName()+TransformerClass.IBakedModel.getName()+TransformerClass.ItemCameraTransforms$TransformType.getName()+")V"),
-//    renderItem("renderItem", "func_178099_a", "a", "(Lnet/minecraft/entity/EntityLivingBase;Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/renderer/block/model/ItemCameraTransforms$TransformType;)V",
-//            "("+TransformerClass.EntityLivingBase.getName()+TransformerClass.ItemStack.getName()+TransformerClass.ItemCameraTransforms$TransformType.getName()+")V"),
     renderItem("renderItem", "func_180454_a", "a", "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/resources/model/IBakedModel;)V",
         "("+TransformerClass.ItemStack.getName()+TransformerClass.IBakedModel.getName()+")V"),
     renderModel_RenderItem("renderModel", "func_175036_a", "a", "(Lnet/minecraft/client/resources/model/IBakedModel;Lnet/minecraft/item/ItemStack;)V",
@@ -47,20 +43,11 @@ public enum TransformerMethod {
     color("color", "func_179131_c", "c", "(FFFF)V"),
     drawString("drawString", "func_78276_b", "a", "(Ljava/lang/String;III)I"),
 
-    // IChatComponent
-    getUnformattedText("getUnformattedText", "func_150260_c", "c", "()Ljava/lang/String;"),
-
     // ItemStack
     isItemDamaged("isItemDamaged", "func_77951_h", "g", "()Z"),
 
     // SoundManager
     getNormalizedVolume("getNormalizedVolume", "func_148594_a", "a", "(Lnet/minecraft/client/audio/ISound;Lnet/minecraft/client/audio/SoundPoolEntry;Lnet/minecraft/client/audio/SoundCategory;)F", "("+TransformerClass.ISound.getName()+TransformerClass.SoundPoolEntry.getName()+TransformerClass.SoundCategory.getName()+")F"),
-
-    // TileEntityEnderChestRenderer
-    bindTexture("bindTexture", "func_147499_a", "a", "(Lnet/minecraft/util/ResourceLocation;)V", "("+TransformerClass.ResourceLocation.getName()+")V"),
-
-    // ModelChest
-    renderAll("renderAll", "func_78231_a", "a", "()V"),
 
     // EntityPlayer
     isPotionActive("isPotionActive", "func_70644_a", "a", "(Lnet/minecraft/potion/Potion;)Z","("+TransformerClass.Potion.getName()+")Z"),
@@ -71,10 +58,6 @@ public enum TransformerMethod {
 
     // EntityRenderer
     getMouseOver("getMouseOver", "func_78473_a", "a", "(F)V"),
-    getNightVisionBrightness("getNightVisionBrightness", "func_180438_a", "a", "(Lnet/minecraft/entity/EntityLivingBase;F)F", "("+TransformerClass.EntityLivingBase.getName()+"F)F"),
-
-    // GuiNewChat
-    printChatMessageWithOptionalDeletion("printChatMessageWithOptionalDeletion", "func_146234_a", "a", "(Lnet/minecraft/util/IChatComponent;I)V", "("+TransformerClass.IChatComponent.getName()+"I)V"),
 
     // Minecraft
     refreshResources("refreshResources", "func_110436_a", "e", "()V"),
@@ -108,9 +91,6 @@ public enum TransformerMethod {
     // TileEntityEnderChestRenderer
     renderTileEntityAt("renderTileEntityAt", "func_180535_a", "a", "(Lnet/minecraft/tileentity/TileEntityEnderChest;DDDFI)V", "("+TransformerClass.TileEntityEnderChest.getName()+"DDDFI)V"),
 
-    // FontRenderer
-    renderChar("renderChar", "func_181559_a", "a", "(CZ)F"),
-
     // EntityLivingBase
     handleStatusUpdate("handleStatusUpdate", "func_70103_a", "a", "(B)V"),
     removePotionEffectClient("removePotionEffectClient", "func_70618_n", "l", "(I)V"),
@@ -133,8 +113,8 @@ public enum TransformerMethod {
 
     NULL(null,null,null,null,false);
 
-    private String name;
-    private String description;
+    private final String name;
+    private final String description;
     private String[] exceptions = null;
 
     TransformerMethod(String deobfMethod, String seargeMethod, String notchMethod18, String seargeDescription) {

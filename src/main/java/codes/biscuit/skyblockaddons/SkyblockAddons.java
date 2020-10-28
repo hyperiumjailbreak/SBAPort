@@ -4,7 +4,6 @@ import codes.biscuit.skyblockaddons.commands.SkyblockAddonsCommand;
 import codes.biscuit.skyblockaddons.config.ConfigValues;
 import codes.biscuit.skyblockaddons.config.PersistentValues;
 import codes.biscuit.skyblockaddons.core.Feature;
-import codes.biscuit.skyblockaddons.core.Message;
 import codes.biscuit.skyblockaddons.core.OnlineData;
 import codes.biscuit.skyblockaddons.gui.IslandWarpGui;
 import codes.biscuit.skyblockaddons.gui.SkyblockAddonsGui;
@@ -12,14 +11,11 @@ import codes.biscuit.skyblockaddons.listeners.NetworkListener;
 import codes.biscuit.skyblockaddons.listeners.PlayerListener;
 import codes.biscuit.skyblockaddons.listeners.RenderListener;
 import codes.biscuit.skyblockaddons.misc.scheduler.Scheduler;
-import codes.biscuit.skyblockaddons.misc.SkyblockKeyBinding;
 import codes.biscuit.skyblockaddons.misc.scheduler.NewScheduler;
 import codes.biscuit.skyblockaddons.misc.scheduler.SkyblockRunnable;
 import codes.biscuit.skyblockaddons.utils.*;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import lombok.Getter;
-import lombok.Setter;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,7 +33,6 @@ import cc.hyperium.internal.addons.IAddon;
 import java.io.File;
 import java.util.*;
 
-@Getter
 public class SkyblockAddons implements IAddon {
 
     public static final String MOD_ID = "skyblockaddons";
@@ -58,20 +53,21 @@ public class SkyblockAddons implements IAddon {
     private RenderListener renderListener;
     private InventoryUtils inventoryUtils;
     private Utils utils;
-    @Setter private OnlineData onlineData;
+    private OnlineData onlineData;
     private Scheduler scheduler;
     private NewScheduler newScheduler;
 
-    @Setter private boolean devMode;
-    private List<SkyblockKeyBinding> keyBindings = new LinkedList<>();
+    private boolean devMode;
+    private List<HyperiumBind> keyBindings = new LinkedList<>();
 
-    @Getter private final Set<Integer> registeredFeatureIDs = new HashSet<>();
+    private final Set<Integer> registeredFeatureIDs = new HashSet<>();
 
     @Override
     public void onLoad() {
         instance = this;
         EventBus.INSTANCE.register(this);
         logger = LogManager.getLogger();
+        logger.info("Loading SBA!");
 
         playerListener = new PlayerListener();
         renderListener = new RenderListener();
@@ -97,10 +93,10 @@ public class SkyblockAddons implements IAddon {
 
         Hyperium.INSTANCE.getHandlers().getCommandHandler().registerCommand(new SkyblockAddonsCommand());
 
-        addKeybinds(new SkyblockKeyBinding("open_settings", Keyboard.KEY_NONE, Message.SETTING_SETTINGS),
-                new SkyblockKeyBinding("edit_gui", Keyboard.KEY_NONE, Message.SETTING_EDIT_LOCATIONS),
-                new SkyblockKeyBinding("lock_slot", Keyboard.KEY_L, Message.SETTING_LOCK_SLOT),
-                new SkyblockKeyBinding("freeze_backpack", Keyboard.KEY_F, Message.SETTING_FREEZE_BACKPACK_PREVIEW));
+        addKeybinds(new HyperiumBind("SBA Settings", Keyboard.KEY_NONE),
+                new HyperiumBind("Edit SBA Locations", Keyboard.KEY_NONE),
+                new HyperiumBind("Lock Slot with SBA", Keyboard.KEY_L),
+                new HyperiumBind("Freeze Backpack Preview", Keyboard.KEY_F));
     }
 
     @InvokeEvent(priority = Priority.LOW)
@@ -141,33 +137,90 @@ public class SkyblockAddons implements IAddon {
     }
 
     public HyperiumBind getOpenSettingsKey() {
-        return keyBindings.get(0).getKeyBinding();
+        return keyBindings.get(0);
     }
 
     public HyperiumBind getOpenEditLocationsKey() {
-        return keyBindings.get(1).getKeyBinding();
+        return keyBindings.get(1);
     }
 
     public HyperiumBind getLockSlotKey() {
-        return keyBindings.get(2).getKeyBinding();
+        return keyBindings.get(2);
     }
 
     public HyperiumBind getFreezeBackpackKey() {
-        return keyBindings.get(3).getKeyBinding();
+        return keyBindings.get(3);
     }
 
-    public void addKeybinds(SkyblockKeyBinding... keybinds) {
-        for (SkyblockKeyBinding skyblockKeyBinding : keybinds) {
-            HyperiumBind keyBinding = new HyperiumBind(skyblockKeyBinding.getName(), skyblockKeyBinding.getDefaultKey());
-            Hyperium.INSTANCE.getHandlers().getKeybindHandler().registerKeyBinding(keyBinding);
-            skyblockKeyBinding.setKeyBinding(keyBinding);
-
-            keyBindings.add(skyblockKeyBinding);
+    public void addKeybinds(HyperiumBind... keybinds) {
+        for (HyperiumBind b : keybinds) {
+            Hyperium.INSTANCE.getHandlers().getKeybindHandler().registerKeyBinding(b);
+            keyBindings.add(b);
         }
     }
 
     @Override
     public void onClose() {
         EventBus.INSTANCE.unregister(this);
+    }
+
+    public InventoryUtils getInventoryUtils() {
+        return inventoryUtils;
+    }
+
+    public Logger getLogger() {
+        return logger;
+    }
+
+    public NewScheduler getNewScheduler() {
+        return newScheduler;
+    }
+
+    public PersistentValues getPersistentValues() {
+        return persistentValues;
+    }
+
+    public PlayerListener getPlayerListener() {
+        return playerListener;
+    }
+
+    public OnlineData getOnlineData() {
+        return onlineData;
+    }
+
+    public RenderListener getRenderListener() {
+        return renderListener;
+    }
+
+    public List<HyperiumBind> getKeyBindings() {
+        return keyBindings;
+    }
+
+    public Utils getUtils() {
+        return utils;
+    }
+
+    public ConfigValues getConfigValues() {
+        return configValues;
+    }
+
+    public Scheduler getScheduler() {
+        return scheduler;
+    }
+
+    public boolean isDevMode() {
+        return devMode;
+    }
+
+    public Set<Integer> getRegisteredFeatureIDs() {
+        return registeredFeatureIDs;
+    }
+
+    public void setDevMode(boolean devMode) {
+        this.devMode = devMode;
+    }
+
+    public void setOnlineData(OnlineData onlineData) {
+        this.onlineData = onlineData;
     }
 }

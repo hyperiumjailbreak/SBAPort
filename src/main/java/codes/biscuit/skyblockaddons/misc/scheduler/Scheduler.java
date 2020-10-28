@@ -181,8 +181,6 @@ public class Scheduler {
                 main.getRenderListener().setTitleFeature(null);
             } else if (this == RESET_SUBTITLE_FEATURE) {
                 main.getRenderListener().setSubtitleFeature(null);
-            } else if (this == ERASE_UPDATE_MESSAGE) {
-                main.getRenderListener().setUpdateMessageDisplayed(true);
             } else if (this == SET_LAST_SECOND_HEALTH) {
                 main.getPlayerListener().setLastSecondHealth((int) commandData[0]);
             }

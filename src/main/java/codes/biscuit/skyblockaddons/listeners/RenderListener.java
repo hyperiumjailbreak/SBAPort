@@ -1,9 +1,11 @@
 package codes.biscuit.skyblockaddons.listeners;
 
+import cc.hyperium.Hyperium;
 import cc.hyperium.event.InvokeEvent;
 import cc.hyperium.event.Priority;
 import cc.hyperium.event.client.TickEvent;
 import cc.hyperium.event.render.RenderHUDEvent;
+import cc.hyperium.handlers.handlers.GuiDisplayHandler;
 import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
 import codes.biscuit.skyblockaddons.SkyblockAddons;
 import codes.biscuit.skyblockaddons.core.Attribute;
@@ -24,7 +26,6 @@ import codes.biscuit.skyblockaddons.gui.SettingsGui;
 import codes.biscuit.skyblockaddons.gui.SkyblockAddonsGui;
 import codes.biscuit.skyblockaddons.gui.buttons.ButtonLocation;
 import codes.biscuit.skyblockaddons.misc.ChromaManager;
-import codes.biscuit.skyblockaddons.misc.scheduler.Scheduler;
 import codes.biscuit.skyblockaddons.utils.EnumUtils;
 import codes.biscuit.skyblockaddons.utils.TextUtils;
 import codes.biscuit.skyblockaddons.utils.ColorCode;
@@ -37,7 +38,6 @@ import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityArmorStand;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.init.Items;
@@ -75,12 +75,10 @@ public class RenderListener {
     private static ItemStack NETHER_STAR;
     private static ItemStack WARP_SKULL;
 
-    private SkyblockAddons main = SkyblockAddons.getInstance();
+    private final SkyblockAddons main = SkyblockAddons.getInstance();
 
     @Getter @Setter private boolean predictHealth;
     @Getter @Setter private boolean predictMana;
-
-    @Setter private boolean updateMessageDisplayed;
 
     private Feature subtitleFeature;
     @Getter @Setter private Feature titleFeature;
@@ -102,7 +100,7 @@ public class RenderListener {
      * Render overlays and warnings for clients without labymod.
      */
     @InvokeEvent
-    public void onRenderRegular() {
+    public void onRenderRegular(RenderHUDEvent e) {
         if (main.getUtils().isOnSkyblock()) {
             renderOverlays();
             renderWarnings(new ScaledResolution(Minecraft.getMinecraft()));
@@ -1138,7 +1136,7 @@ public class RenderListener {
         GlStateManager.disableRescaleNormal();
     }
 
-    private static List<ItemDiff> DUMMY_PICKUP_LOG = new ArrayList<>(Arrays.asList(new ItemDiff(ColorCode.DARK_PURPLE + "Forceful Ember Chestplate", 1),
+    private static final List<ItemDiff> DUMMY_PICKUP_LOG = new ArrayList<>(Arrays.asList(new ItemDiff(ColorCode.DARK_PURPLE + "Forceful Ember Chestplate", 1),
             new ItemDiff("Boat", -1), new ItemDiff(ColorCode.BLUE + "Aspect of the End", 1)));
 
     public void drawItemPickupLog(float scale, ButtonLocation buttonLocation) {
@@ -1334,14 +1332,15 @@ public class RenderListener {
 
     @InvokeEvent
     public void onRender(TickEvent e) {
+        final GuiDisplayHandler g = Hyperium.INSTANCE.getHandlers().getGuiDisplayHandler();
         if (guiToOpen == EnumUtils.GUIType.MAIN) {
-            Minecraft.getMinecraft().displayGuiScreen(new SkyblockAddonsGui(guiPageToOpen, guiTabToOpen));
+            g.setDisplayNextTick(new SkyblockAddonsGui(guiPageToOpen, guiTabToOpen));
         } else if (guiToOpen == EnumUtils.GUIType.EDIT_LOCATIONS) {
-            Minecraft.getMinecraft().displayGuiScreen(new LocationEditGui(guiPageToOpen, guiTabToOpen));
+            g.setDisplayNextTick(new LocationEditGui(guiPageToOpen, guiTabToOpen));
         } else if (guiToOpen == EnumUtils.GUIType.SETTINGS) {
-            Minecraft.getMinecraft().displayGuiScreen(new SettingsGui(guiFeatureToOpen, 1, guiPageToOpen, guiTabToOpen, guiFeatureToOpen.getSettings()));
+            g.setDisplayNextTick(new SettingsGui(guiFeatureToOpen, 1, guiPageToOpen, guiTabToOpen, guiFeatureToOpen.getSettings()));
         } else if (guiToOpen == EnumUtils.GUIType.WARP) {
-            Minecraft.getMinecraft().displayGuiScreen(new IslandWarpGui());
+            g.setDisplayNextTick(new IslandWarpGui());
         }
         guiToOpen = null;
     }
