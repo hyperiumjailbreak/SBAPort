@@ -318,6 +318,135 @@ Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiDisconnectedTransformer
 -        }
 -    }
 -}
+Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+@@ -1,123 +0,0 @@
+-package codes.biscuit.skyblockaddons.asm;
+-
+-import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
+-import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
+-import org.objectweb.asm.Opcodes;
+-import org.objectweb.asm.tree.*;
+-
+-import java.util.Iterator;
+-
+-public class GuiIngameCustomTransformer implements ITransformer {
+-
+-    private boolean foundHealthBlock;
+-    private boolean foundFoodBlock;
+-
+-    private boolean doneHealth;
+-    private boolean doneFood;
+-    private boolean doneArmor;
+-    private boolean doneMountHealth;
+-
+-    /**
+-     * Labymod: net.labymod.core_implementation.mc18.gui.GuiIngameCustom
+-     */
+-    @Override
+-    public String[] getClassName() {
+-        return new String[]{"net.labymod.core_implementation.mc18.gui.GuiIngameCustom"};
+-    }
+-
+-    @Override
+-    public void transform(ClassNode classNode, String name) {
+-        for (MethodNode methodNode : classNode.methods) {
+-            if (methodNode.name.equals("renderPlayerStatsNew")) {
+-
+-                Iterator<AbstractInsnNode> iterator = methodNode.instructions.iterator();
+-                while (iterator.hasNext()) {
+-                    AbstractInsnNode abstractNode = iterator.next();
+-
+-                    if (abstractNode instanceof LdcInsnNode) {
+-                        LdcInsnNode ldcInsnNode = (LdcInsnNode) abstractNode;
+-                        if (!doneArmor && "armor".equals(ldcInsnNode.cst)) {
+-                            methodNode.instructions.insert(ldcInsnNode.getNext(), insertCancelArmorRendering());
+-                            doneArmor = true;
+-
+-                        } else if ("health".equals(ldcInsnNode.cst)) {
+-                            foundHealthBlock = true;
+-
+-                        } else if ("food".equals(ldcInsnNode.cst)) {
+-                            foundFoodBlock = true;
+-
+-                        }
+-                    }
+-
+-                    if (abstractNode instanceof JumpInsnNode) {
+-                        JumpInsnNode jumpInsnNode = (JumpInsnNode) abstractNode;
+-                        if (!doneHealth && foundHealthBlock && abstractNode.getOpcode() == Opcodes.IFLT) {
+-                            doneHealth = true;
+-                            methodNode.instructions.insert(abstractNode, insertCancelHealthRendering(jumpInsnNode.label));
+-                        }
+-
+-                        if (!doneFood && abstractNode.getOpcode() == Opcodes.IFNONNULL) {
+-                            doneFood = true;
+-                            methodNode.instructions.insert(abstractNode, insertCancelFoodRendering(jumpInsnNode.label));
+-                        }
+-                    }
+-
+-                    if (!doneMountHealth && foundFoodBlock && abstractNode instanceof TypeInsnNode && abstractNode.getOpcode() == Opcodes.INSTANCEOF) {
+-                        TypeInsnNode typeInsnNode = (TypeInsnNode) abstractNode;
+-
+-                        if (typeInsnNode.desc.equals(TransformerClass.EntityLivingBase.getNameRaw()) &&
+-                                typeInsnNode.getNext().getOpcode() == Opcodes.IFEQ && typeInsnNode.getNext() instanceof JumpInsnNode) {
+-                            JumpInsnNode jumpInsnNode = (JumpInsnNode) typeInsnNode.getNext();
+-
+-                            doneMountHealth = true;
+-                            methodNode.instructions.insert(jumpInsnNode, insertCancelMountHealthRendering(jumpInsnNode.label));
+-                        }
+-                    }
+-                }
+-            }
+-        }
+-    }
+-
+-    private InsnList insertCancelArmorRendering() {
+-        InsnList list = new InsnList();
+-
+-        list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/GuiIngameCustomHook", "shouldRenderArmor", "()Z", false));
+-
+-        LabelNode notCancelled = new LabelNode(); // if (!GuiIngameCustomHook.shouldRenderArmor())
+-        list.add(new JumpInsnNode(Opcodes.IFNE, notCancelled));
+-
+-        list.add(new InsnNode(Opcodes.ICONST_0));
+-        list.add(new VarInsnNode(Opcodes.ISTORE, 22)); // k2 = 0;
+-
+-        list.add(notCancelled); // }
+-
+-        return list;
+-    }
+-
+-    private InsnList insertCancelHealthRendering(LabelNode label) {
+-        InsnList list = new InsnList();
+-
+-        list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/GuiIngameCustomHook", "shouldRenderHealth", "()Z", false));
+-        list.add(new JumpInsnNode(Opcodes.IFEQ, label)); // && shouldRenderHealth()
+-
+-        return list;
+-    }
+-
+-    private InsnList insertCancelFoodRendering(LabelNode label) {
+-        InsnList list = new InsnList();
+-
+-        list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/GuiIngameCustomHook", "shouldRenderFood", "()Z", false));
+-        list.add(new JumpInsnNode(Opcodes.IFEQ, label));  // && shouldRenderFood()
+-
+-        return list;
+-    }
+-
+-    private InsnList insertCancelMountHealthRendering(LabelNode label) {
+-        InsnList list = new InsnList();
+-
+-        list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/GuiIngameCustomHook", "shouldRenderMountHealth", "()Z", false));
+-        list.add(new JumpInsnNode(Opcodes.IFEQ, label));  // && shouldRenderMountHealth()
+-
+-        return list;
+-    }
+-}
+\ No newline at end of file
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiNewChatTransformer.java
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/GuiNewChatTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
@@ -1746,53 +1875,47 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(date 1603996355694)
-@@ -1,12 +1,6 @@
- package codes.biscuit.skyblockaddons.features;
- 
--import codes.biscuit.skyblockaddons.SkyblockAddons;
- import codes.biscuit.skyblockaddons.core.Feature;
--import codes.biscuit.skyblockaddons.core.Location;
--import codes.biscuit.skyblockaddons.utils.ItemUtils;
--import net.minecraft.item.ItemStack;
++++ src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(date 1604000115998)
+@@ -5,8 +5,6 @@
+ import codes.biscuit.skyblockaddons.core.Location;
+ import codes.biscuit.skyblockaddons.utils.ItemUtils;
+ import net.minecraft.item.ItemStack;
 -import net.minecraftforge.event.entity.player.FillBucketEvent;
 -import net.minecraftforge.event.entity.player.PlayerInteractEvent;
  
  public enum EnchantedItemBlacklist {
  
-@@ -38,32 +32,6 @@
+@@ -38,13 +36,13 @@
          this.onlyBlockPlacement = onlyBlockPlacement;
      }
  
 -    /**
--     * Determine if the usage of this item should be blocked.
--     *
--     * @param itemStack the item being used
--     * @param action the action the player is doing with the item
--     * @return true if the usage should be blocked, false otherwise.
++    /*
+      * Determine if the usage of this item should be blocked.
+      *
+      * @param itemStack the item being used
+      * @param action the action the player is doing with the item
+      * @return true if the usage should be blocked, false otherwise.
 -     */
--    public static boolean shouldBlockUsage(ItemStack itemStack, PlayerInteractEvent.Action action) {
--        SkyblockAddons main = SkyblockAddons.getInstance();
--        boolean blockUsage = false;
--
--        for (EnchantedItemBlacklist blacklistItem : EnchantedItemBlacklist.values()) {
--            if (main.getConfigValues().isEnabled(blacklistItem.feature) && !blacklistItem.isBucket() &&
--                    blacklistItem.itemId.equals(ItemUtils.getSkyBlockItemID(itemStack)) &&
--                    (!blacklistItem.onlyOnIsland || main.getUtils().getLocation() == Location.ISLAND) &&
--                    !main.getUtils().isMaterialForRecipe(itemStack)) {
--
--                if (action == PlayerInteractEvent.Action.RIGHT_CLICK_AIR && blacklistItem.onlyBlockPlacement) continue;
--
--                blockUsage = true; // ^ if the item is a recipe it'll be blocked server-side
--                break;
--            }
--        }
--        return blockUsage;
--    }
--
++     *
+     public static boolean shouldBlockUsage(ItemStack itemStack, PlayerInteractEvent.Action action) {
+         SkyblockAddons main = SkyblockAddons.getInstance();
+         boolean blockUsage = false;
+@@ -63,13 +61,13 @@
+         }
+         return blockUsage;
+     }
++    */
+ 
      /**
       * Checks if the given item from this blacklist is a bucket.
       * This is used to handle buckets separately from other blocks and items.
+      *
+      * @return true if the item is a bucket, false otherwise
+-     * @see codes.biscuit.skyblockaddons.listeners.PlayerListener#onBucketEvent(FillBucketEvent)
+      */
+     private boolean isBucket() {
+         return itemId.contains("BUCKET");
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -1832,24 +1955,6 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
  import java.util.Iterator;
  
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(date 1603996355366)
-@@ -2,8 +2,8 @@
- 
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -1874,26 +1979,26 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(date 1603996356116)
-@@ -4,44 +4,39 @@
- import codes.biscuit.skyblockaddons.config.ConfigValues;
- import codes.biscuit.skyblockaddons.config.PersistentValues;
- import codes.biscuit.skyblockaddons.core.Feature;
--import codes.biscuit.skyblockaddons.core.Message;
++++ src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(date 1604000749719)
+@@ -8,40 +8,40 @@
  import codes.biscuit.skyblockaddons.core.OnlineData;
  import codes.biscuit.skyblockaddons.gui.IslandWarpGui;
  import codes.biscuit.skyblockaddons.gui.SkyblockAddonsGui;
 -import codes.biscuit.skyblockaddons.listeners.GuiScreenListener;
++//import codes.biscuit.skyblockaddons.listeners.GuiScreenListener;
  import codes.biscuit.skyblockaddons.listeners.NetworkListener;
  import codes.biscuit.skyblockaddons.listeners.PlayerListener;
  import codes.biscuit.skyblockaddons.listeners.RenderListener;
  import codes.biscuit.skyblockaddons.misc.scheduler.Scheduler;
 -import codes.biscuit.skyblockaddons.misc.SkyblockKeyBinding;
 -import codes.biscuit.skyblockaddons.misc.Updater;
++//import codes.biscuit.skyblockaddons.misc.SkyblockKeyBinding;
++//import codes.biscuit.skyblockaddons.misc.Updater;
  import codes.biscuit.skyblockaddons.misc.scheduler.NewScheduler;
  import codes.biscuit.skyblockaddons.misc.scheduler.SkyblockRunnable;
  import codes.biscuit.skyblockaddons.utils.*;
 -import codes.biscuit.skyblockaddons.features.discordrpc.DiscordRPCManager;
++//import codes.biscuit.skyblockaddons.features.discordrpc.DiscordRPCManager;
  import com.google.gson.Gson;
  import com.google.gson.stream.JsonReader;
  import lombok.Getter;
@@ -1931,17 +2036,20 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
      public static final String MOD_ID = "skyblockaddons";
      public static final String MOD_NAME = "SkyblockAddons";
-@@ -53,72 +48,63 @@
+@@ -53,71 +53,73 @@
      private ConfigValues configValues;
      private PersistentValues persistentValues;
      private PlayerListener playerListener;
 -    private GuiScreenListener guiScreenListener;
++    //private GuiScreenListener guiScreenListener;
      private RenderListener renderListener;
      private InventoryUtils inventoryUtils;
      private Utils utils;
 -    private Updater updater;
++    //private Updater updater;
      @Setter private OnlineData onlineData;
 -    private DiscordRPCManager discordRPCManager;
++    //private DiscordRPCManager discordRPCManager;
      private Scheduler scheduler;
      private NewScheduler newScheduler;
  
@@ -1951,8 +2059,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 -    private List<SkyblockKeyBinding> keyBindings = new LinkedList<>();
 +    private List<HyperiumBind> keyBindings = new LinkedList<>();
  
--    @Getter private final Set<Integer> registeredFeatureIDs = new HashSet<>();
-+    private final Set<Integer> registeredFeatureIDs = new HashSet<>();
+     @Getter private final Set<Integer> registeredFeatureIDs = new HashSet<>();
  
 -    public SkyblockAddons() {
 +    @Override
@@ -1964,13 +2071,16 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
          playerListener = new PlayerListener();
 -        guiScreenListener = new GuiScreenListener();
++        //guiScreenListener = new GuiScreenListener();
          renderListener = new RenderListener();
          inventoryUtils = new InventoryUtils();
          utils = new Utils();
 -        updater = new Updater();
++        //updater = new Updater();
          scheduler = new Scheduler();
          newScheduler = new NewScheduler();
 -        discordRPCManager = new DiscordRPCManager();
++        //discordRPCManager = new DiscordRPCManager();
      }
  
 -    @Mod.EventHandler
@@ -2021,14 +2131,16 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
          persistentValues.loadValues();
  
 -        setKeyBindingDescriptions();
--
++        //setKeyBindingDescriptions();
+ 
 -        usingLabymod = utils.isModLoaded("labymod");
 -        usingOofModv1 = utils.isModLoaded("refractionoof", "1.0");
--
++        //usingLabymod = utils.isModLoaded("labymod");
++        //usingOofModv1 = utils.isModLoaded("refractionoof", "1.0");
+ 
          utils.pullOnlineData();
          scheduleMagmaBossCheck();
- 
-@@ -137,11 +123,6 @@
+@@ -137,11 +139,6 @@
          Minecraft.getMinecraft().getTextureManager().bindTexture(SkyblockAddonsGui.LOGO_GLOW);
      }
  
@@ -2040,32 +2152,30 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
      private void scheduleMagmaBossCheck() {
          // Loop every 5s until the player is in game, where it will pull once.
          newScheduler.scheduleRepeatingTask(new SkyblockRunnable() {
-@@ -155,42 +136,31 @@
+@@ -155,35 +152,26 @@
          }, 20*5, 20*5);
      }
  
 -    public KeyBinding getOpenSettingsKey() {
 -        return keyBindings.get(0).getKeyBinding();
+-    }
+-
+-    public KeyBinding getOpenEditLocationsKey() {
+-        return keyBindings.get(1).getKeyBinding();
 +    public HyperiumBind getOpenSettingsKey() {
 +        return keyBindings.get(0);
      }
  
--    public KeyBinding getOpenEditLocationsKey() {
--        return keyBindings.get(1).getKeyBinding();
+-    public KeyBinding getLockSlotKey() {
+-        return keyBindings.get(2).getKeyBinding();
 +    public HyperiumBind getOpenEditLocationsKey() {
 +        return keyBindings.get(1);
      }
  
--    public KeyBinding getLockSlotKey() {
--        return keyBindings.get(2).getKeyBinding();
-+    public HyperiumBind getLockSlotKey() {
-+        return keyBindings.get(2);
-     }
- 
 -    public KeyBinding getFreezeBackpackKey() {
 -        return keyBindings.get(3).getKeyBinding();
-+    public HyperiumBind getFreezeBackpackKey() {
-+        return keyBindings.get(3);
++    public HyperiumBind getLockSlotKey() {
++        return keyBindings.get(2);
      }
  
 -    public void addKeybinds(SkyblockKeyBinding... keybinds) {
@@ -2075,6 +2185,14 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 -            skyblockKeyBinding.setKeyBinding(keyBinding);
 -
 -            keyBindings.add(skyblockKeyBinding);
+-        }
++    public HyperiumBind getFreezeBackpackKey() {
++        return keyBindings.get(3);
+     }
+ 
+-    public void setKeyBindingDescriptions() {
+-        for (SkyblockKeyBinding skyblockKeyBinding : keyBindings) {
+-            skyblockKeyBinding.getKeyBinding().keyDescription = skyblockKeyBinding.getMessage().getMessage();
 +    public void addKeybinds(HyperiumBind... keybinds) {
 +        for (HyperiumBind b : keybinds) {
 +            Hyperium.INSTANCE.getHandlers().getKeybindHandler().registerKeyBinding(b);
@@ -2082,21 +2200,15 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
          }
      }
  
--    public void setKeyBindingDescriptions() {
--        for (SkyblockKeyBinding skyblockKeyBinding : keyBindings) {
--            skyblockKeyBinding.getKeyBinding().keyDescription = skyblockKeyBinding.getMessage().getMessage();
--        }
--    }
--
--    static {
--        //noinspection ConstantConditions
--        if (VERSION.contains("@")) { // Debug environment...
--            VERSION = "1.5.4";
--        }
+@@ -193,4 +181,9 @@
+             VERSION = "1.5.4";
+         }
+     }
++
 +    @Override
 +    public void onClose() {
 +        EventBus.INSTANCE.unregister(this);
-     }
++    }
  }
 Index: src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java
 IDEA additional info:
@@ -2119,20 +2231,19 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(date 1603996355491)
-@@ -4,104 +4,43 @@
++++ src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(date 1604001225057)
+@@ -4,19 +4,21 @@
  import codes.biscuit.skyblockaddons.utils.EnumUtils;
  import codes.biscuit.skyblockaddons.utils.DevUtils;
  import codes.biscuit.skyblockaddons.utils.ColorCode;
 +import codes.biscuit.skyblockaddons.utils.Utils;
  import net.minecraft.client.Minecraft;
--import net.minecraft.command.CommandBase;
--import net.minecraft.command.ICommandSender;
+ import net.minecraft.command.CommandBase;
+ import net.minecraft.command.ICommandSender;
  import net.minecraft.scoreboard.Scoreboard;
--import net.minecraft.util.BlockPos;
--import org.apache.logging.log4j.Logger;
-+
 +import cc.hyperium.commands.BaseCommand;
+ import net.minecraft.util.BlockPos;
+ import org.apache.logging.log4j.Logger;
  
  import java.awt.*;
  import java.io.IOException;
@@ -2141,17 +2252,14 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  import java.util.List;
  
 -public class SkyblockAddonsCommand extends CommandBase {
--
--    private SkyblockAddons main;
--    private Logger logger;
 +public class SkyblockAddonsCommand implements BaseCommand {
-+    private final SkyblockAddons main = SkyblockAddons.getInstance();
  
--    public SkyblockAddonsCommand() {
--        main = SkyblockAddons.getInstance();
--        logger = main.getLogger();
--    }
--
+     private SkyblockAddons main;
+     private Logger logger;
+@@ -26,10 +28,8 @@
+         logger = main.getLogger();
+     }
+ 
 -    /**
 -     * Gets the name of the command
 -     */
@@ -2161,73 +2269,33 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
          return "skyblockaddons";
      }
  
--    /**
--     * Return the required permission level for this command.
--     */
--    public int getRequiredPermissionLevel()
--    {
--        return 0;
--    }
--
-     /**
-      * Returns the aliases of this command
+@@ -46,7 +46,7 @@
       */
      public List<String> getCommandAliases()
      {
 -        return Collections.singletonList("sba");
 +        return Arrays.asList("sba", "sbaddons");
      }
--
--    /**
--     * Gets the usage string for the command.
--     */
--    public String getCommandUsage(ICommandSender sender) {
--        if (main.isDevMode()) return getDevCommandUsage();
--
--        return "§7§m------------§7[§b§l SkyblockAddons §7]§7§m------------" + "\n" +
--        "§b● /sba §7- Open the main menu" + "\n" +
--        "§b● /sba edit §7- Edit GUI locations" + "\n" +
--        "§b● /sba set <zealots|eyes|totalzealots §eor§b total> <number> §7- Manually set your zealot counts" + "\n" +
--        "§b● /sba folder §7- Open your mods folder" + "\n" +
--        "§7§m------------------------------------------";
--    }
--
--    /**
--     * Gets the usage string for the developer mode sub-command.
--     */
--    public String getDevCommandUsage() { return
--        "§7§m------------§7[§b§l SkyblockAddons §7]§7§m------------" + "\n" +
--        "§b● /sba §7- Open the main menu" + "\n" +
--        "§b● /sba edit §7- Edit GUI locations" + "\n" +
--        "§b● /sba set <zealots | eyes | totalzealots §7or§b total> <number> §7- Manually set your zealot counts" + "\n" +
--        "§b● /sba folder §7- Open your mods folder" + "\n" +
--        "§b● /sba dev §7- Toggle developer mode" + "\n" +
--        "§b● /sba sidebar [formatted] §7- §e(Dev) §7Copy the scoreboard text. \"formatted\" §7keeps the color codes when copying" + "\n" +
--        "§b● /sba brand §7- §e(Dev) §7Show the server brand" + "\n" +
--        "§7§m------------------------------------------";
--    }
--
--    public List<String> addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
--        if (args.length == 1) {
--            if (main.isDevMode()) {
--                return getListOfStringsMatchingLastWord(args, "set", "edit", "folder", "dev", "sidebar", "brand");
--            } else {
--                return getListOfStringsMatchingLastWord(args, "set", "edit", "folder", "dev");
--            }
  
--        } else if (args.length == 2) {
--            if (main.isDevMode() && args[1].equalsIgnoreCase("sidebar")) {
--                return getListOfStringsMatchingLastWord(args, "formatted");
--            } else if (args[1].equalsIgnoreCase("set")) {
--                return getListOfStringsMatchingLastWord(args, "total", "zealots", "eyes");
--            }
--        }
+     /**
+@@ -77,7 +77,7 @@
+         "§b● /sba brand §7- §e(Dev) §7Show the server brand" + "\n" +
+         "§7§m------------------------------------------";
+     }
 -
--        return null;
++/*
+     public List<String> addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
+         if (args.length == 1) {
+             if (main.isDevMode()) {
+@@ -96,12 +96,17 @@
+ 
+         return null;
+     }
++*/
 +    @Override
 +    public String getUsage() {
 +        return "skyblockaddons";
-     }
++    }
  
      /**
       * Opens the main gui, or locations gui if they type /sba edit
@@ -2238,7 +2306,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
          if (args.length > 0) {
              if (args[0].equalsIgnoreCase("edit")) {
                  main.getUtils().setFadingIn(false);
-@@ -144,9 +83,9 @@
+@@ -144,9 +149,9 @@
                  }
              }  else if (args[0].equalsIgnoreCase("folder")) {
                  try {
@@ -2250,7 +2318,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
                      main.getUtils().sendErrorMessage("Failed to open mods folder.");
                  }
              }  else if (args[0].equalsIgnoreCase("warp")) {
-@@ -162,16 +101,16 @@
+@@ -162,16 +167,16 @@
                          DevUtils.copyScoreboardSidebar(scoreboard, false);
  
                      } else {
@@ -2276,7 +2344,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(date 1603996356053)
++++ src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(date 1604001307702)
 @@ -8,9 +8,9 @@
  import org.apache.commons.lang3.mutable.MutableInt;
  import org.apache.logging.log4j.LogManager;
@@ -2307,7 +2375,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
          registerTransformer(new MouseHelperTransformer());
          registerTransformer(new EntityPlayerSPTransformer());
          registerTransformer(new EntityRendererTransformer());
-@@ -39,14 +35,10 @@
+@@ -39,17 +35,12 @@
  
          registerTransformer(new GuiContainerTransformer());
          registerTransformer(new GuiChestTransformer());
@@ -2321,12 +2389,14 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 -        registerTransformer(new RenderItemTransformer());
          registerTransformer(new EntityLivingBaseTransformer());
          registerTransformer(new InventoryPlayerTransformer());
-         registerTransformer(new GuiIngameCustomTransformer());
-@@ -79,10 +71,6 @@
-         transformers.forEach(transformer -> {
+-        registerTransformer(new GuiIngameCustomTransformer());
+         registerTransformer(new RenderEndermanTransformer());
+         registerTransformer(new ModelEndermanTransformer());
+         registerTransformer(new WorldClientTransformer());
+@@ -80,9 +71,6 @@
              logger.info("Applying transformer {} on {}...", transformer.getClass().getName(), transformedName);
              transformer.transform(node, transformedName);
--
+ 
 -            if (transformer instanceof FontRendererTransformer) {
 -                classWriterFlags.setValue(0);
 -            }
@@ -2396,7 +2466,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(date 1603996355506)
++++ src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(date 1603999694062)
 @@ -3,7 +3,6 @@
  import codes.biscuit.skyblockaddons.SkyblockAddons;
  import codes.biscuit.skyblockaddons.core.Feature;
@@ -2405,59 +2475,33 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  import codes.biscuit.skyblockaddons.misc.ChromaManager;
  import codes.biscuit.skyblockaddons.utils.EnumUtils;
  import codes.biscuit.skyblockaddons.utils.ColorCode;
-@@ -59,9 +58,6 @@
+@@ -59,9 +58,9 @@
      private MutableFloat chromaSpeed = new MutableFloat(0.19354838F); // 2.0
      private MutableObject<EnumUtils.ChromaMode> chromaMode = new MutableObject<>(EnumUtils.ChromaMode.FADE);
      private MutableFloat chromaFadeWidth = new MutableFloat(0.22580644F); // 10° Hue
 -    private MutableObject<DiscordStatus> discordDetails =  new MutableObject<>(DiscordStatus.LOCATION);
 -    private MutableObject<DiscordStatus> discordStatus = new MutableObject<>(DiscordStatus.AUTO_STATUS);
 -    private MutableObject<DiscordStatus> discordAutoDefault = new MutableObject<>(DiscordStatus.NONE);
++    //private MutableObject<DiscordStatus> discordDetails =  new MutableObject<>(DiscordStatus.LOCATION);
++    //private MutableObject<DiscordStatus> discordStatus = new MutableObject<>(DiscordStatus.AUTO_STATUS);
++    //private MutableObject<DiscordStatus> discordAutoDefault = new MutableObject<>(DiscordStatus.NONE);
      @Getter private List<String> discordCustomStatuses = new ArrayList<>();
  
      public ConfigValues(File settingsConfigFile) {
-@@ -93,7 +89,7 @@
-                     String languageKey = settingsConfig.get("language").getAsString();
-                     Language configLanguage = Language.getFromPath(languageKey);
-                     if (configLanguage != null) {
--                        setLanguage(configLanguage); // TODO Will this crash?
-+                        setLanguage(configLanguage);
- //                        language.setValue(configLanguage);
-                     }
-                 }
-@@ -108,7 +104,7 @@
-             deserializeEnumNumberMapFromID(guiScales, "guiScales", Feature.class, float.class);
- 
-             try {
--                for (Feature feature : Feature.getGuiFeatures()) { // TODO Legacy format from 1.3.4, remove in the future.
-+                for (Feature feature : Feature.getGuiFeatures()) {
-                     String property = Introspector.decapitalize(WordUtils.capitalizeFully(feature.toString().replace("_", " "))).replace(" ", "");
-                     String x = property+"X";
-                     String y = property+"Y";
-@@ -124,11 +120,11 @@
-             if (settingsConfig.has("coordinates")) {
-                 deserializeFeatureFloatCoordsMapFromID(coordinates, "coordinates");
-             } else {
--                deserializeFeatureFloatCoordsMapFromID(coordinates, "guiPositions"); // TODO Legacy format from 1.4.2/1.5-betas, remove in the future.
-+                deserializeFeatureFloatCoordsMapFromID(coordinates, "guiPositions"); 
-             }
-             deserializeFeatureIntCoordsMapFromID(barSizes, "barSizes");
- 
--            if (settingsConfig.has("featureColors")) { // TODO Legacy format from 1.3.4, remove in the future.
-+            if (settingsConfig.has("featureColors")) {
-                 try {
-                     for (Map.Entry<String, JsonElement> element : settingsConfig.getAsJsonObject("featureColors").entrySet()) {
-                         Feature feature = Feature.fromId(Integer.parseInt(element.getKey()));
-@@ -152,9 +148,6 @@
+@@ -152,9 +151,9 @@
              deserializeNumber(chromaSpeed, "chromaSpeed", float.class);
              deserializeEnumValueFromOrdinal(chromaMode, "chromaMode");
              deserializeNumber(chromaFadeWidth, "chromaFadeWidth", float.class);
 -            deserializeEnumValueFromOrdinal(discordStatus, "discordStatus");
 -            deserializeEnumValueFromOrdinal(discordDetails, "discordDetails");
 -            deserializeEnumValueFromOrdinal(discordAutoDefault, "discordAutoDefault");
++            //deserializeEnumValueFromOrdinal(discordStatus, "discordStatus");
++            //deserializeEnumValueFromOrdinal(discordDetails, "discordDetails");
++            //deserializeEnumValueFromOrdinal(discordAutoDefault, "discordAutoDefault");
              deserializeStringCollection(discordCustomStatuses, "discordCustomStatuses");
  
              int configVersion;
-@@ -342,16 +335,6 @@
+@@ -342,16 +341,6 @@
              settingsConfig.addProperty("chromaMode", chromaMode.getValue().ordinal());
              settingsConfig.addProperty("chromaFadeWidth", chromaFadeWidth);
  
@@ -2474,50 +2518,19 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
              settingsConfig.addProperty("configVersion", CONFIG_VERSION);
              int largestFeatureID = 0;
              for (Feature feature : Feature.values()) {
-@@ -884,44 +867,4 @@
-     public float getChromaFadeWidth() {
+@@ -885,6 +874,7 @@
          return chromaFadeWidth.getValue();
      }
--
--    public void setDiscordDetails(DiscordStatus discordDetails) {
--        this.discordDetails.setValue(discordDetails);
--    }
--
--    public void setDiscordStatus(DiscordStatus discordStatus) {
--        this.discordStatus.setValue(discordStatus);
--    }
--
--    public DiscordStatus getDiscordStatus() {
--        return discordStatus != null ? discordStatus.getValue() : DiscordStatus.NONE;
--    }
--
--    public DiscordStatus getDiscordDetails() {
--        return discordDetails != null ? discordDetails.getValue() : DiscordStatus.NONE;
--    }
--
--    public DiscordStatus getDiscordAutoDefault() {
--        return discordAutoDefault != null ? discordAutoDefault.getValue() : DiscordStatus.NONE;
--    }
--
--    public void setDiscordAutoDefault(DiscordStatus discordAutoDefault) {
--        this.discordAutoDefault.setValue(discordAutoDefault);
--    }
--
--    public String getCustomStatus(EnumUtils.DiscordStatusEntry statusEntry) {
--        while (main.getConfigValues().getDiscordCustomStatuses().size() < 2) {
--            main.getConfigValues().getDiscordCustomStatuses().add("");
--        }
--
--        return discordCustomStatuses.get(statusEntry.getId());
--    }
--
--    public String setCustomStatus(EnumUtils.DiscordStatusEntry statusEntry, String text) {
--        while (main.getConfigValues().getDiscordCustomStatuses().size() < 2) {
--            main.getConfigValues().getDiscordCustomStatuses().add("");
--        }
--
--        return discordCustomStatuses.set(statusEntry.getId(), text);
--    }
+ 
++    /*
+     public void setDiscordDetails(DiscordStatus discordDetails) {
+         this.discordDetails.setValue(discordDetails);
+     }
+@@ -924,4 +914,5 @@
+ 
+         return discordCustomStatuses.set(statusEntry.getId(), text);
+     }
++    */
  }
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java
 IDEA additional info:
@@ -2525,24 +2538,13 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(date 1603996355303)
-@@ -1,5 +1,6 @@
- package codes.biscuit.skyblockaddons.asm.hooks;
- 
-+import codes.biscuit.skyblockaddons.Reflector;
- import codes.biscuit.skyblockaddons.SkyblockAddons;
- import net.minecraft.client.audio.ISound;
- import net.minecraft.client.audio.SoundCategory;
-@@ -13,7 +14,11 @@
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(date 1604001225057)
+@@ -13,7 +13,7 @@
          if (main != null && main.getUtils() != null && main.getUtils().isPlayingSound()) {
              return 1;
          } else {
 -            return soundManager.getNormalizedVolume(sound, entry, category);
-+            Object o = Reflector.invoke(SoundManager.class, soundManager, "getNormalizedVolume", new Class[]{ISound.class, SoundPoolEntry.class, SoundCategory.class}, new Object[]{sound, entry, category});
-+            if (o == null) {
-+                System.err.println("AAAHHHHH WTF");
-+            }
-+            return (float) o;
++            return (float) codes.biscuit.skyblockaddons.Reflector.invoke(SoundManager.class, soundManager, "getNormalizedVolume", new Class[]{ISound.class, SoundPoolEntry.class, SoundCategory.class}, new Object[]{sound, entry, category});
          }
      }
  }
@@ -2625,8 +2627,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(date 1603996356053)
-@@ -12,14 +12,11 @@
++++ src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(date 1604000006040)
+@@ -12,7 +12,6 @@
  import net.minecraft.scoreboard.ScorePlayerTeam;
  import net.minecraft.scoreboard.Scoreboard;
  import net.minecraft.util.StringUtils;
@@ -2634,14 +2636,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  import org.lwjgl.input.Keyboard;
  
  import java.awt.*;
- import java.awt.datatransfer.Clipboard;
- import java.awt.datatransfer.StringSelection;
--import java.io.ByteArrayInputStream;
--import java.io.IOException;
- import java.util.List;
- import java.util.*;
- import java.util.regex.Matcher;
-@@ -118,6 +115,7 @@
+@@ -118,6 +117,7 @@
              sb.insert(0, "\n").insert(0, org.apache.commons.lang3.StringUtils.center(objectiveName, width));
  
              copyStringToClipboard(sb.toString(), "Sidebar copied to clipboard!");
@@ -2649,7 +2644,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
          }
      }
  
-@@ -150,7 +148,6 @@
+@@ -150,7 +150,6 @@
  
              stringBuilder.append("NBT Data:").append(System.lineSeparator());
              entity.writeToNBT(entityData);
@@ -2657,28 +2652,32 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
              // Add spacing if necessary.
              if (loadedEntitiesCopyIterator.hasNext()) {
-@@ -161,20 +158,6 @@
+@@ -161,12 +160,14 @@
          copyStringToClipboard(stringBuilder.toString(), ColorCode.GREEN + "Entity data was copied to clipboard!");
      }
  
 -    /**
--     * Copies the provided NBT tag to the clipboard as a formatted string.
--     *
--     * @param nbtTag the NBT tag to copy
--     * @param message the message to show in chat when the NBT tag is copied
++
++
++    /*
+      * Copies the provided NBT tag to the clipboard as a formatted string.
+      *
+      * @param nbtTag the NBT tag to copy
+      * @param message the message to show in chat when the NBT tag is copied
 -     */
--    public static void copyNBTTagToClipboard(NBTBase nbtTag, String message) {
--        if (nbtTag == null) {
--            SkyblockAddons.getInstance().getUtils().sendMessage("This item has no NBT data.");
--            return;
--        }
--        writeToClipboard(prettyPrintNBT(nbtTag), message);
--    }
--
++
+     public static void copyNBTTagToClipboard(NBTBase nbtTag, String message) {
+         if (nbtTag == null) {
+             SkyblockAddons.getInstance().getUtils().sendMessage("This item has no NBT data.");
+@@ -174,6 +175,7 @@
+         }
+         writeToClipboard(prettyPrintNBT(nbtTag), message);
+     }
++     */
+ 
      /**
       * Copies the provided NBT tags to the clipboard as a formatted string.
-      *
-@@ -191,7 +174,6 @@
+@@ -191,7 +193,6 @@
              }
  
              stringBuilder.append("Tag ").append(i).append(": ").append(System.lineSeparator());
@@ -2686,125 +2685,141 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
              // Add a blank line if necessary
              if (i < (nbtTags.size()) - 1) {
-@@ -247,118 +229,6 @@
+@@ -247,6 +248,118 @@
          }
      }
  
--    // FIXME add support for TAG_LONG_ARRAY when updating to 1.12
--    /**
--     * <p>Converts an NBT tag into a pretty-printed string.</p>
--     * <p>For constant definitions, see {@link Constants.NBT}</p>
--     *
--     * @param nbt the NBT tag to pretty print
--     * @return pretty-printed string of the NBT data
++    // FIXME add support for TAG_LONG_ARRAY when updating to 1.12
++    /*
++     * <p>Converts an NBT tag into a pretty-printed string.</p>
++     * <p>For constant definitions, see {@link Constants.NBT}</p>
++     *
++     * @param nbt the NBT tag to pretty print
++     * @return pretty-printed string of the NBT data
++
++    public static String prettyPrintNBT(NBTBase nbt) {
++        final String INDENT = "    ";
++
++        int tagID = nbt.getId();
++        StringBuilder stringBuilder = new StringBuilder();
++
++        // Determine which type of tag it is.
++        if (tagID == Constants.NBT.TAG_END) {
++            stringBuilder.append('}');
++
++        } else if (tagID == Constants.NBT.TAG_BYTE_ARRAY || tagID == Constants.NBT.TAG_INT_ARRAY) {
++            stringBuilder.append('[');
++            if (tagID == Constants.NBT.TAG_BYTE_ARRAY) {
++                NBTTagByteArray nbtByteArray = (NBTTagByteArray) nbt;
++                byte[] bytes = nbtByteArray.getByteArray();
++
++                for (int i = 0; i < bytes.length; i++) {
++                    stringBuilder.append(bytes[i]);
++
++                    // Don't add a comma after the last element.
++                    if (i < (bytes.length - 1)) {
++                        stringBuilder.append(", ");
++                    }
++                }
++            } else {
++                NBTTagIntArray nbtIntArray = (NBTTagIntArray) nbt;
++                int[] ints = nbtIntArray.getIntArray();
++
++                for (int i = 0; i < ints.length; i++) {
++                    stringBuilder.append(ints[i]);
++
++                    // Don't add a comma after the last element.
++                    if (i < (ints.length - 1)) {
++                        stringBuilder.append(", ");
++                    }
++                }
++            }
++            stringBuilder.append(']');
++
++        } else if (tagID == Constants.NBT.TAG_LIST) {
++            NBTTagList nbtTagList = (NBTTagList) nbt;
++
++            stringBuilder.append('[');
++            for (int i = 0; i < nbtTagList.tagCount(); i++) {
++                NBTBase currentListElement = nbtTagList.get(i);
++
++                stringBuilder.append(prettyPrintNBT(currentListElement));
++
++                // Don't add a comma after the last element.
++                if (i < (nbtTagList.tagCount() - 1)) {
++                    stringBuilder.append(", ");
++                }
++            }
++            stringBuilder.append(']');
++
++        } else if (tagID == Constants.NBT.TAG_COMPOUND) {
++            NBTTagCompound nbtTagCompound = (NBTTagCompound) nbt;
++
++            stringBuilder.append('{');
++            if (!nbtTagCompound.hasNoTags()) {
++                Iterator<String> iterator = nbtTagCompound.getKeySet().iterator();
++
++                stringBuilder.append(System.lineSeparator());
++
++                while (iterator.hasNext()) {
++                    String key = iterator.next();
++                    NBTBase currentCompoundTagElement = nbtTagCompound.getTag(key);
++
++                    stringBuilder.append(key).append(": ").append(
++                            prettyPrintNBT(currentCompoundTagElement));
++
++                    if (key.contains("backpack_data") && currentCompoundTagElement instanceof NBTTagByteArray) {
++                        try {
++                            NBTTagCompound backpackData = CompressedStreamTools.readCompressed(new ByteArrayInputStream(((NBTTagByteArray)currentCompoundTagElement).getByteArray()));
++
++                            stringBuilder.append(",").append(System.lineSeparator());
++                            stringBuilder.append(key).append("(decoded): ").append(
++                                    prettyPrintNBT(backpackData));
++                        } catch (IOException e) {
++                            e.printStackTrace();
++                        }
++                    }
++
++                    // Don't add a comma after the last element.
++                    if (iterator.hasNext()) {
++                        stringBuilder.append(",").append(System.lineSeparator());
++                    }
++                }
++
++                // Indent all lines
++                String indentedString = stringBuilder.toString().replaceAll(System.lineSeparator(), System.lineSeparator() + INDENT);
++                stringBuilder = new StringBuilder(indentedString);
++            }
++
++            stringBuilder.append(System.lineSeparator()).append('}');
++        }
++        // This includes the tags: byte, short, int, long, float, double, and string
++        else {
++            stringBuilder.append(nbt.toString());
++        }
++
++        return stringBuilder.toString();
++    }
++
+     // FIXME add support for TAG_LONG_ARRAY when updating to 1.12
+     /**
+      * <p>Converts an NBT tag into a pretty-printed string.</p>
+@@ -254,7 +367,6 @@
+      *
+      * @param nbt the NBT tag to pretty print
+      * @return pretty-printed string of the NBT data
 -     */
--    public static String prettyPrintNBT(NBTBase nbt) {
--        final String INDENT = "    ";
--
--        int tagID = nbt.getId();
--        StringBuilder stringBuilder = new StringBuilder();
--
--        // Determine which type of tag it is.
--        if (tagID == Constants.NBT.TAG_END) {
--            stringBuilder.append('}');
--
--        } else if (tagID == Constants.NBT.TAG_BYTE_ARRAY || tagID == Constants.NBT.TAG_INT_ARRAY) {
--            stringBuilder.append('[');
--            if (tagID == Constants.NBT.TAG_BYTE_ARRAY) {
--                NBTTagByteArray nbtByteArray = (NBTTagByteArray) nbt;
--                byte[] bytes = nbtByteArray.getByteArray();
--
--                for (int i = 0; i < bytes.length; i++) {
--                    stringBuilder.append(bytes[i]);
--
--                    // Don't add a comma after the last element.
--                    if (i < (bytes.length - 1)) {
--                        stringBuilder.append(", ");
--                    }
--                }
--            } else {
--                NBTTagIntArray nbtIntArray = (NBTTagIntArray) nbt;
--                int[] ints = nbtIntArray.getIntArray();
--
--                for (int i = 0; i < ints.length; i++) {
--                    stringBuilder.append(ints[i]);
--
--                    // Don't add a comma after the last element.
--                    if (i < (ints.length - 1)) {
--                        stringBuilder.append(", ");
--                    }
--                }
--            }
--            stringBuilder.append(']');
--
--        } else if (tagID == Constants.NBT.TAG_LIST) {
--            NBTTagList nbtTagList = (NBTTagList) nbt;
--
--            stringBuilder.append('[');
--            for (int i = 0; i < nbtTagList.tagCount(); i++) {
--                NBTBase currentListElement = nbtTagList.get(i);
--
--                stringBuilder.append(prettyPrintNBT(currentListElement));
--
--                // Don't add a comma after the last element.
--                if (i < (nbtTagList.tagCount() - 1)) {
--                    stringBuilder.append(", ");
--                }
--            }
--            stringBuilder.append(']');
--
--        } else if (tagID == Constants.NBT.TAG_COMPOUND) {
--            NBTTagCompound nbtTagCompound = (NBTTagCompound) nbt;
--
--            stringBuilder.append('{');
--             if (!nbtTagCompound.hasNoTags()) {
--                Iterator<String> iterator = nbtTagCompound.getKeySet().iterator();
--
--                stringBuilder.append(System.lineSeparator());
--
--                while (iterator.hasNext()) {
--                    String key = iterator.next();
--                    NBTBase currentCompoundTagElement = nbtTagCompound.getTag(key);
--
--                    stringBuilder.append(key).append(": ").append(
--                            prettyPrintNBT(currentCompoundTagElement));
--
--                    if (key.contains("backpack_data") && currentCompoundTagElement instanceof NBTTagByteArray) {
--                        try {
--                            NBTTagCompound backpackData = CompressedStreamTools.readCompressed(new ByteArrayInputStream(((NBTTagByteArray)currentCompoundTagElement).getByteArray()));
--
--                            stringBuilder.append(",").append(System.lineSeparator());
--                            stringBuilder.append(key).append("(decoded): ").append(
--                                    prettyPrintNBT(backpackData));
--                        } catch (IOException e) {
--                            e.printStackTrace();
--                        }
--                    }
--
--                    // Don't add a comma after the last element.
--                    if (iterator.hasNext()) {
--                        stringBuilder.append(",").append(System.lineSeparator());
--                    }
--                }
--
--                // Indent all lines
--                String indentedString = stringBuilder.toString().replaceAll(System.lineSeparator(), System.lineSeparator() + INDENT);
--                stringBuilder = new StringBuilder(indentedString);
--            }
--
--            stringBuilder.append(System.lineSeparator()).append('}');
--        }
--        // This includes the tags: byte, short, int, long, float, double, and string
--        else {
--            stringBuilder.append(nbt.toString());
--        }
--
--        return stringBuilder.toString();
--    }
--
+     public static String prettyPrintNBT(NBTBase nbt) {
+         final String INDENT = "    ";
+ 
+@@ -358,6 +470,7 @@
+ 
+         return stringBuilder.toString();
+     }
++    */
+ 
      // Internal methods
      private static void writeToClipboard(String text, String successMessage) {
-         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -3601,16 +3616,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(date 1603996355710)
-@@ -8,6 +8,7 @@
- import net.minecraft.util.MathHelper;
- 
- import java.math.BigDecimal;
-+import java.math.RoundingMode;
- 
- public class ButtonSlider extends GuiButton {
- 
-@@ -53,9 +54,7 @@
++++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(date 1603999661917)
+@@ -53,9 +53,7 @@
          drawRect(this.xPosition, this.yPosition, this.xPosition+this.width, this.yPosition+this.height, main.getUtils().getDefaultColor(boxAlpha));
          this.mouseDragged(mc, mouseX, mouseY);
          int j = 14737632;
@@ -3621,15 +3628,6 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
              j = 10526880;
          } else if (this.hovered) {
              j = 16777120;
-@@ -98,7 +97,7 @@
-     }
- 
-     private float getRoundedValue(float value) {
--        return new BigDecimal(String.valueOf(value)).setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
-+        return new BigDecimal(String.valueOf(value)).setScale(2, RoundingMode.HALF_UP).floatValue();
-     }
- 
-     public float denormalizeScale(float value) {
 Index: src/main/resources/pack.mcmeta
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -3651,16 +3649,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(date 1603996355710)
-@@ -9,6 +9,7 @@
- import net.minecraft.util.MathHelper;
- 
- import java.math.BigDecimal;
-+import java.math.RoundingMode;
- 
- public class ButtonGuiScale extends ButtonFeature {
- 
-@@ -41,9 +42,7 @@
++++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(date 1603999661958)
+@@ -41,9 +41,7 @@
          drawRect(this.xPosition, this.yPosition, this.xPosition+this.width, this.yPosition+this.height, main.getUtils().getDefaultColor(boxAlpha));
          this.mouseDragged(mc, mouseX, mouseY);
          int j = 14737632;
@@ -3671,15 +3661,6 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
              j = 10526880;
          } else if (this.hovered) {
              j = 16777120;
-@@ -88,7 +87,7 @@
-     }
- 
-     private float getRoundedValue(float value) {
--        return new BigDecimal(String.valueOf(value)).setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
-+        return new BigDecimal(String.valueOf(value)).setScale(2, RoundingMode.HALF_UP).floatValue();
-     }
- }
- 
 Index: src/main/java/codes/biscuit/skyblockaddons/Reflector.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -3993,33 +3974,6 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
                                      && !result.isSatisfied()
                                      && main.getPersistentValues().isBlockCraftingIncompletePatterns()) {
                                  // cancel clicking the result if the pattern isn't satisfied
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
---- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook.java	(date 1603996355241)
-@@ -1,7 +1,6 @@
- package codes.biscuit.skyblockaddons.asm.hooks;
- 
- import codes.biscuit.skyblockaddons.SkyblockAddons;
--import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
- import codes.biscuit.skyblockaddons.core.Feature;
- import codes.biscuit.skyblockaddons.core.npc.NPCUtils;
- import net.minecraft.client.Minecraft;
-@@ -43,11 +42,4 @@
-             list.removeIf(entity -> entity instanceof EntityOtherPlayerMP && !NPCUtils.isNPC(entity) && NPCUtils.isNearNPC(entity));
-         }
-     }
--
--    public static void preventBlink(ReturnValue<Float> returnValue) {
--        SkyblockAddons main = SkyblockAddons.getInstance();
--        if (main.getConfigValues().isEnabled(Feature.AVOID_BLINKING_NIGHT_VISION)) {
--            returnValue.cancel(1.0F);
--        }
--    }
- }
 Index: build.gradle
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -5355,45 +5309,39 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(date 1603996355694)
-@@ -8,8 +8,8 @@
++++ src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(date 1604000696340)
+@@ -1,5 +1,6 @@
+ package codes.biscuit.skyblockaddons.features.tabtimers;
+ 
++import codes.biscuit.skyblockaddons.Reflector;
+ import codes.biscuit.skyblockaddons.SkyblockAddons;
+ import codes.biscuit.skyblockaddons.core.Feature;
+ import codes.biscuit.skyblockaddons.gui.buttons.ButtonLocation;
+@@ -7,8 +8,8 @@
+ import codes.biscuit.skyblockaddons.utils.TextUtils;
  import lombok.Getter;
  import net.minecraft.client.Minecraft;
++import net.minecraft.client.gui.GuiPlayerTabOverlay;
  import net.minecraft.util.IChatComponent;
 -import net.minecraftforge.fml.common.gameevent.TickEvent;
  
-+import java.lang.reflect.Field;
  import java.util.ArrayList;
  import java.util.Arrays;
- import java.util.Collections;
-@@ -94,7 +94,17 @@
+@@ -88,13 +89,12 @@
+     }
+ 
+     /**
+-     * Called by {@link codes.biscuit.skyblockaddons.listeners.PlayerListener#onTick(TickEvent.ClientTickEvent)} every second
+      * to update the list of current effect timers.
+      */
      public void updatePotionEffects() {
          potionTimers.clear();
          powerupTimers.clear();
 -        IChatComponent tabFooterChatComponent = Minecraft.getMinecraft().ingameGUI.getTabList().footer;
-+        
-+        IChatComponent tabFooterChatComponent;
-+        
-+        try {
-+            Field f = Minecraft.getMinecraft().ingameGUI.getTabList().getClass().getField("footer");
-+            f.setAccessible(true);
-+            tabFooterChatComponent = (IChatComponent) f.get(Minecraft.getMinecraft().ingameGUI.getTabList());
-+        } catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e) {
-+            e.printStackTrace();
-+            tabFooterChatComponent = null;
-+        }
++        IChatComponent tabFooterChatComponent = (IChatComponent) Reflector.getFieldValue(GuiPlayerTabOverlay.class, Minecraft.getMinecraft().ingameGUI.getTabList(), "footer");
  
          // Convert tab footer to a String
          StringBuilder tabFooterStringBuilder = new StringBuilder();
-@@ -125,7 +135,7 @@
-             effectCount = 0;
-         }
- 
--        if(SkyblockAddons.getInstance().getConfigValues().isEnabled(Feature.SORT_TAB_EFFECT_TIMERS)) {
-+        if (SkyblockAddons.getInstance().getConfigValues().isEnabled(Feature.SORT_TAB_EFFECT_TIMERS)) {
-             Collections.sort(potionTimers);
-             Collections.sort(powerupTimers);
-         }
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
@@ -5550,7 +5498,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(date 1603996355335)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(date 1604000299614)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5562,12 +5510,13 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
  import java.util.Iterator;
  
-@@ -38,17 +38,6 @@
+@@ -38,18 +38,18 @@
                          }
                      }
                  }
 -            } else if (TransformerMethod.getNightVisionBrightness.matches(methodNode)) {
--
++            }/* else if (TransformerMethod.getNightVisionBrightness.matches(methodNode)) {
+ 
 -                // Objective:
 -                // Find: Method head.
 -                // Insert:   ReturnValue returnValue = new ReturnValue();
@@ -5575,42 +5524,35 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 -                //           if (returnValue.isCancelled()) {
 -                //               return 1.0F;
 -                //           }
--
++            // Objective:
++            // Find: Method head.
++            // Insert:   ReturnValue returnValue = new ReturnValue();
++            //           EntityPlayerSPHook.preventBlink(returnValue);
++            //           if (returnValue.isCancelled()) {
++            //               return 1.0F;
++            //           }
+ 
 -                methodNode.instructions.insertBefore(methodNode.instructions.getFirst(), insertNightVision());
-             }
+-            }
++            methodNode.instructions.insertBefore(methodNode.instructions.getFirst(), insertNightVision());
++        }*/
          }
      }
-@@ -60,31 +49,6 @@
-         list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook", "removeEntities",
-                 "(Ljava/util/List;)V", false));
  
--        return list;
--    }
--
--    private InsnList insertNightVision() {
--        InsnList list = new InsnList();
--
--        list.add(new TypeInsnNode(Opcodes.NEW, "codes/biscuit/skyblockaddons/asm/utils/ReturnValue"));
--        list.add(new InsnNode(Opcodes.DUP)); // ReturnValue returnValue = new ReturnValue();
--        list.add(new MethodInsnNode(Opcodes.INVOKESPECIAL, "codes/biscuit/skyblockaddons/asm/utils/ReturnValue", "<init>", "()V", false));
--        list.add(new VarInsnNode(Opcodes.ASTORE, 4));
--
--        list.add(new VarInsnNode(Opcodes.ALOAD, 4)); // EntityRendererHook.preventBlink(returnValue);
--        list.add(new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook", "preventBlink",
--                "(Lcodes/biscuit/skyblockaddons/asm/utils/ReturnValue;)V", false));
--
--        list.add(new VarInsnNode(Opcodes.ALOAD, 4));
--        list.add(new MethodInsnNode(Opcodes.INVOKEVIRTUAL, "codes/biscuit/skyblockaddons/asm/utils/ReturnValue", "isCancelled",
--                "()Z", false));
--        LabelNode notCancelled = new LabelNode(); // if (returnValue.isCancelled())
--        list.add(new JumpInsnNode(Opcodes.IFEQ, notCancelled));
--
--        list.add(new InsnNode(Opcodes.FCONST_1)); // return 1.0F;
--        list.add(new InsnNode(Opcodes.FRETURN));
--        list.add(notCancelled);
--
+@@ -63,6 +63,7 @@
          return list;
      }
+ 
++    /*
+     private InsnList insertNightVision() {
+         InsnList list = new InsnList();
+ 
+@@ -86,5 +87,5 @@
+         list.add(notCancelled);
+ 
+         return list;
+-    }
++    }*/
  }
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java
 IDEA additional info:
