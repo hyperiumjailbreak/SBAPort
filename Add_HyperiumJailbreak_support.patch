@@ -1746,7 +1746,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(date 1603833448153)
++++ src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(date 1603996355694)
 @@ -1,12 +1,6 @@
  package codes.biscuit.skyblockaddons.features;
  
@@ -1799,7 +1799,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java	(date 1603891793484)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java	(date 1603996355475)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -1817,7 +1817,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java	(date 1603891793460)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java	(date 1603996355475)
 @@ -3,11 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -1838,7 +1838,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(date 1603891418306)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(date 1603996355366)
 @@ -2,8 +2,8 @@
  
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
@@ -1856,7 +1856,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java	(date 1603891793642)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java	(date 1603996355444)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -1874,7 +1874,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(date 1603921517937)
++++ src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(date 1603996356116)
 @@ -4,44 +4,39 @@
  import codes.biscuit.skyblockaddons.config.ConfigValues;
  import codes.biscuit.skyblockaddons.config.PersistentValues;
@@ -2104,7 +2104,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java	(date 1603891984089)
++++ src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java	(date 1603996356006)
 @@ -1,6 +1,6 @@
  package codes.biscuit.skyblockaddons.tweaker.transformer;
  
@@ -2119,7 +2119,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(date 1603905594924)
++++ src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(date 1603996355491)
 @@ -4,104 +4,43 @@
  import codes.biscuit.skyblockaddons.utils.EnumUtils;
  import codes.biscuit.skyblockaddons.utils.DevUtils;
@@ -2276,7 +2276,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(date 1603909950300)
++++ src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(date 1603996356053)
 @@ -8,9 +8,9 @@
  import org.apache.commons.lang3.mutable.MutableInt;
  import org.apache.logging.log4j.LogManager;
@@ -2339,7 +2339,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java	(date 1603910294223)
++++ src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java	(date 1603996356038)
 @@ -1,7 +1,7 @@
  package codes.biscuit.skyblockaddons.tweaker;
  
@@ -2364,7 +2364,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java	(date 1603921366930)
++++ src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java	(date 1603996355616)
 @@ -1,7 +1,7 @@
  package codes.biscuit.skyblockaddons.events;
  
@@ -2380,7 +2380,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java	(date 1603921366964)
++++ src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java	(date 1603996355663)
 @@ -1,7 +1,7 @@
  package codes.biscuit.skyblockaddons.events;
  
@@ -2396,7 +2396,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(date 1603891155812)
++++ src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(date 1603996355506)
 @@ -3,7 +3,6 @@
  import codes.biscuit.skyblockaddons.SkyblockAddons;
  import codes.biscuit.skyblockaddons.core.Feature;
@@ -2525,7 +2525,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(date 1603893429645)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(date 1603996355303)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.asm.hooks;
  
@@ -2552,7 +2552,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java	(date 1603894698458)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java	(date 1603996355272)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.asm.hooks;
  
@@ -2592,7 +2592,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java	(date 1603893682793)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java	(date 1603996355257)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.asm.hooks;
  
@@ -2625,7 +2625,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(date 1603833448582)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(date 1603996356053)
 @@ -12,14 +12,11 @@
  import net.minecraft.scoreboard.ScorePlayerTeam;
  import net.minecraft.scoreboard.Scoreboard;
@@ -2811,7 +2811,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java	(date 1603894250254)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java	(date 1603996355257)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.asm.hooks;
  
@@ -2916,7 +2916,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java	(date 1603833448644)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java	(date 1603996356084)
 @@ -4,7 +4,6 @@
  import net.minecraft.item.ItemStack;
  import net.minecraft.nbt.NBTTagCompound;
@@ -2940,7 +2940,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java	(date 1603833448644)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java	(date 1603996356100)
 @@ -32,16 +32,17 @@
  import net.minecraft.util.ChatComponentText;
  import net.minecraft.util.MathHelper;
@@ -3106,7 +3106,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/utils/EnumUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/utils/EnumUtils.java	(date 1603905047239)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/EnumUtils.java	(date 1603996356069)
 @@ -370,16 +370,4 @@
              return values()[nextType];
          }
@@ -3130,7 +3130,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java	(date 1603833448582)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java	(date 1603996356084)
 @@ -19,13 +19,13 @@
  import net.minecraft.item.Item;
  import net.minecraft.item.ItemStack;
@@ -3418,7 +3418,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java	(date 1603833448412)
++++ src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java	(date 1603996355913)
 @@ -1,12 +1,13 @@
  package codes.biscuit.skyblockaddons.misc.scheduler;
  
@@ -3502,7 +3502,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java	(date 1603903742363)
++++ src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java	(date 1603996355928)
 @@ -8,10 +8,11 @@
  import codes.biscuit.skyblockaddons.utils.objects.IntPair;
  import lombok.Getter;
@@ -3601,7 +3601,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(date 1603833448381)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(date 1603996355710)
 @@ -8,6 +8,7 @@
  import net.minecraft.util.MathHelper;
  
@@ -3630,13 +3630,28 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
      }
  
      public float denormalizeScale(float value) {
+Index: src/main/resources/pack.mcmeta
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/resources/pack.mcmeta	(date 1603899136345)
++++ src/main/resources/pack.mcmeta	(date 1603899136345)
+@@ -0,0 +1,6 @@
++{
++  "pack": {
++    "description": "SBA Resources",
++    "pack_format": 1
++   }
++}
+\ No newline at end of file
 Index: src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(date 1603833448381)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(date 1603996355710)
 @@ -9,6 +9,7 @@
  import net.minecraft.util.MathHelper;
  
@@ -3665,13 +3680,73 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
      }
  }
  
+Index: src/main/java/codes/biscuit/skyblockaddons/Reflector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/Reflector.java	(date 1603994544145)
++++ src/main/java/codes/biscuit/skyblockaddons/Reflector.java	(date 1603994544145)
+@@ -0,0 +1,52 @@
++package codes.biscuit.skyblockaddons;
++
++import java.lang.reflect.Field;
++import java.lang.reflect.InvocationTargetException;
++import java.lang.reflect.Method;
++
++/**
++ * Does reflection. What did you expect?
++ */
++public final class Reflector {
++    public static Object getFieldValue(Class<?> clazz, Object classInstance, String field) {
++        Object o;
++        try {
++            Field f = clazz.getDeclaredField(field);
++            if (!f.isAccessible()) {
++                f.setAccessible(true);
++            }
++            o = f.get(classInstance);
++        } catch (NoSuchFieldException | IllegalAccessException e) {
++            e.printStackTrace();
++            o = null;
++        }
++        return o;
++    }
++
++    public static void setFieldValue(Class<?> clazz, Object classInstance, String field, Object value) {
++        try {
++            Field f = clazz.getDeclaredField(field);
++            if (!f.isAccessible()) {
++                f.setAccessible(true);
++            }
++            f.set(classInstance, value);
++        } catch (NoSuchFieldException | IllegalAccessException e) {
++            e.printStackTrace();
++        }
++    }
++
++    public static Object invoke(Class<?> clazz, Object classInstance, String method, Class<?>[] methodParamTypes, Object[] params) {
++        Object o;
++        try {
++            Method m = clazz.getDeclaredMethod(method, methodParamTypes);
++            if (!m.isAccessible()) {
++                m.setAccessible(true);
++            }
++            o = m.invoke(classInstance, params);
++        } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
++            e.printStackTrace();
++            o = null;
++        }
++        return o;
++    }
++}
 Index: src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java	(date 1603833448375)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java	(date 1603996355725)
 @@ -6,16 +6,16 @@
  import codes.biscuit.skyblockaddons.core.Message;
  import codes.biscuit.skyblockaddons.gui.buttons.*;
@@ -3809,7 +3884,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java	(date 1603921366978)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java	(date 1603996355850)
 @@ -16,10 +16,11 @@
  import net.minecraft.client.renderer.GlStateManager;
  import net.minecraft.client.renderer.texture.TextureManager;
@@ -3855,7 +3930,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java	(date 1603891793628)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java	(date 1603996355303)
 @@ -1,8 +1,8 @@
  package codes.biscuit.skyblockaddons.asm.utils;
  
@@ -3867,13 +3942,33 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
  public enum TransformerField {
  
+Index: src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java	(date 1603996630390)
+@@ -1,9 +1,9 @@
+ package codes.biscuit.skyblockaddons.asm.utils;
+ 
+ import codes.biscuit.skyblockaddons.tweaker.PreTransformationChecks;
+-import org.objectweb.asm.Opcodes;
+-import org.objectweb.asm.tree.MethodInsnNode;
+-import org.objectweb.asm.tree.MethodNode;
++import org.spongepowered.asm.lib.Opcodes;
++import org.spongepowered.asm.lib.tree.MethodInsnNode;
++import org.spongepowered.asm.lib.tree.MethodNode;
+ 
+ public enum TransformerMethod {
+ 
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java	(date 1603921366992)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java	(date 1603996355288)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.asm.hooks;
  
@@ -3904,7 +3999,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook.java	(date 1603905147372)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/EntityRendererHook.java	(date 1603996355241)
 @@ -1,7 +1,6 @@
  package codes.biscuit.skyblockaddons.asm.hooks;
  
@@ -3931,7 +4026,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- build.gradle	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ build.gradle	(date 1603892043664)
++++ build.gradle	(date 1603996355225)
 @@ -1,99 +1,36 @@
 +buildscript {
 +    repositories {
@@ -4061,7 +4156,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/resources/addon.json	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/resources/addon.json	(date 1603892863383)
++++ src/main/resources/addon.json	(date 1603996356209)
 @@ -1,6 +1,6 @@
  {
 -  "uuid": "%uuid%",
@@ -4078,7 +4173,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java	(date 1603904196663)
++++ src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java	(date 1603996355881)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.listeners;
  
@@ -4835,7 +4930,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/resources/data.json	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/resources/data.json	(date 1603833449386)
++++ src/main/resources/data.json	(date 1603996356256)
 @@ -2,8 +2,6 @@
    "bannerImageURL": null,
    "bannerLink": null,
@@ -4851,7 +4946,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java	(date 1603893429516)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java	(date 1603996355444)
 @@ -3,12 +3,11 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -4873,7 +4968,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java	(date 1603910579573)
++++ src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java	(date 1603996355897)
 @@ -1,5 +1,12 @@
  package codes.biscuit.skyblockaddons.listeners;
  
@@ -5142,7 +5237,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java	(date 1603891418548)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java	(date 1603996355397)
 @@ -3,10 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5162,7 +5257,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java	(date 1603891793571)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java	(date 1603996355444)
 @@ -3,11 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5183,7 +5278,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java	(date 1603833448397)
++++ src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java	(date 1603996355866)
 @@ -1,14 +1,13 @@
  package codes.biscuit.skyblockaddons.listeners;
  
@@ -5242,7 +5337,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java	(date 1603891418297)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java	(date 1603996355413)
 @@ -4,8 +4,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5260,7 +5355,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(date 1603833448343)
++++ src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(date 1603996355694)
 @@ -8,8 +8,8 @@
  import lombok.Getter;
  import net.minecraft.client.Minecraft;
@@ -5305,7 +5400,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java	(date 1603891418395)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java	(date 1603996355381)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5323,7 +5418,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java	(date 1603891418314)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java	(date 1603996355350)
 @@ -4,8 +4,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5341,7 +5436,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java	(date 1603891793653)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java	(date 1603996355460)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5359,7 +5454,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java	(date 1603891418387)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java	(date 1603996355413)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5377,7 +5472,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java	(date 1603891227408)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java	(date 1603996355319)
 @@ -4,8 +4,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5395,7 +5490,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java	(date 1603891418429)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java	(date 1603996355381)
 @@ -4,8 +4,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5413,7 +5508,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java	(date 1603891418421)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java	(date 1603996355319)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5431,7 +5526,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java	(date 1603833448169)
++++ src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java	(date 1603996355663)
 @@ -9,7 +9,6 @@
  import net.minecraft.nbt.CompressedStreamTools;
  import net.minecraft.nbt.NBTTagCompound;
@@ -5455,7 +5550,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(date 1603905147356)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(date 1603996355335)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5523,7 +5618,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java	(date 1603891793469)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java	(date 1603996355428)
 @@ -3,11 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5544,7 +5639,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java	(date 1603891418413)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java	(date 1603996355350)
 @@ -4,8 +4,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
@@ -5562,7 +5657,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
 --- src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java	(date 1603891418379)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java	(date 1603996355428)
 @@ -3,8 +3,8 @@
  import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
  import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
