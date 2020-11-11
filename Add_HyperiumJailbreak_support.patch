@@ -3058,7 +3058,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 +    }
 +    dependencies {
 +        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
-+        classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
++        //classpath 'org.spongepowered:mixingradle:0.6-SNAPSHOT'
 +    }
 +}
 +
@@ -3071,7 +3071,7 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
  
 -group = 'codes.biscuit'
 +apply plugin: 'net.minecraftforge.gradle.tweaker-client'
-+apply plugin: 'org.spongepowered.mixin'
++//apply plugin: 'org.spongepowered.mixin'
 +apply plugin: 'java'
  
 -// The below line is for version checkers <= 1.4.2
@@ -3092,8 +3092,8 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 -    }
 +compileJava.options.encoding = "utf-8"
 +
-+mixin {
-+    add sourceSets.main, "mixin.skyblockaddons.refmap.json"
++//mixin {
++//    add sourceSets.main, "mixin.skyblockaddons.refmap.json"
  }
  
  minecraft {
