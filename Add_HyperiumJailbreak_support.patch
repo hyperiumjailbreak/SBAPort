@@ -1,9 +1,7 @@
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/FontRendererHook.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/FontRendererHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/FontRendererHook.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/FontRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/FontRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/FontRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,30 +0,0 @@
 -package codes.biscuit.skyblockaddons.asm.hooks;
 -
@@ -37,10 +35,8 @@ deleted file mode 100644
 -}
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiDisconnectedHook.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiDisconnectedHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiDisconnectedHook.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiDisconnectedHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiDisconnectedHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiDisconnectedHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,14 +0,0 @@
 -package codes.biscuit.skyblockaddons.asm.hooks;
 -
@@ -58,10 +54,8 @@ deleted file mode 100644
 -}
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderEndermanHook.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderEndermanHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderEndermanHook.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderEndermanHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderEndermanHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderEndermanHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,19 +0,0 @@
 -package codes.biscuit.skyblockaddons.asm.hooks;
 -
@@ -84,10 +78,8 @@ deleted file mode 100644
 -}
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderItemHook.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderItemHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderItemHook.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderItemHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderItemHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/RenderItemHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,45 +0,0 @@
 -package codes.biscuit.skyblockaddons.asm.hooks;
 -
@@ -136,10 +128,8 @@ deleted file mode 100644
 -}
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/TileEntityEnderChestRendererHook.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/TileEntityEnderChestRendererHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/TileEntityEnderChestRendererHook.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/TileEntityEnderChestRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/TileEntityEnderChestRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/TileEntityEnderChestRendererHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,41 +0,0 @@
 -package codes.biscuit.skyblockaddons.asm.hooks;
 -
@@ -182,61 +172,10 @@ deleted file mode 100644
 -        }
 -    }
 -}
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/RenderEndermanTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-@@ -1,41 +0,0 @@
--package codes.biscuit.skyblockaddons.asm;
--
--import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
--import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
--import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
--
--import java.util.Iterator;
--
--public class RenderEndermanTransformer implements ITransformer {
--    /**
--     * {@link net.minecraft.client.renderer.entity.RenderEnderman}
--     */
--    @Override
--    public String[] getClassName() {
--        return new String[]{TransformerClass.RenderEnderman.getTransformerName()};
--    }
--
--    @Override
--    public void transform(ClassNode classNode, String name) {
--        for (MethodNode methodNode : classNode.methods) {
--            if (TransformerMethod.getEntityTexture_RenderEnderman.matches(methodNode)) {
--
--                // Objective:
--                // Find: return endermanTextures;
--                // Change to: return RenderEndermanHook.getEndermanTexture(endermanTextures);
--
--                Iterator<AbstractInsnNode> iterator = methodNode.instructions.iterator();
--                while (iterator.hasNext()) {
--                    AbstractInsnNode abstractNode = iterator.next();
--                    if (abstractNode instanceof InsnNode && abstractNode.getOpcode() == Opcodes.ARETURN) {
--                        methodNode.instructions.insertBefore(abstractNode, new MethodInsnNode(Opcodes.INVOKESTATIC, "codes/biscuit/skyblockaddons/asm/hooks/RenderEndermanHook",
--                                "getEndermanTexture", "("+TransformerClass.ResourceLocation.getName()+")"+TransformerClass.ResourceLocation.getName(), false));
--                        break;
--                    }
--                }
--            }
--        }
--    }
--}
-\ No newline at end of file
 Index: src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordRPCManager.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordRPCManager.java b/src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordRPCManager.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordRPCManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordRPCManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordRPCManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,137 +0,0 @@
 -package codes.biscuit.skyblockaddons.features.discordrpc;
 -
@@ -378,10 +317,8 @@ deleted file mode 100644
 \ No newline at end of file
 Index: src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordStatus.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordStatus.java b/src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordStatus.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordStatus.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordStatus.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/features/discordrpc/DiscordStatus.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,110 +0,0 @@
 -package codes.biscuit.skyblockaddons.features.discordrpc;
 -
@@ -496,10 +433,8 @@ deleted file mode 100644
 \ No newline at end of file
 Index: src/main/java/codes/biscuit/skyblockaddons/misc/SkyblockKeyBinding.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/misc/SkyblockKeyBinding.java b/src/main/java/codes/biscuit/skyblockaddons/misc/SkyblockKeyBinding.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/misc/SkyblockKeyBinding.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/misc/SkyblockKeyBinding.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/misc/SkyblockKeyBinding.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,21 +0,0 @@
 -package codes.biscuit.skyblockaddons.misc;
 -
@@ -524,10 +459,8 @@ deleted file mode 100644
 -}
 Index: src/main/java/codes/biscuit/skyblockaddons/misc/Updater.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/misc/Updater.java b/src/main/java/codes/biscuit/skyblockaddons/misc/Updater.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/misc/Updater.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/misc/Updater.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/misc/Updater.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,136 +0,0 @@
 -package codes.biscuit.skyblockaddons.misc;
 -
@@ -667,10 +600,8 @@ deleted file mode 100644
 -}
 Index: src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsLoadingPlugin.java
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsLoadingPlugin.java b/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsLoadingPlugin.java
-deleted file mode 100644
---- a/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsLoadingPlugin.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsLoadingPlugin.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsLoadingPlugin.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,33 +0,0 @@
 -package codes.biscuit.skyblockaddons.tweaker;
 -
@@ -707,10 +638,8 @@ deleted file mode 100644
 -}
 Index: src/main/resources/mcmod.info
 ===================================================================
-diff --git a/src/main/resources/mcmod.info b/src/main/resources/mcmod.info
-deleted file mode 100644
---- a/src/main/resources/mcmod.info	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ /dev/null	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
+--- src/main/resources/mcmod.info	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/resources/mcmod.info	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
 @@ -1,10 +0,0 @@
 -[{
 -  "modid": "skyblockaddons",
@@ -723,217 +652,60 @@ deleted file mode 100644
 -  "logoFile": "assets/skyblockaddons/logo.png"
 -}]
 \ No newline at end of file
-Index: src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java
+Index: src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java b/src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java
---- a/src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java	(date 1605114290426)
-@@ -1,7 +1,7 @@
- package codes.biscuit.skyblockaddons.tweaker;
+--- src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(date 1605114290157)
+@@ -5,8 +5,6 @@
+ import codes.biscuit.skyblockaddons.core.Location;
+ import codes.biscuit.skyblockaddons.utils.ItemUtils;
+ import net.minecraft.item.ItemStack;
+-import net.minecraftforge.event.entity.player.FillBucketEvent;
+-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
  
-+import cc.hyperium.Hyperium;
- import lombok.Getter;
--import net.minecraft.launchwrapper.Launch;
+ public enum EnchantedItemBlacklist {
  
- public class PreTransformationChecks {
- 
-@@ -14,7 +14,7 @@
-         // Environment Obfuscation checks
-         deobfuscated = false;
- 
--        deobfuscated = (boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment");
-+        deobfuscated = Hyperium.INSTANCE.isDevEnv();
- 
-         usingNotchMappings = !deobfuscated;
-     }
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/MinecraftTransformer.java	(date 1605114289815)
-@@ -4,8 +4,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java b/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java
---- a/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java	(date 1605114290256)
-@@ -1,12 +1,13 @@
- package codes.biscuit.skyblockaddons.misc.scheduler;
- 
- import net.minecraft.client.Minecraft;
--import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
--import net.minecraftforge.fml.common.gameevent.TickEvent;
- 
- import java.util.ArrayList;
- import java.util.List;
- 
-+import cc.hyperium.event.InvokeEvent;
-+import cc.hyperium.event.client.TickEvent;
-+
- public class NewScheduler {
- 
-     private final List<ScheduledTask> queuedTasks = new ArrayList<>();
-@@ -18,36 +19,34 @@
-         return this.totalTicks;
+@@ -38,13 +36,13 @@
+         this.onlyBlockPlacement = onlyBlockPlacement;
      }
  
--    @SubscribeEvent
--    public void ticker(TickEvent.ClientTickEvent event) {
--        if (event.phase == TickEvent.Phase.START) {
--            synchronized (this.anchor) {
--                this.totalTicks++;
--            }
-+    @InvokeEvent
-+    public void ticker(TickEvent event) {
-+        synchronized (this.anchor) {
-+            this.totalTicks++;
-+        }
- 
--            if (Minecraft.getMinecraft() != null) {
--                this.pendingTasks.removeIf(ScheduledTask::isCanceled);
-+        if (Minecraft.getMinecraft() != null) {
-+            this.pendingTasks.removeIf(ScheduledTask::isCanceled);
- 
--                this.pendingTasks.addAll(queuedTasks);
--                queuedTasks.clear();
-+            this.pendingTasks.addAll(queuedTasks);
-+            queuedTasks.clear();
- 
--                try {
--                    for (ScheduledTask scheduledTask : this.pendingTasks) {
--                        if (this.getTotalTicks() >= (scheduledTask.getAddedTicks() + scheduledTask.getDelay())) {
--                            scheduledTask.start();
-+            try {
-+                for (ScheduledTask scheduledTask : this.pendingTasks) {
-+                    if (this.getTotalTicks() >= (scheduledTask.getAddedTicks() + scheduledTask.getDelay())) {
-+                        scheduledTask.start();
- 
--                            if (scheduledTask.isRepeating()) {
--                                if (!scheduledTask.isCanceled()) {
--                                    scheduledTask.setDelay(scheduledTask.getPeriod());
--                                }
--                            } else {
--                                scheduledTask.cancel();
--                            }
--                        }
--                    }
--                } catch (Throwable ex) {
--                    ex.printStackTrace();
--                }
-+                        if (scheduledTask.isRepeating()) {
-+                            if (!scheduledTask.isCanceled()) {
-+                                scheduledTask.setDelay(scheduledTask.getPeriod());
-+                            }
-+                        } else {
-+                            scheduledTask.cancel();
-+                        }
-+                    }
-+                }
-+            } catch (Throwable ex) {
-+                ex.printStackTrace();
-             }
+-    /**
++    /*
+      * Determine if the usage of this item should be blocked.
+      *
+      * @param itemStack the item being used
+      * @param action the action the player is doing with the item
+      * @return true if the usage should be blocked, false otherwise.
+-     */
++     *
+     public static boolean shouldBlockUsage(ItemStack itemStack, PlayerInteractEvent.Action action) {
+         SkyblockAddons main = SkyblockAddons.getInstance();
+         boolean blockUsage = false;
+@@ -63,13 +61,13 @@
          }
+         return blockUsage;
      }
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiChestTransformer.java	(date 1605114289753)
-@@ -4,8 +4,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
++    */
  
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/FontRendererTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/FontRendererTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/FontRendererTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/FontRendererTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/FontRendererTransformer.java	(date 1605727698478)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/resources/pack.mcmeta
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/resources/pack.mcmeta b/src/main/resources/pack.mcmeta
-new file mode 100644
---- /dev/null	(date 1605114290681)
-+++ b/src/main/resources/pack.mcmeta	(date 1605114290681)
-@@ -0,0 +1,6 @@
-+{
-+  "pack": {
-+    "description": "SBA Resources",
-+    "pack_format": 1
-+   }
-+}
-\ No newline at end of file
-Index: src/main/resources/addon.json
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/resources/addon.json b/src/main/resources/addon.json
---- a/src/main/resources/addon.json	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/resources/addon.json	(date 1605738769753)
-@@ -1,6 +1,5 @@
- {
--  "uuid": "%uuid%",
-   "name": "SkyblockAddons",
--  "mainClass": "codes.biscuit.skyblockaddons.SkyblockAddonsLabyAddon",
--  "transformerClass": "codes.biscuit.skyblockaddons.tweaker.SkyblockAddonsTransformer"
-+  "version": "1.0.0",
-+  "mainClass": "codes.biscuit.skyblockaddons.SkyblockAddons"
- }
-\ No newline at end of file
+     /**
+      * Checks if the given item from this blacklist is a bucket.
+      * This is used to handle buckets separately from other blocks and items.
+      *
+      * @return true if the item is a bucket, false otherwise
+-     * @see codes.biscuit.skyblockaddons.listeners.PlayerListener#onBucketEvent(FillBucketEvent)
+      */
+     private boolean isBucket() {
+         return itemId.contains("BUCKET");
 Index: src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java b/src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java
---- a/src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(date 1605141709569)
+--- src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java	(date 1605141709569)
 @@ -8,40 +8,41 @@
  import codes.biscuit.skyblockaddons.core.OnlineData;
  import codes.biscuit.skyblockaddons.gui.IslandWarpGui;
@@ -1165,27 +937,126 @@ diff --git a/src/main/java/codes/biscuit/skyblockaddons/SkyblockAddons.java b/sr
 +        EventBus.INSTANCE.unregister(this);
 +    }
  }
+Index: src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(date 1605114289906)
+@@ -4,19 +4,21 @@
+ import codes.biscuit.skyblockaddons.utils.EnumUtils;
+ import codes.biscuit.skyblockaddons.utils.DevUtils;
+ import codes.biscuit.skyblockaddons.utils.ColorCode;
++import codes.biscuit.skyblockaddons.utils.Utils;
+ import net.minecraft.client.Minecraft;
+ import net.minecraft.command.CommandBase;
+ import net.minecraft.command.ICommandSender;
+ import net.minecraft.scoreboard.Scoreboard;
++import cc.hyperium.commands.BaseCommand;
+ import net.minecraft.util.BlockPos;
+ import org.apache.logging.log4j.Logger;
+ 
+ import java.awt.*;
+ import java.io.IOException;
+-import java.util.Collections;
++import java.util.Arrays;
+ import java.util.List;
+ 
+-public class SkyblockAddonsCommand extends CommandBase {
++public class SkyblockAddonsCommand implements BaseCommand {
+ 
+     private SkyblockAddons main;
+     private Logger logger;
+@@ -26,10 +28,8 @@
+         logger = main.getLogger();
+     }
+ 
+-    /**
+-     * Gets the name of the command
+-     */
+-    public String getCommandName() {
++    @Override
++    public String getName() {
+         return "skyblockaddons";
+     }
+ 
+@@ -46,7 +46,7 @@
+      */
+     public List<String> getCommandAliases()
+     {
+-        return Collections.singletonList("sba");
++        return Arrays.asList("sba", "sbaddons");
+     }
+ 
+     /**
+@@ -77,7 +77,7 @@
+         "§b● /sba brand §7- §e(Dev) §7Show the server brand" + "\n" +
+         "§7§m------------------------------------------";
+     }
+-
++/*
+     public List<String> addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
+         if (args.length == 1) {
+             if (main.isDevMode()) {
+@@ -96,12 +96,17 @@
+ 
+         return null;
+     }
++*/
++    @Override
++    public String getUsage() {
++        return "skyblockaddons";
++    }
+ 
+     /**
+      * Opens the main gui, or locations gui if they type /sba edit
+      */
+     @Override
+-    public void processCommand(ICommandSender sender, String[] args) {
++    public void onExecute(String[] args) {
+         if (args.length > 0) {
+             if (args[0].equalsIgnoreCase("edit")) {
+                 main.getUtils().setFadingIn(false);
+@@ -144,9 +149,9 @@
+                 }
+             }  else if (args[0].equalsIgnoreCase("folder")) {
+                 try {
+-                    Desktop.getDesktop().open(main.getUtils().getSBAFolder());
++                    Desktop.getDesktop().open(Utils.getSBAFolder());
+                 } catch (IOException e) {
+-                    logger.catching(e);
++                    e.printStackTrace();
+                     main.getUtils().sendErrorMessage("Failed to open mods folder.");
+                 }
+             }  else if (args[0].equalsIgnoreCase("warp")) {
+@@ -162,16 +167,16 @@
+                         DevUtils.copyScoreboardSidebar(scoreboard, false);
+ 
+                     } else {
+-                        main.getUtils().sendMessage(getCommandUsage(sender), false);
++                        main.getUtils().sendMessage(getUsage(), false);
+                     }
+                 } else if (args[0].equalsIgnoreCase("brand")) {
+                     main.getUtils().sendMessage(DevUtils.getServerBrand(Minecraft.getMinecraft()));
+ 
+                 } else {
+-                    main.getUtils().sendMessage(getCommandUsage(sender), false);
++                    main.getUtils().sendMessage(getUsage(), false);
+                 }
+             } else {
+-                main.getUtils().sendMessage(getCommandUsage(sender), false);
++                main.getUtils().sendMessage(getUsage(), false);
+             }
+         } else {
+             // If there's no arguments given, open the main GUI
 Index: src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(date 1605727440659)
-@@ -8,9 +8,9 @@
- import org.apache.commons.lang3.mutable.MutableInt;
- import org.apache.logging.log4j.LogManager;
- import org.apache.logging.log4j.Logger;
--import org.objectweb.asm.ClassReader;
--import org.objectweb.asm.ClassWriter;
--import org.objectweb.asm.tree.ClassNode;
-+import org.spongepowered.asm.lib.ClassReader;
-+import org.spongepowered.asm.lib.ClassWriter;
-+import org.spongepowered.asm.lib.tree.ClassNode;
- 
- import java.io.File;
- import java.io.FileOutputStream;
+--- src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTransformer.java	(date 1606225383377)
 @@ -18,15 +18,11 @@
  import java.util.Collection;
  
@@ -1251,168 +1122,388 @@ diff --git a/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTr
          });
  
          ClassWriter writer = new ClassWriter(classWriterFlags.getValue());
-Index: build.gradle
+Index: src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/build.gradle b/build.gradle
---- a/build.gradle	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/build.gradle	(date 1605739679240)
-@@ -1,99 +1,38 @@
-+buildscript {
-+    repositories {
-+        maven { url "https://hyperiumjailbreak.mycloudrepo.io/public/repositories/forge-proxy/" }
-+        maven { url "https://hyperiumjailbreak.mycloudrepo.io/public/repositories/gradle-plugin-proxy/" }
-+    }
-+    dependencies {
-+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
-+    }
-+}
-+
- plugins {
--    id 'java'
--    id 'net.minecraftforge.gradle.forge' version '2.1-SNAPSHOT'
-     id 'io.franzbecker.gradle-lombok' version '4.0.0'
--    id 'com.github.johnrengelman.shadow' version '4.0.4'
+--- src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java	(date 1605114290200)
+@@ -1,3 +1,4 @@
++/*
+ package codes.biscuit.skyblockaddons.listeners;
+ 
+ import codes.biscuit.skyblockaddons.SkyblockAddons;
+@@ -15,7 +16,6 @@
+  *
+  * @author ILikePlayingGames
+  * @version 1.0
+- */
+ public class GuiScreenListener {
+ 
+     private SkyblockAddons main = SkyblockAddons.getInstance();
+@@ -24,7 +24,6 @@
+      * Listens for key presses while a GUI is open
+      *
+      * @param event the {@code GuiScreenEvent.KeyboardInputEvent} to listen for
+-     */
+     @SubscribeEvent()
+     public void onKeyInput(GuiScreenEvent.KeyboardInputEvent event) {
+         int eventKey = Keyboard.getEventKey();
+@@ -47,3 +46,4 @@
+         }
+     }
  }
- 
--group = 'codes.biscuit'
-+apply plugin: 'net.minecraftforge.gradle.tweaker-client'
-+apply plugin: 'java'
- 
--// The below line is for version checkers <= 1.4.2
--//version = "1.5.4"
-+group 'hjb.ext'
-+version '1.0-SNAPSHOT'
- 
--// Java plugin settings
--sourceCompatibility = JavaVersion.VERSION_1_8
--targetCompatibility = JavaVersion.VERSION_1_8
--compileJava.options.encoding = 'UTF-8'
-+sourceCompatibility = 1.8
-+targetCompatibility = 1.8
- 
--sourceSets {
--    main {
--        output.resourcesDir = java.outputDir
--    }
--}
-+compileJava.options.encoding = "utf-8"
- 
- minecraft {
--    version = "${project.minecraftVersion}-${project.forgeVersion}"
--    runDir = "run"
--
--    mappings = "${project.mappings}"
--
--    // Replace placeholders in source code
--    replace("@MOD_ID@": project.modId,
--            "@MOD_NAME@": project.modName,
--            "@VERSION@": project.version,
--            "@MOD_ACCEPTED@": project.acceptedMinecraftVersions,
--            "@UPDATE_JSON@": project.updateJSON)
--    replaceIn("${project.modName}.java")
-+    version = "1.8.9"
-+    tweakClass = "cc.hyperium.launch.HyperiumTweaker"
-+    mappings = "stable_20"
-+    runDir = 'run'
-+    makeObfSourceJar = false
- }
- 
--repositories {
--    maven {
--        name 'JitPack'
--        url 'https://jitpack.io'
--    }
--}
-+repositories { maven { url 'https://jitpack.io' } }
- 
- dependencies {
--    // Discord RPC for Java https://github.com/jagrosh/DiscordIPC
--    implementation('com.github.jagrosh:DiscordIPC:e29d6d8') {
--        exclude module: 'log4j'
--    }
-+    compile 'com.github.hyperiumjailbreak:client:master-SNAPSHOT'
- }
--
--jar {
--    // Set the archive name here instead of in shadowJar because ForgeGradle needs it when re-obfuscating the jar.
--    archiveName = project.modName + "-" + version + "-for-MC-1.8.9.jar"
--    // Disable the default jar task and use shadowJar instead to shade the libraries into the jar.
--    enabled = false
--}
--
--shadowJar {
--    archiveName = tasks.jar.archiveName
--    classifier = ''
--    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
--
--    manifest.attributes(
--            'Main-Class': 'SkyblockAddonsInstallerFrame',
--            'FMLCorePlugin': "${project.group}.${project.modId}.tweaker.${project.modName}LoadingPlugin",
--            'ForceLoadAsMod': true,
--            'FMLCorePluginContainsFMLMod': true,
--            'ModSide': 'CLIENT',
--            'FMLAT': "${project.modId}_at.cfg"
--    )
--
--    exclude('dummyThing')
--    exclude('META-INF/maven/')
--    exclude('META-INF/nar/')
--    exclude('module-info.class')
--    exclude('META-INF/versions/')
--}
--
--processResources {
--    inputs.property "version", project.version
--    inputs.property "mcversion", project.minecraft.version
--
--    // replace stuff in mcmod.info, nothing else
--    from(sourceSets.main.resources.srcDirs) {
--        include 'mcmod.info'
--
--        // replace version and mcversion
--        expand 'version':project.version, 'mcversion':project.minecraft.version
--    }
--
--    // copy everything else, thats not the mcmod.info
--    from(sourceSets.main.resources.srcDirs) {
--        exclude 'mcmod.info'
--    }
--}
--
--tasks.reobfJar.dependsOn(tasks.shadowJar)
++*/
 \ No newline at end of file
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java
+Index: src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/InventoryPlayerTransformer.java	(date 1605114289797)
-@@ -3,10 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.ClassNode;
--import org.objectweb.asm.tree.MethodInsnNode;
--import org.objectweb.asm.tree.MethodNode;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
+--- src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/tweaker/PreTransformationChecks.java	(date 1605114290426)
+@@ -1,7 +1,7 @@
+ package codes.biscuit.skyblockaddons.tweaker;
  
- public class InventoryPlayerTransformer implements ITransformer {
++import cc.hyperium.Hyperium;
+ import lombok.Getter;
+-import net.minecraft.launchwrapper.Launch;
  
+ public class PreTransformationChecks {
+ 
+@@ -14,7 +14,7 @@
+         // Environment Obfuscation checks
+         deobfuscated = false;
+ 
+-        deobfuscated = (boolean) Launch.blackboard.get("fml.deobfuscatedEnvironment");
++        deobfuscated = Hyperium.INSTANCE.isDevEnv();
+ 
+         usingNotchMappings = !deobfuscated;
+     }
+Index: src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java	(date 1605114290085)
+@@ -1,7 +1,7 @@
+ package codes.biscuit.skyblockaddons.events;
+ 
++import cc.hyperium.event.Event;
+ import codes.biscuit.skyblockaddons.utils.Utils;
+-import net.minecraftforge.fml.common.eventhandler.Event;
+ 
+ /**
+  * This is fired by {@link Utils#checkGameLocationDate()} when the player joins Hypixel Skyblock.
+Index: src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(date 1605114290164)
+@@ -41,9 +41,7 @@
+         drawRect(this.xPosition, this.yPosition, this.xPosition+this.width, this.yPosition+this.height, main.getUtils().getDefaultColor(boxAlpha));
+         this.mouseDragged(mc, mouseX, mouseY);
+         int j = 14737632;
+-        if (packedFGColour != 0) {
+-            j = packedFGColour;
+-        } else if (!this.enabled) {
++        if (!this.enabled) {
+             j = 10526880;
+         } else if (this.hovered) {
+             j = 16777120;
+Index: src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java	(date 1605114290126)
+@@ -1,7 +1,7 @@
+ package codes.biscuit.skyblockaddons.events;
+ 
++import cc.hyperium.event.Event;
+ import codes.biscuit.skyblockaddons.utils.Utils;
+-import net.minecraftforge.fml.common.eventhandler.Event;
+ 
+ /**
+  * This is fired by {@link Utils#checkGameLocationDate()} when the player leaves Hypixel Skyblock or disconnects from a server.
+Index: src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(date 1605114289934)
+@@ -3,7 +3,6 @@
+ import codes.biscuit.skyblockaddons.SkyblockAddons;
+ import codes.biscuit.skyblockaddons.core.Feature;
+ import codes.biscuit.skyblockaddons.core.Language;
+-import codes.biscuit.skyblockaddons.features.discordrpc.DiscordStatus;
+ import codes.biscuit.skyblockaddons.misc.ChromaManager;
+ import codes.biscuit.skyblockaddons.utils.EnumUtils;
+ import codes.biscuit.skyblockaddons.utils.ColorCode;
+@@ -59,9 +58,9 @@
+     private MutableFloat chromaSpeed = new MutableFloat(0.19354838F); // 2.0
+     private MutableObject<EnumUtils.ChromaMode> chromaMode = new MutableObject<>(EnumUtils.ChromaMode.FADE);
+     private MutableFloat chromaFadeWidth = new MutableFloat(0.22580644F); // 10° Hue
+-    private MutableObject<DiscordStatus> discordDetails =  new MutableObject<>(DiscordStatus.LOCATION);
+-    private MutableObject<DiscordStatus> discordStatus = new MutableObject<>(DiscordStatus.AUTO_STATUS);
+-    private MutableObject<DiscordStatus> discordAutoDefault = new MutableObject<>(DiscordStatus.NONE);
++    //private MutableObject<DiscordStatus> discordDetails =  new MutableObject<>(DiscordStatus.LOCATION);
++    //private MutableObject<DiscordStatus> discordStatus = new MutableObject<>(DiscordStatus.AUTO_STATUS);
++    //private MutableObject<DiscordStatus> discordAutoDefault = new MutableObject<>(DiscordStatus.NONE);
+     @Getter private List<String> discordCustomStatuses = new ArrayList<>();
+ 
+     public ConfigValues(File settingsConfigFile) {
+@@ -152,9 +151,9 @@
+             deserializeNumber(chromaSpeed, "chromaSpeed", float.class);
+             deserializeEnumValueFromOrdinal(chromaMode, "chromaMode");
+             deserializeNumber(chromaFadeWidth, "chromaFadeWidth", float.class);
+-            deserializeEnumValueFromOrdinal(discordStatus, "discordStatus");
+-            deserializeEnumValueFromOrdinal(discordDetails, "discordDetails");
+-            deserializeEnumValueFromOrdinal(discordAutoDefault, "discordAutoDefault");
++            //deserializeEnumValueFromOrdinal(discordStatus, "discordStatus");
++            //deserializeEnumValueFromOrdinal(discordDetails, "discordDetails");
++            //deserializeEnumValueFromOrdinal(discordAutoDefault, "discordAutoDefault");
+             deserializeStringCollection(discordCustomStatuses, "discordCustomStatuses");
+ 
+             int configVersion;
+@@ -342,16 +341,6 @@
+             settingsConfig.addProperty("chromaMode", chromaMode.getValue().ordinal());
+             settingsConfig.addProperty("chromaFadeWidth", chromaFadeWidth);
+ 
+-            settingsConfig.addProperty("discordStatus", discordStatus.getValue().ordinal());
+-            settingsConfig.addProperty("discordDetails", discordDetails.getValue().ordinal());
+-            settingsConfig.addProperty("discordAutoDefault", discordAutoDefault.getValue().ordinal());
+-
+-            JsonArray discordCustomStatusesArray = new JsonArray();
+-            for (String string : discordCustomStatuses) {
+-                discordCustomStatusesArray.add(new GsonBuilder().create().toJsonTree(string));
+-            }
+-            settingsConfig.add("discordCustomStatuses", discordCustomStatusesArray);
+-
+             settingsConfig.addProperty("configVersion", CONFIG_VERSION);
+             int largestFeatureID = 0;
+             for (Feature feature : Feature.values()) {
+@@ -885,6 +874,7 @@
+         return chromaFadeWidth.getValue();
+     }
+ 
++    /*
+     public void setDiscordDetails(DiscordStatus discordDetails) {
+         this.discordDetails.setValue(discordDetails);
+     }
+@@ -924,4 +914,5 @@
+ 
+         return discordCustomStatuses.set(statusEntry.getId(), text);
+     }
++    */
+ }
+Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(date 1605114289696)
+@@ -13,7 +13,7 @@
+         if (main != null && main.getUtils() != null && main.getUtils().isPlayingSound()) {
+             return 1;
+         } else {
+-            return soundManager.getNormalizedVolume(sound, entry, category);
++            return (float) codes.biscuit.skyblockaddons.Reflector.invoke(SoundManager.class, soundManager, "getNormalizedVolume", new Class[]{ISound.class, SoundPoolEntry.class, SoundCategory.class}, new Object[]{sound, entry, category});
+         }
+     }
+ }
+Index: src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java	(date 1605114290182)
+@@ -6,16 +6,16 @@
+ import codes.biscuit.skyblockaddons.core.Message;
+ import codes.biscuit.skyblockaddons.gui.buttons.*;
+ import codes.biscuit.skyblockaddons.utils.*;
+-import codes.biscuit.skyblockaddons.features.discordrpc.DiscordStatus;
+ import net.minecraft.client.Minecraft;
+ import net.minecraft.client.gui.GuiButton;
+ import net.minecraft.client.gui.GuiScreen;
+ import net.minecraft.client.gui.ScaledResolution;
+ import net.minecraft.client.renderer.GlStateManager;
+ import net.minecraft.util.ResourceLocation;
+-import net.minecraftforge.client.GuiIngameForge;
+ import org.lwjgl.input.Keyboard;
+ 
++import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
++
+ import java.awt.*;
+ import java.io.IOException;
+ import java.util.Arrays;
+@@ -135,26 +135,6 @@
+             int width = halfWidth+90+boxWidth;
+             width -= x;
+             float numSettings = settings.size();
+-            if (settings.contains(EnumUtils.FeatureSetting.DISCORD_RP_STATE)) {
+-                if (main.getConfigValues().getDiscordStatus() == DiscordStatus.CUSTOM) numSettings++;
+-                if (main.getConfigValues().getDiscordStatus() == DiscordStatus.AUTO_STATUS) {
+-                    numSettings ++;
+-                    if (main.getConfigValues().getDiscordAutoDefault() == DiscordStatus.CUSTOM) {
+-                        numSettings ++;
+-                    }
+-                }
+-                numSettings += 0.4;
+-            }
+-            if (settings.contains(EnumUtils.FeatureSetting.DISCORD_RP_DETAILS)) {
+-                if (main.getConfigValues().getDiscordDetails() == DiscordStatus.CUSTOM) numSettings++;
+-                if (main.getConfigValues().getDiscordDetails() == DiscordStatus.AUTO_STATUS) {
+-                    numSettings ++;
+-                    if (main.getConfigValues().getDiscordAutoDefault() == DiscordStatus.CUSTOM) {
+-                        numSettings ++;
+-                    }
+-                }
+-                numSettings += 0.4;
+-            }
+             int height = (int)(getRowHeightSetting(numSettings)-50);
+             int y =(int)getRowHeight(1);
+             GlStateManager.enableBlend();
+@@ -177,7 +157,6 @@
+             Language language = ((ButtonLanguage)abstractButton).getLanguage();
+             main.getConfigValues().setLanguage(language);
+             main.getUtils().loadLanguageFile(true);
+-            main.setKeyBindingDescriptions();
+             returnToGui();
+         } else if (abstractButton instanceof ButtonSwitchTab) {
+             ButtonSwitchTab tab = (ButtonSwitchTab)abstractButton;
+@@ -194,9 +173,9 @@
+             } else {
+                 main.getConfigValues().getDisabledFeatures().add(feature);
+                 if (feature == Feature.HIDE_FOOD_ARMOR_BAR) { // Reset the vanilla bars when disabling these two features.
+-                    GuiIngameForge.renderArmor = true; // The food gets automatically enabled, no need to include it.
++                    HyperiumGuiIngame.renderArmor = true; // The food gets automatically enabled, no need to include it.
+                 } else if (feature == Feature.HIDE_HEALTH_BAR) {
+-                    GuiIngameForge.renderHealth = true;
++                    HyperiumGuiIngame.renderHealth = true;
+                 } else if (feature == Feature.REPEAT_FULL_INVENTORY_WARNING) {
+                     // Remove queued warnings when the repeat setting is turned off.
+                     main.getScheduler().removeQueuedFullInventoryWarnings();
+@@ -304,64 +283,6 @@
+             boxWidth = 140;
+             x = halfWidth-(boxWidth/2);
+             buttonList.add(new ButtonSolid(x, y, 140, 20, Message.SETTING_POWER_ORB_DISPLAY_STYLE.getMessage(), main, feature));
+-        } else if(setting == EnumUtils.FeatureSetting.DISCORD_RP_DETAILS || setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
+-            boxWidth = 140;
+-            x = halfWidth-(boxWidth/2);
+-            DiscordStatus currentStatus;
+-            if(setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
+-                currentStatus = main.getConfigValues().getDiscordStatus();
+-            } else {
+-                currentStatus = main.getConfigValues().getDiscordDetails();
+-            }
+-
+-            buttonList.add(new ButtonTextNew(halfWidth, (int)y-10, setting == EnumUtils.FeatureSetting.DISCORD_RP_DETAILS ? Message.MESSAGE_FIRST_STATUS.getMessage() :
+-                    Message.MESSAGE_SECOND_STATUS.getMessage(), true, 0xFFFFFFFF));
+-            buttonList.add(new ButtonSelect(x, (int)y, boxWidth, 20, Arrays.asList(DiscordStatus.values()), currentStatus.ordinal(), index -> {
+-                final DiscordStatus selectedStatus = DiscordStatus.values()[index];
+-                if(setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
+-                    main.getDiscordRPCManager().setStateLine(selectedStatus);
+-                    main.getConfigValues().setDiscordStatus(selectedStatus);
+-                } else {
+-                    main.getDiscordRPCManager().setDetailsLine(selectedStatus);
+-                    main.getConfigValues().setDiscordDetails(selectedStatus);
+-                }
+-                SettingsGui.this.reInit = true;
+-            }));
+-
+-            if (currentStatus == DiscordStatus.AUTO_STATUS) {
+-                row++;
+-                row += 0.4;
+-                boxWidth = 140;
+-                x = halfWidth-(boxWidth/2);
+-                y = getRowHeightSetting(row);
+-
+-                buttonList.add(new ButtonTextNew(halfWidth, (int)y-10, Message.MESSAGE_FALLBACK_STATUS.getMessage(), true, 0xFFFFFFFF));
+-                currentStatus = main.getConfigValues().getDiscordAutoDefault();
+-                buttonList.add(new ButtonSelect(x, (int)y, boxWidth, 20, Arrays.asList(DiscordStatus.values()), currentStatus.ordinal(), index -> {
+-                    final DiscordStatus selectedStatus = DiscordStatus.values()[index];
+-                    main.getConfigValues().setDiscordAutoDefault(selectedStatus);
+-                    SettingsGui.this.reInit = true;
+-                }));
+-            }
+-
+-            if (currentStatus == DiscordStatus.CUSTOM) {
+-                row++;
+-                halfWidth = width/2;
+-                boxWidth = 200;
+-                x = halfWidth-(boxWidth/2);
+-                y = getRowHeightSetting(row);
+-
+-                EnumUtils.DiscordStatusEntry discordStatusEntry = EnumUtils.DiscordStatusEntry.DETAILS;
+-                if (setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
+-                    discordStatusEntry = EnumUtils.DiscordStatusEntry.STATE;
+-                }
+-                final EnumUtils.DiscordStatusEntry finalDiscordStatusEntry = discordStatusEntry;
+-                ButtonInputFieldWrapper inputField = new ButtonInputFieldWrapper(x, (int) y, 200, 20, main.getConfigValues().getCustomStatus(discordStatusEntry),
+-                        null, 100, false, updatedValue -> main.getConfigValues().setCustomStatus(finalDiscordStatusEntry, updatedValue));
+-                buttonList.add(inputField);
+-            }
+-
+-            row += 0.4;
+         } else {
+             boxWidth = 31; // Default size and stuff.
+             x = halfWidth-(boxWidth/2);
+Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java	(date 1605114289672)
+@@ -1,5 +1,6 @@
+ package codes.biscuit.skyblockaddons.asm.hooks;
+ 
++import cc.hyperium.event.world.item.ItemTooltipEvent;
+ import codes.biscuit.skyblockaddons.SkyblockAddons;
+ import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
+ import codes.biscuit.skyblockaddons.features.backpacks.Backpack;
+@@ -15,7 +16,6 @@
+ import net.minecraft.inventory.IInventory;
+ import net.minecraft.item.ItemStack;
+ import net.minecraft.util.IChatComponent;
+-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+ import org.lwjgl.input.Keyboard;
+ 
+ public class GuiScreenHook {
+@@ -80,7 +80,7 @@
+                 if (!GuiContainerHook.isFreezeBackpack()) {
+                     main.getUtils().setBackpackToPreview(backpack);
+                 }
+-                main.getPlayerListener().onItemTooltip(new ItemTooltipEvent(stack, null, null, false));
++                main.getPlayerListener().onItemTooltip(new ItemTooltipEvent(stack, null));
+                 returnValue.cancel();
+             }
+         }
+@@ -92,8 +92,6 @@
+     private static boolean isFreezeKeyDown() {
+         SkyblockAddons main = SkyblockAddons.getInstance();
+ 
+-        if (main.getFreezeBackpackKey().isKeyDown()) return true;
+-        if (main.getFreezeBackpackKey().isPressed()) return true;
+         try {
+             if (Keyboard.isKeyDown(main.getFreezeBackpackKey().getKeyCode())) return true;
+         } catch (Exception ignored) {}
 Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java	(date 1605114289648)
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.java	(date 1605114289648)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.asm.hooks;
  
@@ -1439,71 +1530,473 @@ diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiChestHook.j
                              || main.getInventoryUtils().getInventoryType() == InventoryType.BASIC_ACCESSORY_BAG_REFORGING)) {
                          Slot itemSlot = slots.getSlot(13);
                          if (itemSlot != null && itemSlot.getHasStack()) {
-Index: src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java
+Index: src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java b/src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/tweaker/transformer/ITransformer.java	(date 1605114290387)
-@@ -1,6 +1,6 @@
- package codes.biscuit.skyblockaddons.tweaker.transformer;
+--- src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(date 1605114290445)
+@@ -12,7 +12,7 @@
+ import net.minecraft.scoreboard.ScorePlayerTeam;
+ import net.minecraft.scoreboard.Scoreboard;
+ import net.minecraft.util.StringUtils;
+-import net.minecraftforge.common.util.Constants;
++//import net.minecraftforge.common.util.Constants;
+ import org.lwjgl.input.Keyboard;
  
--import org.objectweb.asm.tree.ClassNode;
-+import org.spongepowered.asm.lib.tree.ClassNode;
+ import java.awt.*;
+@@ -118,6 +118,7 @@
+             sb.insert(0, "\n").insert(0, org.apache.commons.lang3.StringUtils.center(objectiveName, width));
  
- public interface ITransformer {
+             copyStringToClipboard(sb.toString(), "Sidebar copied to clipboard!");
++            formatter.close();
+         }
+     }
  
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java
+@@ -150,7 +151,6 @@
+ 
+             stringBuilder.append("NBT Data:").append(System.lineSeparator());
+             entity.writeToNBT(entityData);
+-            stringBuilder.append(prettyPrintNBT(entityData));
+ 
+             // Add spacing if necessary.
+             if (loadedEntitiesCopyIterator.hasNext()) {
+@@ -161,12 +161,14 @@
+         copyStringToClipboard(stringBuilder.toString(), ColorCode.GREEN + "Entity data was copied to clipboard!");
+     }
+ 
+-    /**
++
++
++    /*
+      * Copies the provided NBT tag to the clipboard as a formatted string.
+      *
+      * @param nbtTag the NBT tag to copy
+      * @param message the message to show in chat when the NBT tag is copied
+-     */
++
+     public static void copyNBTTagToClipboard(NBTBase nbtTag, String message) {
+         if (nbtTag == null) {
+             SkyblockAddons.getInstance().getUtils().sendMessage("This item has no NBT data.");
+@@ -174,6 +176,7 @@
+         }
+         writeToClipboard(prettyPrintNBT(nbtTag), message);
+     }
++     */
+ 
+     /**
+      * Copies the provided NBT tags to the clipboard as a formatted string.
+@@ -191,7 +194,6 @@
+             }
+ 
+             stringBuilder.append("Tag ").append(i).append(": ").append(System.lineSeparator());
+-            stringBuilder.append(prettyPrintNBT(nbtTags.get(i)));
+ 
+             // Add a blank line if necessary
+             if (i < (nbtTags.size()) - 1) {
+@@ -254,7 +256,6 @@
+      *
+      * @param nbt the NBT tag to pretty print
+      * @return pretty-printed string of the NBT data
+-     */
+     public static String prettyPrintNBT(NBTBase nbt) {
+         final String INDENT = "    ";
+ 
+@@ -358,6 +359,7 @@
+ 
+         return stringBuilder.toString();
+     }
++    */
+ 
+     // Internal methods
+     private static void writeToClipboard(String text, String successMessage) {
+Index: src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiScreenTransformer.java	(date 1605114289790)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
+--- src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java	(date 1605114290192)
+@@ -16,10 +16,11 @@
+ import net.minecraft.client.renderer.GlStateManager;
+ import net.minecraft.client.renderer.texture.TextureManager;
+ import net.minecraft.util.ResourceLocation;
+-import net.minecraftforge.client.GuiIngameForge;
+ import org.apache.commons.lang3.StringUtils;
+ import org.lwjgl.input.Keyboard;
  
- public class GuiScreenTransformer implements ITransformer {
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java
++import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
++
+ import java.awt.*;
+ import java.io.IOException;
+ import java.net.URI;
+@@ -223,22 +224,18 @@
+                 if (main.getConfigValues().isRemoteDisabled(feature)) return;
+                 if (main.getConfigValues().isDisabled(feature)) {
+                     main.getConfigValues().getDisabledFeatures().remove(feature);
+-                    if(feature == Feature.DISCORD_RPC) {
+-                        main.getDiscordRPCManager().start();
+-                    } else if (feature == Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT) {
++                    if (feature == Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT) {
+                         main.getConfigValues().getDisabledFeatures().remove(Feature.DISABLE_ENDERMAN_TELEPORTATION_EFFECT);
+                     }
+                 } else {
+                     main.getConfigValues().getDisabledFeatures().add(feature);
+                     if (feature == Feature.HIDE_FOOD_ARMOR_BAR) { // Reset the vanilla bars when disabling these two features.
+-                        GuiIngameForge.renderArmor = true; // The food gets automatically enabled, no need to include it.
++                        HyperiumGuiIngame.renderArmor = true; // The food gets automatically enabled, no need to include it.
+                     } else if (feature == Feature.HIDE_HEALTH_BAR) {
+-                        GuiIngameForge.renderHealth = true;
++                        HyperiumGuiIngame.renderHealth = true;
+                     } else if (feature == Feature.FULL_INVENTORY_WARNING) {
+                         main.getInventoryUtils().setInventoryWarningShown(false);
+                         main.getScheduler().removeQueuedFullInventoryWarnings();
+-                    } else if(feature == Feature.DISCORD_RPC) {
+-                        main.getDiscordRPCManager().stop();
+                     } else if (feature == Feature.DISABLE_ENDERMAN_TELEPORTATION_EFFECT) {
+                         main.getConfigValues().getDisabledFeatures().remove(Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT);
+                     }
+Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/SoundManagerTransformer.java	(date 1605114289886)
-@@ -3,11 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.AbstractInsnNode;
--import org.objectweb.asm.tree.ClassNode;
--import org.objectweb.asm.tree.MethodInsnNode;
--import org.objectweb.asm.tree.MethodNode;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java	(date 1605114289660)
+@@ -1,5 +1,6 @@
+ package codes.biscuit.skyblockaddons.asm.hooks;
  
- import java.util.Iterator;
++import codes.biscuit.skyblockaddons.Reflector;
+ import codes.biscuit.skyblockaddons.SkyblockAddons;
+ import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
+ import codes.biscuit.skyblockaddons.core.Feature;
+@@ -12,6 +13,7 @@
+ import net.minecraft.client.Minecraft;
+ import net.minecraft.client.gui.FontRenderer;
+ import net.minecraft.client.gui.Gui;
++import net.minecraft.client.gui.GuiScreen;
+ import net.minecraft.client.gui.inventory.GuiContainer;
+ import net.minecraft.client.renderer.GlStateManager;
+ import net.minecraft.client.renderer.RenderHelper;
+@@ -23,6 +25,7 @@
+ import net.minecraft.util.ResourceLocation;
  
+ import javax.lang.model.type.NullType;
++import java.util.List;
+ 
+ public class GuiContainerHook {
+ 
+@@ -103,11 +106,11 @@
+                         int itemX = x+8 + ((i % 9) * 18);
+                         int itemY = y+18 + ((i / 9) * 18);
+                         RenderItem renderItem = mc.getRenderItem();
+-                        guiContainer.zLevel = 200;
++                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 200);
+                         renderItem.zLevel = 200;
+                         renderItem.renderItemAndEffectIntoGUI(item, itemX, itemY);
+                         renderItem.renderItemOverlayIntoGUI(mc.fontRendererObj, item, itemX, itemY, null);
+-                        guiContainer.zLevel = 0;
++                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 0);
+                         renderItem.zLevel = 0;
+ 
+                         if (freezeBackpack && mouseX > itemX && mouseX < itemX+16 && mouseY > itemY && mouseY < itemY+16) {
+@@ -141,11 +144,11 @@
+                         int itemX = x + ((i % 9) * 16);
+                         int itemY = y + ((i / 9) * 16);
+                         RenderItem renderItem = mc.getRenderItem();
+-                        guiContainer.zLevel = 200;
++                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 200);
+                         renderItem.zLevel = 200;
+                         renderItem.renderItemAndEffectIntoGUI(item, itemX, itemY);
+                         renderItem.renderItemOverlayIntoGUI(mc.fontRendererObj, item, itemX, itemY, null);
+-                        guiContainer.zLevel = 0;
++                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 0);
+                         renderItem.zLevel = 0;
+ 
+                         if (freezeBackpack && mouseX > itemX && mouseX < itemX+16 && mouseY > itemY && mouseY < itemY+16) {
+@@ -155,7 +158,7 @@
+                 }
+             }
+             if (tooltipItem != null) {
+-                guiContainer.drawHoveringText(tooltipItem.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips), mouseX, mouseY);
++                Reflector.invoke(GuiScreen.class, guiContainer, "drawHoveringText", new Class[]{List.class, int.class, int.class}, new Object[]{tooltipItem.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips), mouseX, mouseY});
+             }
+             if (!freezeBackpack) {
+                 main.getUtils().setBackpackToPreview(null);
+@@ -180,11 +183,11 @@
+             if (main.getConfigValues().isEnabled(Feature.LOCK_SLOTS) &&
+                     main.getUtils().isOnSkyblock() && main.getConfigValues().getLockedSlots().contains(slotNum)
+                     && (slotNum >= 9 || container instanceof ContainerPlayer && slotNum >= 5)) {
+-                guiContainer.drawGradientRect(left, top, right, bottom, OVERLAY_RED, OVERLAY_RED);
++                Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{left, top, right, bottom, OVERLAY_RED, OVERLAY_RED});
+                 return;
+             }
+         }
+-        guiContainer.drawGradientRect(left, top, right, bottom, startColor, endColor);
++        Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{left, top, right, bottom, OVERLAY_RED, OVERLAY_RED});
+     }
+ 
+     public static void drawSlot(GuiContainer guiContainer, Slot slot) {
+@@ -198,7 +201,8 @@
+                     && slot.inventory.getDisplayName().getUnformattedText().equals(CraftingPattern.CRAFTING_TABLE_DISPLAYNAME)
+                     && main.getPersistentValues().getSelectedCraftingPattern() != CraftingPattern.FREE) {
+ 
+-                int craftingGridIndex = CraftingPattern.slotToCraftingGridIndex(slot.getSlotIndex());
++                int slotIndex = (int) Reflector.getFieldValue(Slot.class, slot, "slotIndex");
++                int craftingGridIndex = CraftingPattern.slotToCraftingGridIndex(slotIndex);
+                 if (craftingGridIndex >= 0) {
+                     int slotLeft = slot.xDisplayPosition;
+                     int slotTop = slot.yDisplayPosition;
+@@ -206,11 +210,11 @@
+                     int slotBottom = slotTop + 16;
+                     if (main.getPersistentValues().getSelectedCraftingPattern().isSlotInPattern(craftingGridIndex)) {
+                         if (!slot.getHasStack()) {
+-                            guiContainer.drawGradientRect(slotLeft, slotTop, slotRight, slotBottom, OVERLAY_GREEN, OVERLAY_GREEN);
++                            Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{slotLeft, slotTop, slotRight, slotBottom, OVERLAY_GREEN, OVERLAY_GREEN});
+                         }
+                     } else {
+                         if (slot.getHasStack()) {
+-                            guiContainer.drawGradientRect(slotLeft, slotTop, slotRight, slotBottom, OVERLAY_RED, OVERLAY_RED);
++                            Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{slotLeft, slotTop, slotRight, slotBottom, OVERLAY_RED, OVERLAY_RED});
+                         }
+                     }
+                 }
+Index: src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java	(date 1605114290462)
+@@ -4,7 +4,6 @@
+ import net.minecraft.item.ItemStack;
+ import net.minecraft.nbt.NBTTagCompound;
+ import net.minecraft.nbt.NBTTagList;
+-import net.minecraftforge.common.util.Constants;
+ 
+ import java.util.ArrayList;
+ import java.util.Collections;
+@@ -37,7 +36,7 @@
+             return null;
+         }
+ 
+-        NBTTagList lore = display.getTagList("Lore", Constants.NBT.TAG_STRING);
++        NBTTagList lore = display.getTagList("Lore", 8);
+ 
+         // Determine the item's rarity
+         for (int i = 0; i < lore.tagCount(); i++) {
+Index: src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java	(date 1606225192860)
+@@ -2,7 +2,7 @@
+ 
+ import codes.biscuit.skyblockaddons.tweaker.PreTransformationChecks;
+ import org.objectweb.asm.Opcodes;
+-import org.objectweb.asm.tree.FieldInsnNode;
++import org.objectweb.asm.tree.*;
+ 
+ public enum TransformerField {
+ 
+Index: src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java	(date 1605114290475)
+@@ -32,16 +32,17 @@
+ import net.minecraft.util.ChatComponentText;
+ import net.minecraft.util.MathHelper;
+ import net.minecraft.util.ResourceLocation;
+-import net.minecraftforge.client.event.ClientChatReceivedEvent;
+-import net.minecraftforge.common.MinecraftForge;
+-import net.minecraftforge.fml.common.Loader;
+-import net.minecraftforge.fml.common.ModContainer;
+ import org.apache.commons.lang3.StringUtils;
+ import org.apache.commons.lang3.mutable.MutableInt;
+ import org.apache.commons.lang3.text.WordUtils;
+ import org.apache.logging.log4j.Logger;
+ import org.lwjgl.opengl.GL11;
+ 
++import cc.hyperium.Hyperium;
++import cc.hyperium.event.EventBus;
++import cc.hyperium.event.network.chat.ChatEvent;
++import cc.hyperium.handlers.handlers.HypixelDetector;
++
+ import javax.imageio.ImageIO;
+ import java.awt.*;
+ import java.awt.image.BufferedImage;
+@@ -152,10 +153,10 @@
+     }
+ 
+     public void sendMessage(String text, boolean prefix) {
+-        ClientChatReceivedEvent event = new ClientChatReceivedEvent((byte) 1, new ChatComponentText((prefix ? MESSAGE_PREFIX : "") + text));
+-        MinecraftForge.EVENT_BUS.post(event); // Let other mods pick up the new message
+-        if (!event.isCanceled()) {
+-            Minecraft.getMinecraft().thePlayer.addChatMessage(event.message); // Just for logs
++        ChatEvent event = new ChatEvent(new ChatComponentText((prefix ? MESSAGE_PREFIX : "") + text));
++        EventBus.INSTANCE.post(event);
++        if (!event.isCancelled()) {
++            Minecraft.getMinecraft().thePlayer.addChatMessage(event.getChat()); // Just for logs
+         }
+     }
+ 
+@@ -170,10 +171,10 @@
+             text = newText;
+         }
+ 
+-        ClientChatReceivedEvent event = new ClientChatReceivedEvent((byte) 1, text);
+-        MinecraftForge.EVENT_BUS.post(event); // Let other mods pick up the new message
+-        if (!event.isCanceled()) {
+-            Minecraft.getMinecraft().thePlayer.addChatMessage(event.message); // Just for logs
++        ChatEvent event = new ChatEvent(text);
++        EventBus.INSTANCE.post(event); // Let other mods pick up the new message
++        if (!event.isCancelled()) {
++            Minecraft.getMinecraft().thePlayer.addChatMessage(event.getChat()); // Just for logs
+         }
+     }
+ 
+@@ -187,25 +188,7 @@
+      * @return {@code true} if the player is on Hypixel, {@code false} otherwise
+      */
+     public boolean isOnHypixel() {
+-        final Pattern SERVER_BRAND_PATTERN = Pattern.compile("(.+) <- (?:.+)");
+-        final String HYPIXEL_SERVER_BRAND = "BungeeCord (Hypixel)";
+-
+-        Minecraft mc = Minecraft.getMinecraft();
+-
+-        if (!mc.isSingleplayer() && mc.thePlayer.getClientBrand() != null) {
+-            Matcher matcher = SERVER_BRAND_PATTERN.matcher(mc.thePlayer.getClientBrand());
+-
+-            if (matcher.find()) {
+-                // Group 1 is the server brand.
+-                return matcher.group(1).equals(HYPIXEL_SERVER_BRAND);
+-            }
+-            else {
+-                return false;
+-            }
+-        }
+-        else {
+-            return false;
+-        }
++        return HypixelDetector.getInstance().isHypixel();
+     }
+ 
+     private long lastFoundScoreboard = -1;
+@@ -240,7 +223,7 @@
+                 // If it's a Skyblock scoreboard and the player has not joined Skyblock yet,
+                 // this indicates that he did so.
+                 if (foundSkyblockTitle && !this.isOnSkyblock()) {
+-                    MinecraftForge.EVENT_BUS.post(new SkyblockJoinedEvent());
++                    EventBus.INSTANCE.post(new SkyblockJoinedEvent());
+                 }
+ 
+                 Collection<Score> scoreboardLines = scoreboard.getSortedScores(sidebarObjective);
+@@ -360,7 +343,7 @@
+             // Check if we found a scoreboard in general. If not, its possible they are switching worlds.
+             // If we don't find a scoreboard for 10s, then we know they actually left the server.
+             if (foundScoreboard || System.currentTimeMillis() - lastFoundScoreboard > 10000) {
+-                MinecraftForge.EVENT_BUS.post(new SkyblockLeftEvent());
++                EventBus.INSTANCE.post(new SkyblockLeftEvent());
+             }
+         }
+     }
+@@ -571,8 +554,8 @@
+      *
+      * @return the folder the SkyblockAddons jar is located in
+      */
+-    public File getSBAFolder() {
+-        return Loader.instance().activeModContainer().getSource().getParentFile();
++    public static File getSBAFolder() {
++        return new File(Hyperium.folder.getParent() + "/addons");
+     }
+ 
+     public int getNBTInteger(ItemStack item, String... path) {
+@@ -868,8 +851,6 @@
+ 
+                 main.setOnlineData(new Gson().fromJson(response.toString(), OnlineData.class));
+                 logger.info("Successfully grabbed online data.");
+-
+-                main.getUpdater().processUpdateCheckResult();
+             } catch (Exception ex) {
+                 logger.warn("There was an error while trying to pull the online data...");
+                 logger.catching(ex);
+@@ -991,32 +972,6 @@
+         GlStateManager.blendFunc(blendFunctionSrcFactor, blendFunctionDstFactor);
+     }
+ 
+-    public boolean isModLoaded(String modId) {
+-        return isModLoaded(modId, null);
+-    }
+-
+-    /**
+-     * Check if another mod is loaded.
+-     *
+-     * @param modId The modid to check.
+-     * @param version The version of the mod to match (optional).
+-     */
+-    public boolean isModLoaded(String modId, String version) {
+-        boolean isLoaded = Loader.isModLoaded(modId); // Check for the modid...
+-
+-        if (isLoaded && version != null) { // Check for the specific version...
+-            for (ModContainer modContainer : Loader.instance().getModList()) {
+-                if (modContainer.getModId().equals(modId) && modContainer.getVersion().equals(version)) {
+-                    return true;
+-                }
+-            }
+-
+-            return false;
+-        }
+-
+-        return isLoaded;
+-    }
+-
+     public void drawCenteredString(String text, float x, float y, int color) {
+         Minecraft.getMinecraft().fontRendererObj.drawString(text, x - Minecraft.getMinecraft().fontRendererObj.getStringWidth(text) / 2F, y, color, true);
+     }
+Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java	(date 1605114289685)
+@@ -1,5 +1,6 @@
+ package codes.biscuit.skyblockaddons.asm.hooks;
+ 
++import codes.biscuit.skyblockaddons.Reflector;
+ import codes.biscuit.skyblockaddons.SkyblockAddons;
+ import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
+ import codes.biscuit.skyblockaddons.core.Feature;
+@@ -11,7 +12,6 @@
+ import codes.biscuit.skyblockaddons.features.cooldowns.CooldownManager;
+ import codes.biscuit.skyblockaddons.features.craftingpatterns.CraftingPattern;
+ import codes.biscuit.skyblockaddons.features.craftingpatterns.CraftingPatternResult;
+-import codes.biscuit.skyblockaddons.utils.EnumUtils;
+ import codes.biscuit.skyblockaddons.utils.InventoryUtils;
+ import codes.biscuit.skyblockaddons.utils.ItemUtils;
+ import codes.biscuit.skyblockaddons.utils.Utils;
+@@ -238,7 +238,7 @@
+                                 returnValue.cancel();
+                             }
+                         } else {
+-                            if (slotIn.getSlotIndex() == CraftingPattern.CRAFTING_RESULT_INDEX
++                            if ((int) Reflector.getFieldValue(Slot.class, slotIn, "slotIndex") == CraftingPattern.CRAFTING_RESULT_INDEX
+                                     && !result.isSatisfied()
+                                     && main.getPersistentValues().isBlockCraftingIncompletePatterns()) {
+                                 // cancel clicking the result if the pattern isn't satisfied
 Index: src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java b/src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java
---- a/src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java	(date 1605114290454)
+--- src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.java	(date 1605114290454)
 @@ -19,13 +19,13 @@
  import net.minecraft.item.Item;
  import net.minecraft.item.ItemStack;
@@ -1785,33 +2278,97 @@ diff --git a/src/main/java/codes/biscuit/skyblockaddons/utils/InventoryUtils.jav
  
          for (InventoryType inventoryType : InventoryType.values()) {
              if (inventoryType.getInventoryName().equals(inventory.getDisplayName().getUnformattedText())) {
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java
+Index: src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java b/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerField.java	(date 1605114289706)
-@@ -1,8 +1,8 @@
- package codes.biscuit.skyblockaddons.asm.utils;
+--- src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/NewScheduler.java	(date 1605114290256)
+@@ -1,12 +1,13 @@
+ package codes.biscuit.skyblockaddons.misc.scheduler;
  
- import codes.biscuit.skyblockaddons.tweaker.PreTransformationChecks;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.FieldInsnNode;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
+ import net.minecraft.client.Minecraft;
+-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+-import net.minecraftforge.fml.common.gameevent.TickEvent;
  
- public enum TransformerField {
+ import java.util.ArrayList;
+ import java.util.List;
  
++import cc.hyperium.event.InvokeEvent;
++import cc.hyperium.event.client.TickEvent;
++
+ public class NewScheduler {
+ 
+     private final List<ScheduledTask> queuedTasks = new ArrayList<>();
+@@ -18,36 +19,34 @@
+         return this.totalTicks;
+     }
+ 
+-    @SubscribeEvent
+-    public void ticker(TickEvent.ClientTickEvent event) {
+-        if (event.phase == TickEvent.Phase.START) {
+-            synchronized (this.anchor) {
+-                this.totalTicks++;
+-            }
++    @InvokeEvent
++    public void ticker(TickEvent event) {
++        synchronized (this.anchor) {
++            this.totalTicks++;
++        }
+ 
+-            if (Minecraft.getMinecraft() != null) {
+-                this.pendingTasks.removeIf(ScheduledTask::isCanceled);
++        if (Minecraft.getMinecraft() != null) {
++            this.pendingTasks.removeIf(ScheduledTask::isCanceled);
+ 
+-                this.pendingTasks.addAll(queuedTasks);
+-                queuedTasks.clear();
++            this.pendingTasks.addAll(queuedTasks);
++            queuedTasks.clear();
+ 
+-                try {
+-                    for (ScheduledTask scheduledTask : this.pendingTasks) {
+-                        if (this.getTotalTicks() >= (scheduledTask.getAddedTicks() + scheduledTask.getDelay())) {
+-                            scheduledTask.start();
++            try {
++                for (ScheduledTask scheduledTask : this.pendingTasks) {
++                    if (this.getTotalTicks() >= (scheduledTask.getAddedTicks() + scheduledTask.getDelay())) {
++                        scheduledTask.start();
+ 
+-                            if (scheduledTask.isRepeating()) {
+-                                if (!scheduledTask.isCanceled()) {
+-                                    scheduledTask.setDelay(scheduledTask.getPeriod());
+-                                }
+-                            } else {
+-                                scheduledTask.cancel();
+-                            }
+-                        }
+-                    }
+-                } catch (Throwable ex) {
+-                    ex.printStackTrace();
+-                }
++                        if (scheduledTask.isRepeating()) {
++                            if (!scheduledTask.isCanceled()) {
++                                scheduledTask.setDelay(scheduledTask.getPeriod());
++                            }
++                        } else {
++                            scheduledTask.cancel();
++                        }
++                    }
++                }
++            } catch (Throwable ex) {
++                ex.printStackTrace();
+             }
+         }
+     }
 Index: src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java b/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java
---- a/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java	(date 1605114290264)
+--- src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler.java	(date 1605114290264)
 @@ -8,10 +8,11 @@
  import codes.biscuit.skyblockaddons.utils.objects.IntPair;
  import lombok.Getter;
@@ -1904,609 +2461,153 @@ diff --git a/src/main/java/codes/biscuit/skyblockaddons/misc/scheduler/Scheduler
              }
          }
      }
-Index: src/main/resources/data.json
+Index: build.gradle
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/resources/data.json b/src/main/resources/data.json
---- a/src/main/resources/data.json	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/resources/data.json	(date 1605114290647)
-@@ -2,8 +2,6 @@
-   "bannerImageURL": null,
-   "bannerLink": null,
- 
--  "latestVersion": "1.5.4",
--  "latestBeta": "1.6.0-beta.6",
-   "videoLink": "https://youtu.be/_BZMJm6JD4Q",
-   "directDownload": "https://biscuit.codes/mods/skyblockaddons/downloadversion/?v=1.5.4",
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/RenderManagerTransformer.java	(date 1605114289877)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- public class RenderManagerTransformer implements ITransformer {
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiScreenHook.java	(date 1605114289672)
-@@ -1,5 +1,6 @@
- package codes.biscuit.skyblockaddons.asm.hooks;
- 
-+import cc.hyperium.event.world.item.ItemTooltipEvent;
- import codes.biscuit.skyblockaddons.SkyblockAddons;
- import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
- import codes.biscuit.skyblockaddons.features.backpacks.Backpack;
-@@ -15,7 +16,6 @@
- import net.minecraft.inventory.IInventory;
- import net.minecraft.item.ItemStack;
- import net.minecraft.util.IChatComponent;
--import net.minecraftforge.event.entity.player.ItemTooltipEvent;
- import org.lwjgl.input.Keyboard;
- 
- public class GuiScreenHook {
-@@ -80,7 +80,7 @@
-                 if (!GuiContainerHook.isFreezeBackpack()) {
-                     main.getUtils().setBackpackToPreview(backpack);
-                 }
--                main.getPlayerListener().onItemTooltip(new ItemTooltipEvent(stack, null, null, false));
-+                main.getPlayerListener().onItemTooltip(new ItemTooltipEvent(stack, null));
-                 returnValue.cancel();
-             }
-         }
-@@ -92,8 +92,6 @@
-     private static boolean isFreezeKeyDown() {
-         SkyblockAddons main = SkyblockAddons.getInstance();
- 
--        if (main.getFreezeBackpackKey().isKeyDown()) return true;
--        if (main.getFreezeBackpackKey().isPressed()) return true;
-         try {
-             if (Keyboard.isKeyDown(main.getFreezeBackpackKey().getKeyCode())) return true;
-         } catch (Exception ignored) {}
-Index: src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java b/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java
---- a/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockLeftEvent.java	(date 1605114290126)
-@@ -1,7 +1,7 @@
- package codes.biscuit.skyblockaddons.events;
- 
-+import cc.hyperium.event.Event;
- import codes.biscuit.skyblockaddons.utils.Utils;
--import net.minecraftforge.fml.common.eventhandler.Event;
- 
- /**
-  * This is fired by {@link Utils#checkGameLocationDate()} when the player leaves Hypixel Skyblock or disconnects from a server.
-Index: src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java b/src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java
---- a/src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java	(date 1605114290134)
-@@ -9,7 +9,6 @@
- import net.minecraft.nbt.CompressedStreamTools;
- import net.minecraft.nbt.NBTTagCompound;
- import net.minecraft.nbt.NBTTagList;
--import net.minecraftforge.common.util.Constants;
- 
- import java.io.ByteArrayInputStream;
- import java.io.IOException;
-@@ -68,7 +67,7 @@
-                     ItemStack[] items = new ItemStack[length];
-                     if (bytes != null) {
-                         NBTTagCompound nbtTagCompound = CompressedStreamTools.readCompressed(new ByteArrayInputStream(bytes));
--                        NBTTagList list = nbtTagCompound.getTagList("i", Constants.NBT.TAG_COMPOUND);
-+                        NBTTagList list = nbtTagCompound.getTagList("i", 10);
- 
-                         if (list.tagCount() > length) {
-                             length = list.tagCount();
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java b/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/utils/TransformerMethod.java	(date 1605114289715)
-@@ -1,9 +1,9 @@
- package codes.biscuit.skyblockaddons.asm.utils;
- 
- import codes.biscuit.skyblockaddons.tweaker.PreTransformationChecks;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.MethodInsnNode;
--import org.objectweb.asm.tree.MethodNode;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.MethodInsnNode;
-+import org.spongepowered.asm.lib.tree.MethodNode;
- 
- public enum TransformerMethod {
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java b/src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java
---- a/src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/listeners/GuiScreenListener.java	(date 1605114290200)
-@@ -1,3 +1,4 @@
-+/*
- package codes.biscuit.skyblockaddons.listeners;
- 
- import codes.biscuit.skyblockaddons.SkyblockAddons;
-@@ -15,7 +16,6 @@
-  *
-  * @author ILikePlayingGames
-  * @version 1.0
-- */
- public class GuiScreenListener {
- 
-     private SkyblockAddons main = SkyblockAddons.getInstance();
-@@ -24,7 +24,6 @@
-      * Listens for key presses while a GUI is open
-      *
-      * @param event the {@code GuiScreenEvent.KeyboardInputEvent} to listen for
--     */
-     @SubscribeEvent()
-     public void onKeyInput(GuiScreenEvent.KeyboardInputEvent event) {
-         int eventKey = Keyboard.getEventKey();
-@@ -47,3 +46,4 @@
-         }
-     }
- }
-+*/
-\ No newline at end of file
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/GuiContainerHook.java	(date 1605114289660)
-@@ -1,5 +1,6 @@
- package codes.biscuit.skyblockaddons.asm.hooks;
- 
-+import codes.biscuit.skyblockaddons.Reflector;
- import codes.biscuit.skyblockaddons.SkyblockAddons;
- import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
- import codes.biscuit.skyblockaddons.core.Feature;
-@@ -12,6 +13,7 @@
- import net.minecraft.client.Minecraft;
- import net.minecraft.client.gui.FontRenderer;
- import net.minecraft.client.gui.Gui;
-+import net.minecraft.client.gui.GuiScreen;
- import net.minecraft.client.gui.inventory.GuiContainer;
- import net.minecraft.client.renderer.GlStateManager;
- import net.minecraft.client.renderer.RenderHelper;
-@@ -23,6 +25,7 @@
- import net.minecraft.util.ResourceLocation;
- 
- import javax.lang.model.type.NullType;
-+import java.util.List;
- 
- public class GuiContainerHook {
- 
-@@ -103,11 +106,11 @@
-                         int itemX = x+8 + ((i % 9) * 18);
-                         int itemY = y+18 + ((i / 9) * 18);
-                         RenderItem renderItem = mc.getRenderItem();
--                        guiContainer.zLevel = 200;
-+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 200);
-                         renderItem.zLevel = 200;
-                         renderItem.renderItemAndEffectIntoGUI(item, itemX, itemY);
-                         renderItem.renderItemOverlayIntoGUI(mc.fontRendererObj, item, itemX, itemY, null);
--                        guiContainer.zLevel = 0;
-+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 0);
-                         renderItem.zLevel = 0;
- 
-                         if (freezeBackpack && mouseX > itemX && mouseX < itemX+16 && mouseY > itemY && mouseY < itemY+16) {
-@@ -141,11 +144,11 @@
-                         int itemX = x + ((i % 9) * 16);
-                         int itemY = y + ((i / 9) * 16);
-                         RenderItem renderItem = mc.getRenderItem();
--                        guiContainer.zLevel = 200;
-+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 200);
-                         renderItem.zLevel = 200;
-                         renderItem.renderItemAndEffectIntoGUI(item, itemX, itemY);
-                         renderItem.renderItemOverlayIntoGUI(mc.fontRendererObj, item, itemX, itemY, null);
--                        guiContainer.zLevel = 0;
-+                        Reflector.setFieldValue(guiContainer.getClass(), guiContainer, "zLevel", 0);
-                         renderItem.zLevel = 0;
- 
-                         if (freezeBackpack && mouseX > itemX && mouseX < itemX+16 && mouseY > itemY && mouseY < itemY+16) {
-@@ -155,7 +158,7 @@
-                 }
-             }
-             if (tooltipItem != null) {
--                guiContainer.drawHoveringText(tooltipItem.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips), mouseX, mouseY);
-+                Reflector.invoke(GuiScreen.class, guiContainer, "drawHoveringText", new Class[]{List.class, int.class, int.class}, new Object[]{tooltipItem.getTooltip(mc.thePlayer, mc.gameSettings.advancedItemTooltips), mouseX, mouseY});
-             }
-             if (!freezeBackpack) {
-                 main.getUtils().setBackpackToPreview(null);
-@@ -180,11 +183,11 @@
-             if (main.getConfigValues().isEnabled(Feature.LOCK_SLOTS) &&
-                     main.getUtils().isOnSkyblock() && main.getConfigValues().getLockedSlots().contains(slotNum)
-                     && (slotNum >= 9 || container instanceof ContainerPlayer && slotNum >= 5)) {
--                guiContainer.drawGradientRect(left, top, right, bottom, OVERLAY_RED, OVERLAY_RED);
-+                Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{left, top, right, bottom, OVERLAY_RED, OVERLAY_RED});
-                 return;
-             }
-         }
--        guiContainer.drawGradientRect(left, top, right, bottom, startColor, endColor);
-+        Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{left, top, right, bottom, OVERLAY_RED, OVERLAY_RED});
-     }
- 
-     public static void drawSlot(GuiContainer guiContainer, Slot slot) {
-@@ -198,7 +201,8 @@
-                     && slot.inventory.getDisplayName().getUnformattedText().equals(CraftingPattern.CRAFTING_TABLE_DISPLAYNAME)
-                     && main.getPersistentValues().getSelectedCraftingPattern() != CraftingPattern.FREE) {
- 
--                int craftingGridIndex = CraftingPattern.slotToCraftingGridIndex(slot.getSlotIndex());
-+                int slotIndex = (int) Reflector.getFieldValue(Slot.class, slot, "slotIndex");
-+                int craftingGridIndex = CraftingPattern.slotToCraftingGridIndex(slotIndex);
-                 if (craftingGridIndex >= 0) {
-                     int slotLeft = slot.xDisplayPosition;
-                     int slotTop = slot.yDisplayPosition;
-@@ -206,11 +210,11 @@
-                     int slotBottom = slotTop + 16;
-                     if (main.getPersistentValues().getSelectedCraftingPattern().isSlotInPattern(craftingGridIndex)) {
-                         if (!slot.getHasStack()) {
--                            guiContainer.drawGradientRect(slotLeft, slotTop, slotRight, slotBottom, OVERLAY_GREEN, OVERLAY_GREEN);
-+                            Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{slotLeft, slotTop, slotRight, slotBottom, OVERLAY_GREEN, OVERLAY_GREEN});
-                         }
-                     } else {
-                         if (slot.getHasStack()) {
--                            guiContainer.drawGradientRect(slotLeft, slotTop, slotRight, slotBottom, OVERLAY_RED, OVERLAY_RED);
-+                            Reflector.invoke(Gui.class, guiContainer, "drawGradientRect", new Class[]{int.class, int.class, int.class, int.class, int.class, int.class}, new Object[]{slotLeft, slotTop, slotRight, slotBottom, OVERLAY_RED, OVERLAY_RED});
-                         }
-                     }
-                 }
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameMenuTransformer.java	(date 1605114289779)
-@@ -4,8 +4,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiContainerTransformer.java	(date 1605114289762)
-@@ -4,8 +4,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java b/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java
---- a/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonGuiScale.java	(date 1605114290164)
-@@ -41,9 +41,7 @@
-         drawRect(this.xPosition, this.yPosition, this.xPosition+this.width, this.yPosition+this.height, main.getUtils().getDefaultColor(boxAlpha));
-         this.mouseDragged(mc, mouseX, mouseY);
-         int j = 14737632;
--        if (packedFGColour != 0) {
--            j = packedFGColour;
--        } else if (!this.enabled) {
-+        if (!this.enabled) {
-             j = 10526880;
-         } else if (this.hovered) {
-             j = 16777120;
-Index: src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTweaker.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTweaker.java b/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTweaker.java
-new file mode 100644
---- /dev/null	(date 1605723061478)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/tweaker/SkyblockAddonsTweaker.java	(date 1605723061478)
-@@ -0,0 +1,32 @@
-+package codes.biscuit.skyblockaddons.tweaker;
-+
-+import cc.hyperium.launch.HyperiumTweaker;
-+import net.minecraft.launchwrapper.ITweaker;
-+import net.minecraft.launchwrapper.LaunchClassLoader;
-+import org.apache.logging.log4j.LogManager;
-+
-+import java.io.File;
-+import java.util.List;
-+
-+public class SkyblockAddonsTweaker implements ITweaker {
-+    @Override
-+    public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
-+
+--- build.gradle	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ build.gradle	(date 1605739679240)
+@@ -1,99 +1,38 @@
++buildscript {
++    repositories {
++        maven { url "https://hyperiumjailbreak.mycloudrepo.io/public/repositories/forge-proxy/" }
++        maven { url "https://hyperiumjailbreak.mycloudrepo.io/public/repositories/gradle-plugin-proxy/" }
 +    }
-+
-+    @Override
-+    public void injectIntoClassLoader(LaunchClassLoader classLoader) {
-+        LogManager.getLogger().info("Injecting SkyblockAddons into the launch class loader!");
-+        classLoader.registerTransformer("codes.biscuit.skyblockaddons.tweaker.SkyblockAddonsTransformer");
-+    }
-+
-+    @Override
-+    public String getLaunchTarget() {
-+        return HyperiumTweaker.INSTANCE.getLaunchTarget();
-+    }
-+
-+    @Override
-+    public String[] getLaunchArguments() {
-+        return new String[0];
++    dependencies {
++        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
 +    }
 +}
-Index: src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java b/src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java
---- a/src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/utils/Utils.java	(date 1605114290475)
-@@ -32,16 +32,17 @@
- import net.minecraft.util.ChatComponentText;
- import net.minecraft.util.MathHelper;
- import net.minecraft.util.ResourceLocation;
--import net.minecraftforge.client.event.ClientChatReceivedEvent;
--import net.minecraftforge.common.MinecraftForge;
--import net.minecraftforge.fml.common.Loader;
--import net.minecraftforge.fml.common.ModContainer;
- import org.apache.commons.lang3.StringUtils;
- import org.apache.commons.lang3.mutable.MutableInt;
- import org.apache.commons.lang3.text.WordUtils;
- import org.apache.logging.log4j.Logger;
- import org.lwjgl.opengl.GL11;
- 
-+import cc.hyperium.Hyperium;
-+import cc.hyperium.event.EventBus;
-+import cc.hyperium.event.network.chat.ChatEvent;
-+import cc.hyperium.handlers.handlers.HypixelDetector;
 +
- import javax.imageio.ImageIO;
- import java.awt.*;
- import java.awt.image.BufferedImage;
-@@ -152,10 +153,10 @@
-     }
+ plugins {
+-    id 'java'
+-    id 'net.minecraftforge.gradle.forge' version '2.1-SNAPSHOT'
+     id 'io.franzbecker.gradle-lombok' version '4.0.0'
+-    id 'com.github.johnrengelman.shadow' version '4.0.4'
+ }
  
-     public void sendMessage(String text, boolean prefix) {
--        ClientChatReceivedEvent event = new ClientChatReceivedEvent((byte) 1, new ChatComponentText((prefix ? MESSAGE_PREFIX : "") + text));
--        MinecraftForge.EVENT_BUS.post(event); // Let other mods pick up the new message
--        if (!event.isCanceled()) {
--            Minecraft.getMinecraft().thePlayer.addChatMessage(event.message); // Just for logs
-+        ChatEvent event = new ChatEvent(new ChatComponentText((prefix ? MESSAGE_PREFIX : "") + text));
-+        EventBus.INSTANCE.post(event);
-+        if (!event.isCancelled()) {
-+            Minecraft.getMinecraft().thePlayer.addChatMessage(event.getChat()); // Just for logs
-         }
-     }
+-group = 'codes.biscuit'
++apply plugin: 'net.minecraftforge.gradle.tweaker-client'
++apply plugin: 'java'
  
-@@ -170,10 +171,10 @@
-             text = newText;
-         }
+-// The below line is for version checkers <= 1.4.2
+-//version = "1.5.4"
++group 'hjb.ext'
++version '1.0-SNAPSHOT'
  
--        ClientChatReceivedEvent event = new ClientChatReceivedEvent((byte) 1, text);
--        MinecraftForge.EVENT_BUS.post(event); // Let other mods pick up the new message
--        if (!event.isCanceled()) {
--            Minecraft.getMinecraft().thePlayer.addChatMessage(event.message); // Just for logs
-+        ChatEvent event = new ChatEvent(text);
-+        EventBus.INSTANCE.post(event); // Let other mods pick up the new message
-+        if (!event.isCancelled()) {
-+            Minecraft.getMinecraft().thePlayer.addChatMessage(event.getChat()); // Just for logs
-         }
-     }
+-// Java plugin settings
+-sourceCompatibility = JavaVersion.VERSION_1_8
+-targetCompatibility = JavaVersion.VERSION_1_8
+-compileJava.options.encoding = 'UTF-8'
++sourceCompatibility = 1.8
++targetCompatibility = 1.8
  
-@@ -187,25 +188,7 @@
-      * @return {@code true} if the player is on Hypixel, {@code false} otherwise
-      */
-     public boolean isOnHypixel() {
--        final Pattern SERVER_BRAND_PATTERN = Pattern.compile("(.+) <- (?:.+)");
--        final String HYPIXEL_SERVER_BRAND = "BungeeCord (Hypixel)";
+-sourceSets {
+-    main {
+-        output.resourcesDir = java.outputDir
+-    }
+-}
++compileJava.options.encoding = "utf-8"
+ 
+ minecraft {
+-    version = "${project.minecraftVersion}-${project.forgeVersion}"
+-    runDir = "run"
 -
--        Minecraft mc = Minecraft.getMinecraft();
+-    mappings = "${project.mappings}"
 -
--        if (!mc.isSingleplayer() && mc.thePlayer.getClientBrand() != null) {
--            Matcher matcher = SERVER_BRAND_PATTERN.matcher(mc.thePlayer.getClientBrand());
+-    // Replace placeholders in source code
+-    replace("@MOD_ID@": project.modId,
+-            "@MOD_NAME@": project.modName,
+-            "@VERSION@": project.version,
+-            "@MOD_ACCEPTED@": project.acceptedMinecraftVersions,
+-            "@UPDATE_JSON@": project.updateJSON)
+-    replaceIn("${project.modName}.java")
++    version = "1.8.9"
++    tweakClass = "cc.hyperium.launch.HyperiumTweaker"
++    mappings = "stable_20"
++    runDir = 'run'
++    makeObfSourceJar = false
+ }
+ 
+-repositories {
+-    maven {
+-        name 'JitPack'
+-        url 'https://jitpack.io'
+-    }
+-}
++repositories { maven { url 'https://jitpack.io' } }
+ 
+ dependencies {
+-    // Discord RPC for Java https://github.com/jagrosh/DiscordIPC
+-    implementation('com.github.jagrosh:DiscordIPC:e29d6d8') {
+-        exclude module: 'log4j'
+-    }
++    compile 'com.github.hyperiumjailbreak:client:master-SNAPSHOT'
+ }
 -
--            if (matcher.find()) {
--                // Group 1 is the server brand.
--                return matcher.group(1).equals(HYPIXEL_SERVER_BRAND);
--            }
--            else {
--                return false;
--            }
--        }
--        else {
--            return false;
--        }
-+        return HypixelDetector.getInstance().isHypixel();
-     }
- 
-     private long lastFoundScoreboard = -1;
-@@ -240,7 +223,7 @@
-                 // If it's a Skyblock scoreboard and the player has not joined Skyblock yet,
-                 // this indicates that he did so.
-                 if (foundSkyblockTitle && !this.isOnSkyblock()) {
--                    MinecraftForge.EVENT_BUS.post(new SkyblockJoinedEvent());
-+                    EventBus.INSTANCE.post(new SkyblockJoinedEvent());
-                 }
- 
-                 Collection<Score> scoreboardLines = scoreboard.getSortedScores(sidebarObjective);
-@@ -360,7 +343,7 @@
-             // Check if we found a scoreboard in general. If not, its possible they are switching worlds.
-             // If we don't find a scoreboard for 10s, then we know they actually left the server.
-             if (foundScoreboard || System.currentTimeMillis() - lastFoundScoreboard > 10000) {
--                MinecraftForge.EVENT_BUS.post(new SkyblockLeftEvent());
-+                EventBus.INSTANCE.post(new SkyblockLeftEvent());
-             }
-         }
-     }
-@@ -571,8 +554,8 @@
-      *
-      * @return the folder the SkyblockAddons jar is located in
-      */
--    public File getSBAFolder() {
--        return Loader.instance().activeModContainer().getSource().getParentFile();
-+    public static File getSBAFolder() {
-+        return new File(Hyperium.folder.getParent() + "/addons");
-     }
- 
-     public int getNBTInteger(ItemStack item, String... path) {
-@@ -868,8 +851,6 @@
- 
-                 main.setOnlineData(new Gson().fromJson(response.toString(), OnlineData.class));
-                 logger.info("Successfully grabbed online data.");
+-jar {
+-    // Set the archive name here instead of in shadowJar because ForgeGradle needs it when re-obfuscating the jar.
+-    archiveName = project.modName + "-" + version + "-for-MC-1.8.9.jar"
+-    // Disable the default jar task and use shadowJar instead to shade the libraries into the jar.
+-    enabled = false
+-}
 -
--                main.getUpdater().processUpdateCheckResult();
-             } catch (Exception ex) {
-                 logger.warn("There was an error while trying to pull the online data...");
-                 logger.catching(ex);
-@@ -991,32 +972,6 @@
-         GlStateManager.blendFunc(blendFunctionSrcFactor, blendFunctionDstFactor);
-     }
- 
--    public boolean isModLoaded(String modId) {
--        return isModLoaded(modId, null);
+-shadowJar {
+-    archiveName = tasks.jar.archiveName
+-    classifier = ''
+-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+-
+-    manifest.attributes(
+-            'Main-Class': 'SkyblockAddonsInstallerFrame',
+-            'FMLCorePlugin': "${project.group}.${project.modId}.tweaker.${project.modName}LoadingPlugin",
+-            'ForceLoadAsMod': true,
+-            'FMLCorePluginContainsFMLMod': true,
+-            'ModSide': 'CLIENT',
+-            'FMLAT': "${project.modId}_at.cfg"
+-    )
+-
+-    exclude('dummyThing')
+-    exclude('META-INF/maven/')
+-    exclude('META-INF/nar/')
+-    exclude('module-info.class')
+-    exclude('META-INF/versions/')
+-}
+-
+-processResources {
+-    inputs.property "version", project.version
+-    inputs.property "mcversion", project.minecraft.version
+-
+-    // replace stuff in mcmod.info, nothing else
+-    from(sourceSets.main.resources.srcDirs) {
+-        include 'mcmod.info'
+-
+-        // replace version and mcversion
+-        expand 'version':project.version, 'mcversion':project.minecraft.version
 -    }
 -
--    /**
--     * Check if another mod is loaded.
--     *
--     * @param modId The modid to check.
--     * @param version The version of the mod to match (optional).
--     */
--    public boolean isModLoaded(String modId, String version) {
--        boolean isLoaded = Loader.isModLoaded(modId); // Check for the modid...
--
--        if (isLoaded && version != null) { // Check for the specific version...
--            for (ModContainer modContainer : Loader.instance().getModList()) {
--                if (modContainer.getModId().equals(modId) && modContainer.getVersion().equals(version)) {
--                    return true;
--                }
--            }
--
--            return false;
--        }
--
--        return isLoaded;
+-    // copy everything else, thats not the mcmod.info
+-    from(sourceSets.main.resources.srcDirs) {
+-        exclude 'mcmod.info'
 -    }
+-}
 -
-     public void drawCenteredString(String text, float x, float y, int color) {
-         Minecraft.getMinecraft().fontRendererObj.drawString(text, x - Minecraft.getMinecraft().fontRendererObj.getStringWidth(text) / 2F, y, color, true);
-     }
-Index: src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java
+-tasks.reobfJar.dependsOn(tasks.shadowJar)
+\ No newline at end of file
+Index: src/main/resources/addon.json
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java b/src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java
---- a/src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java	(date 1605114402481)
-@@ -1,14 +1,14 @@
- package codes.biscuit.skyblockaddons.listeners;
- 
-+import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
- import codes.biscuit.skyblockaddons.SkyblockAddons;
--import codes.biscuit.skyblockaddons.core.Feature;
- import codes.biscuit.skyblockaddons.events.SkyblockJoinedEvent;
- import codes.biscuit.skyblockaddons.events.SkyblockLeftEvent;
--import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
--import net.minecraftforge.fml.common.network.FMLNetworkEvent;
- import org.apache.logging.log4j.Logger;
- 
--import static net.minecraftforge.common.MinecraftForge.EVENT_BUS;
-+import cc.hyperium.event.EventBus;
-+import cc.hyperium.event.InvokeEvent;
-+import cc.hyperium.event.network.server.ServerLeaveEvent;
- 
- public class NetworkListener {
-     private final SkyblockAddons main;
-@@ -19,27 +19,27 @@
-         logger = main.getLogger();
-     }
- 
--    @SubscribeEvent
--    public void onDisconnect(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
-+    @InvokeEvent
-+    public void onLeave(ServerLeaveEvent event) {
-         // Leave Skyblock when the player disconnects
--        EVENT_BUS.post(new SkyblockLeftEvent());
-+        EventBus.INSTANCE.post(new SkyblockLeftEvent());
-     }
- 
--    @SubscribeEvent
-+    @InvokeEvent
-     public void onSkyblockJoined(SkyblockJoinedEvent event) {
-         logger.info("Joined Skyblock");
-         main.getUtils().setOnSkyblock(true);
--        if (main.getConfigValues().isEnabled(Feature.DISCORD_RPC)) {
--            main.getDiscordRPCManager().start();
--        }
-     }
- 
--    @SubscribeEvent
-+    @InvokeEvent
-     public void onSkyblockLeft(SkyblockLeftEvent event) {
-         logger.info("Left Skyblock");
-         main.getUtils().setOnSkyblock(false);
--        if (main.getDiscordRPCManager().isActive()) {
--            main.getDiscordRPCManager().stop();
--        }
-+        HyperiumGuiIngame.renderAir = true;
-+        HyperiumGuiIngame.renderArmor = true;
-+        HyperiumGuiIngame.renderHealth = true;
-+        HyperiumGuiIngame.renderHealthMount = true;
-+        HyperiumGuiIngame.renderScoreboard = true;
-+        HyperiumGuiIngame.renderFood = true;
-     }
+--- src/main/resources/addon.json	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/resources/addon.json	(date 1606224910861)
+@@ -1,6 +1,5 @@
+ {
+-  "uuid": "%uuid%",
+   "name": "SkyblockAddons",
+-  "mainClass": "codes.biscuit.skyblockaddons.SkyblockAddonsLabyAddon",
+-  "transformerClass": "codes.biscuit.skyblockaddons.tweaker.SkyblockAddonsTransformer"
++  "version": "1.0.0",
++  "mainClass": "codes.biscuit.skyblockaddons.SkyblockAddons"
  }
 \ No newline at end of file
 Index: src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java
@@ -2514,9 +2615,8 @@ IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java b/src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java
---- a/src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java	(date 1605114290232)
+--- src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener.java	(date 1605114290232)
 @@ -1,5 +1,6 @@
  package codes.biscuit.skyblockaddons.listeners;
  
@@ -3267,36 +3367,29 @@ diff --git a/src/main/java/codes/biscuit/skyblockaddons/listeners/PlayerListener
              main.getUtils().setFadingIn(false);
              main.getRenderListener().setGuiToOpen(EnumUtils.GUIType.EDIT_LOCATIONS, 0, null);
          } else if (Keyboard.getEventKey() == DevUtils.DEV_KEY && Keyboard.getEventKeyState()) {
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java
+Index: src/main/resources/data.json
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/MouseHelperTransformer.java	(date 1605114289840)
-@@ -3,11 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.AbstractInsnNode;
--import org.objectweb.asm.tree.ClassNode;
--import org.objectweb.asm.tree.MethodInsnNode;
--import org.objectweb.asm.tree.MethodNode;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
+--- src/main/resources/data.json	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/resources/data.json	(date 1605114290647)
+@@ -2,8 +2,6 @@
+   "bannerImageURL": null,
+   "bannerLink": null,
  
- import java.util.Iterator;
+-  "latestVersion": "1.5.4",
+-  "latestBeta": "1.6.0-beta.6",
+   "videoLink": "https://youtu.be/_BZMJm6JD4Q",
+   "directDownload": "https://biscuit.codes/mods/skyblockaddons/downloadversion/?v=1.5.4",
  
 Index: src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java b/src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java
---- a/src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java	(date 1605114290248)
+--- src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener.java	(date 1605114290248)
 @@ -1,5 +1,12 @@
  package codes.biscuit.skyblockaddons.listeners;
  
@@ -3559,654 +3652,28 @@ diff --git a/src/main/java/codes/biscuit/skyblockaddons/listeners/RenderListener
          }
          guiToOpen = null;
      }
-Index: src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java
+Index: src/main/resources/pack.mcmeta
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java b/src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java
---- a/src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(date 1605114290148)
-@@ -1,5 +1,6 @@
- package codes.biscuit.skyblockaddons.features.tabtimers;
- 
-+import codes.biscuit.skyblockaddons.Reflector;
- import codes.biscuit.skyblockaddons.SkyblockAddons;
- import codes.biscuit.skyblockaddons.core.Feature;
- import codes.biscuit.skyblockaddons.gui.buttons.ButtonLocation;
-@@ -7,8 +8,8 @@
- import codes.biscuit.skyblockaddons.utils.TextUtils;
- import lombok.Getter;
- import net.minecraft.client.Minecraft;
-+import net.minecraft.client.gui.GuiPlayerTabOverlay;
- import net.minecraft.util.IChatComponent;
--import net.minecraftforge.fml.common.gameevent.TickEvent;
- 
- import java.util.ArrayList;
- import java.util.Arrays;
-@@ -88,13 +89,12 @@
-     }
- 
-     /**
--     * Called by {@link codes.biscuit.skyblockaddons.listeners.PlayerListener#onTick(TickEvent.ClientTickEvent)} every second
-      * to update the list of current effect timers.
-      */
-     public void updatePotionEffects() {
-         potionTimers.clear();
-         powerupTimers.clear();
--        IChatComponent tabFooterChatComponent = Minecraft.getMinecraft().ingameGUI.getTabList().footer;
-+        IChatComponent tabFooterChatComponent = (IChatComponent) Reflector.getFieldValue(GuiPlayerTabOverlay.class, Minecraft.getMinecraft().ingameGUI.getTabList(), "footer");
- 
-         // Convert tab footer to a String
-         StringBuilder tabFooterStringBuilder = new StringBuilder();
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/EntityRendererTransformer.java	(date 1605114289739)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-@@ -38,18 +38,18 @@
-                         }
-                     }
-                 }
--            } else if (TransformerMethod.getNightVisionBrightness.matches(methodNode)) {
-+            }/* else if (TransformerMethod.getNightVisionBrightness.matches(methodNode)) {
- 
--                // Objective:
--                // Find: Method head.
--                // Insert:   ReturnValue returnValue = new ReturnValue();
--                //           EntityPlayerSPHook.preventBlink(returnValue);
--                //           if (returnValue.isCancelled()) {
--                //               return 1.0F;
--                //           }
-+            // Objective:
-+            // Find: Method head.
-+            // Insert:   ReturnValue returnValue = new ReturnValue();
-+            //           EntityPlayerSPHook.preventBlink(returnValue);
-+            //           if (returnValue.isCancelled()) {
-+            //               return 1.0F;
-+            //           }
- 
--                methodNode.instructions.insertBefore(methodNode.instructions.getFirst(), insertNightVision());
--            }
-+            methodNode.instructions.insertBefore(methodNode.instructions.getFirst(), insertNightVision());
-+        }*/
-         }
-     }
- 
-@@ -63,6 +63,7 @@
-         return list;
-     }
- 
-+    /*
-     private InsnList insertNightVision() {
-         InsnList list = new InsnList();
- 
-@@ -86,5 +87,5 @@
-         list.add(notCancelled);
- 
-         return list;
--    }
-+    }*/
- }
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/EntityLivingBaseTransformer.java	(date 1605114289722)
-@@ -4,8 +4,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerField;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/ItemTransformer.java	(date 1605114289805)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/PlayerControllerMPTransformer.java	(date 1605114289849)
-@@ -3,12 +3,11 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- public class PlayerControllerMPTransformer implements ITransformer {
- 
--
-     /**
-      * {@link net.minecraft.client.multiplayer.PlayerControllerMP}
-      */
-Index: src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java b/src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java
---- a/src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/gui/SkyblockAddonsGui.java	(date 1605114290192)
-@@ -16,10 +16,11 @@
- import net.minecraft.client.renderer.GlStateManager;
- import net.minecraft.client.renderer.texture.TextureManager;
- import net.minecraft.util.ResourceLocation;
--import net.minecraftforge.client.GuiIngameForge;
- import org.apache.commons.lang3.StringUtils;
- import org.lwjgl.input.Keyboard;
- 
-+import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
-+
- import java.awt.*;
- import java.io.IOException;
- import java.net.URI;
-@@ -223,22 +224,18 @@
-                 if (main.getConfigValues().isRemoteDisabled(feature)) return;
-                 if (main.getConfigValues().isDisabled(feature)) {
-                     main.getConfigValues().getDisabledFeatures().remove(feature);
--                    if(feature == Feature.DISCORD_RPC) {
--                        main.getDiscordRPCManager().start();
--                    } else if (feature == Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT) {
-+                    if (feature == Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT) {
-                         main.getConfigValues().getDisabledFeatures().remove(Feature.DISABLE_ENDERMAN_TELEPORTATION_EFFECT);
-                     }
-                 } else {
-                     main.getConfigValues().getDisabledFeatures().add(feature);
-                     if (feature == Feature.HIDE_FOOD_ARMOR_BAR) { // Reset the vanilla bars when disabling these two features.
--                        GuiIngameForge.renderArmor = true; // The food gets automatically enabled, no need to include it.
-+                        HyperiumGuiIngame.renderArmor = true; // The food gets automatically enabled, no need to include it.
-                     } else if (feature == Feature.HIDE_HEALTH_BAR) {
--                        GuiIngameForge.renderHealth = true;
-+                        HyperiumGuiIngame.renderHealth = true;
-                     } else if (feature == Feature.FULL_INVENTORY_WARNING) {
-                         main.getInventoryUtils().setInventoryWarningShown(false);
-                         main.getScheduler().removeQueuedFullInventoryWarnings();
--                    } else if(feature == Feature.DISCORD_RPC) {
--                        main.getDiscordRPCManager().stop();
-                     } else if (feature == Feature.DISABLE_ENDERMAN_TELEPORTATION_EFFECT) {
-                         main.getConfigValues().getDisabledFeatures().remove(Feature.ZEALOT_COUNTER_EXPLOSIVE_BOW_SUPPORT);
-                     }
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/EntityPlayerSPTransformer.java	(date 1605114289730)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- public class EntityPlayerSPTransformer implements ITransformer {
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/RenderItemTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/RenderItemTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/RenderItemTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/RenderItemTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/RenderItemTransformer.java	(date 1605727794123)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/ModelEndermanTransformer.java	(date 1605114289822)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- public class ModelEndermanTransformer implements ITransformer {
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java b/src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java
---- a/src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/commands/SkyblockAddonsCommand.java	(date 1605114289906)
-@@ -4,19 +4,21 @@
- import codes.biscuit.skyblockaddons.utils.EnumUtils;
- import codes.biscuit.skyblockaddons.utils.DevUtils;
- import codes.biscuit.skyblockaddons.utils.ColorCode;
-+import codes.biscuit.skyblockaddons.utils.Utils;
- import net.minecraft.client.Minecraft;
- import net.minecraft.command.CommandBase;
- import net.minecraft.command.ICommandSender;
- import net.minecraft.scoreboard.Scoreboard;
-+import cc.hyperium.commands.BaseCommand;
- import net.minecraft.util.BlockPos;
- import org.apache.logging.log4j.Logger;
- 
- import java.awt.*;
- import java.io.IOException;
--import java.util.Collections;
-+import java.util.Arrays;
- import java.util.List;
- 
--public class SkyblockAddonsCommand extends CommandBase {
-+public class SkyblockAddonsCommand implements BaseCommand {
- 
-     private SkyblockAddons main;
-     private Logger logger;
-@@ -26,10 +28,8 @@
-         logger = main.getLogger();
-     }
- 
--    /**
--     * Gets the name of the command
--     */
--    public String getCommandName() {
-+    @Override
-+    public String getName() {
-         return "skyblockaddons";
-     }
- 
-@@ -46,7 +46,7 @@
-      */
-     public List<String> getCommandAliases()
-     {
--        return Collections.singletonList("sba");
-+        return Arrays.asList("sba", "sbaddons");
-     }
- 
-     /**
-@@ -77,7 +77,7 @@
-         "§b● /sba brand §7- §e(Dev) §7Show the server brand" + "\n" +
-         "§7§m------------------------------------------";
-     }
--
-+/*
-     public List<String> addTabCompletionOptions(ICommandSender sender, String[] args, BlockPos pos) {
-         if (args.length == 1) {
-             if (main.isDevMode()) {
-@@ -96,12 +96,17 @@
- 
-         return null;
-     }
-+*/
-+    @Override
-+    public String getUsage() {
-+        return "skyblockaddons";
-+    }
- 
-     /**
-      * Opens the main gui, or locations gui if they type /sba edit
-      */
-     @Override
--    public void processCommand(ICommandSender sender, String[] args) {
-+    public void onExecute(String[] args) {
-         if (args.length > 0) {
-             if (args[0].equalsIgnoreCase("edit")) {
-                 main.getUtils().setFadingIn(false);
-@@ -144,9 +149,9 @@
-                 }
-             }  else if (args[0].equalsIgnoreCase("folder")) {
-                 try {
--                    Desktop.getDesktop().open(main.getUtils().getSBAFolder());
-+                    Desktop.getDesktop().open(Utils.getSBAFolder());
-                 } catch (IOException e) {
--                    logger.catching(e);
-+                    e.printStackTrace();
-                     main.getUtils().sendErrorMessage("Failed to open mods folder.");
-                 }
-             }  else if (args[0].equalsIgnoreCase("warp")) {
-@@ -162,16 +167,16 @@
-                         DevUtils.copyScoreboardSidebar(scoreboard, false);
- 
-                     } else {
--                        main.getUtils().sendMessage(getCommandUsage(sender), false);
-+                        main.getUtils().sendMessage(getUsage(), false);
-                     }
-                 } else if (args[0].equalsIgnoreCase("brand")) {
-                     main.getUtils().sendMessage(DevUtils.getServerBrand(Minecraft.getMinecraft()));
- 
-                 } else {
--                    main.getUtils().sendMessage(getCommandUsage(sender), false);
-+                    main.getUtils().sendMessage(getUsage(), false);
-                 }
-             } else {
--                main.getUtils().sendMessage(getCommandUsage(sender), false);
-+                main.getUtils().sendMessage(getUsage(), false);
-             }
-         } else {
-             // If there's no arguments given, open the main GUI
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/TileEntityEnderChestRendererTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/TileEntityEnderChestRendererTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/TileEntityEnderChestRendererTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/TileEntityEnderChestRendererTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/TileEntityEnderChestRendererTransformer.java	(date 1605727803873)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java b/src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java
---- a/src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/utils/ItemUtils.java	(date 1605114290462)
-@@ -4,7 +4,6 @@
- import net.minecraft.item.ItemStack;
- import net.minecraft.nbt.NBTTagCompound;
- import net.minecraft.nbt.NBTTagList;
--import net.minecraftforge.common.util.Constants;
- 
- import java.util.ArrayList;
- import java.util.Collections;
-@@ -37,7 +36,7 @@
-             return null;
-         }
- 
--        NBTTagList lore = display.getTagList("Lore", Constants.NBT.TAG_STRING);
-+        NBTTagList lore = display.getTagList("Lore", 8);
- 
-         // Determine the item's rarity
-         for (int i = 0; i < lore.tagCount(); i++) {
-Index: src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java b/src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java
---- a/src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/utils/DevUtils.java	(date 1605114290445)
-@@ -12,7 +12,7 @@
- import net.minecraft.scoreboard.ScorePlayerTeam;
- import net.minecraft.scoreboard.Scoreboard;
- import net.minecraft.util.StringUtils;
--import net.minecraftforge.common.util.Constants;
-+//import net.minecraftforge.common.util.Constants;
- import org.lwjgl.input.Keyboard;
- 
- import java.awt.*;
-@@ -118,6 +118,7 @@
-             sb.insert(0, "\n").insert(0, org.apache.commons.lang3.StringUtils.center(objectiveName, width));
- 
-             copyStringToClipboard(sb.toString(), "Sidebar copied to clipboard!");
-+            formatter.close();
-         }
-     }
- 
-@@ -150,7 +151,6 @@
- 
-             stringBuilder.append("NBT Data:").append(System.lineSeparator());
-             entity.writeToNBT(entityData);
--            stringBuilder.append(prettyPrintNBT(entityData));
- 
-             // Add spacing if necessary.
-             if (loadedEntitiesCopyIterator.hasNext()) {
-@@ -161,12 +161,14 @@
-         copyStringToClipboard(stringBuilder.toString(), ColorCode.GREEN + "Entity data was copied to clipboard!");
-     }
- 
--    /**
-+
-+
-+    /*
-      * Copies the provided NBT tag to the clipboard as a formatted string.
-      *
-      * @param nbtTag the NBT tag to copy
-      * @param message the message to show in chat when the NBT tag is copied
--     */
-+
-     public static void copyNBTTagToClipboard(NBTBase nbtTag, String message) {
-         if (nbtTag == null) {
-             SkyblockAddons.getInstance().getUtils().sendMessage("This item has no NBT data.");
-@@ -174,6 +176,7 @@
-         }
-         writeToClipboard(prettyPrintNBT(nbtTag), message);
-     }
-+     */
- 
-     /**
-      * Copies the provided NBT tags to the clipboard as a formatted string.
-@@ -191,7 +194,6 @@
-             }
- 
-             stringBuilder.append("Tag ").append(i).append(": ").append(System.lineSeparator());
--            stringBuilder.append(prettyPrintNBT(nbtTags.get(i)));
- 
-             // Add a blank line if necessary
-             if (i < (nbtTags.size()) - 1) {
-@@ -254,7 +256,6 @@
-      *
-      * @param nbt the NBT tag to pretty print
-      * @return pretty-printed string of the NBT data
--     */
-     public static String prettyPrintNBT(NBTBase nbt) {
-         final String INDENT = "    ";
- 
-@@ -358,6 +359,7 @@
- 
-         return stringBuilder.toString();
-     }
-+    */
- 
-     // Internal methods
-     private static void writeToClipboard(String text, String successMessage) {
-Index: src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java b/src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java
---- a/src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/config/ConfigValues.java	(date 1605114289934)
-@@ -3,7 +3,6 @@
- import codes.biscuit.skyblockaddons.SkyblockAddons;
- import codes.biscuit.skyblockaddons.core.Feature;
- import codes.biscuit.skyblockaddons.core.Language;
--import codes.biscuit.skyblockaddons.features.discordrpc.DiscordStatus;
- import codes.biscuit.skyblockaddons.misc.ChromaManager;
- import codes.biscuit.skyblockaddons.utils.EnumUtils;
- import codes.biscuit.skyblockaddons.utils.ColorCode;
-@@ -59,9 +58,9 @@
-     private MutableFloat chromaSpeed = new MutableFloat(0.19354838F); // 2.0
-     private MutableObject<EnumUtils.ChromaMode> chromaMode = new MutableObject<>(EnumUtils.ChromaMode.FADE);
-     private MutableFloat chromaFadeWidth = new MutableFloat(0.22580644F); // 10° Hue
--    private MutableObject<DiscordStatus> discordDetails =  new MutableObject<>(DiscordStatus.LOCATION);
--    private MutableObject<DiscordStatus> discordStatus = new MutableObject<>(DiscordStatus.AUTO_STATUS);
--    private MutableObject<DiscordStatus> discordAutoDefault = new MutableObject<>(DiscordStatus.NONE);
-+    //private MutableObject<DiscordStatus> discordDetails =  new MutableObject<>(DiscordStatus.LOCATION);
-+    //private MutableObject<DiscordStatus> discordStatus = new MutableObject<>(DiscordStatus.AUTO_STATUS);
-+    //private MutableObject<DiscordStatus> discordAutoDefault = new MutableObject<>(DiscordStatus.NONE);
-     @Getter private List<String> discordCustomStatuses = new ArrayList<>();
- 
-     public ConfigValues(File settingsConfigFile) {
-@@ -152,9 +151,9 @@
-             deserializeNumber(chromaSpeed, "chromaSpeed", float.class);
-             deserializeEnumValueFromOrdinal(chromaMode, "chromaMode");
-             deserializeNumber(chromaFadeWidth, "chromaFadeWidth", float.class);
--            deserializeEnumValueFromOrdinal(discordStatus, "discordStatus");
--            deserializeEnumValueFromOrdinal(discordDetails, "discordDetails");
--            deserializeEnumValueFromOrdinal(discordAutoDefault, "discordAutoDefault");
-+            //deserializeEnumValueFromOrdinal(discordStatus, "discordStatus");
-+            //deserializeEnumValueFromOrdinal(discordDetails, "discordDetails");
-+            //deserializeEnumValueFromOrdinal(discordAutoDefault, "discordAutoDefault");
-             deserializeStringCollection(discordCustomStatuses, "discordCustomStatuses");
- 
-             int configVersion;
-@@ -342,16 +341,6 @@
-             settingsConfig.addProperty("chromaMode", chromaMode.getValue().ordinal());
-             settingsConfig.addProperty("chromaFadeWidth", chromaFadeWidth);
- 
--            settingsConfig.addProperty("discordStatus", discordStatus.getValue().ordinal());
--            settingsConfig.addProperty("discordDetails", discordDetails.getValue().ordinal());
--            settingsConfig.addProperty("discordAutoDefault", discordAutoDefault.getValue().ordinal());
--
--            JsonArray discordCustomStatusesArray = new JsonArray();
--            for (String string : discordCustomStatuses) {
--                discordCustomStatusesArray.add(new GsonBuilder().create().toJsonTree(string));
--            }
--            settingsConfig.add("discordCustomStatuses", discordCustomStatusesArray);
--
-             settingsConfig.addProperty("configVersion", CONFIG_VERSION);
-             int largestFeatureID = 0;
-             for (Feature feature : Feature.values()) {
-@@ -885,6 +874,7 @@
-         return chromaFadeWidth.getValue();
-     }
- 
-+    /*
-     public void setDiscordDetails(DiscordStatus discordDetails) {
-         this.discordDetails.setValue(discordDetails);
-     }
-@@ -924,4 +914,5 @@
- 
-         return discordCustomStatuses.set(statusEntry.getId(), text);
-     }
-+    */
- }
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/SoundManagerHook.java	(date 1605114289696)
-@@ -13,7 +13,7 @@
-         if (main != null && main.getUtils() != null && main.getUtils().isPlayingSound()) {
-             return 1;
-         } else {
--            return soundManager.getNormalizedVolume(sound, entry, category);
-+            return (float) codes.biscuit.skyblockaddons.Reflector.invoke(SoundManager.class, soundManager, "getNormalizedVolume", new Class[]{ISound.class, SoundPoolEntry.class, SoundCategory.class}, new Object[]{sound, entry, category});
-         }
-     }
- }
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/RendererLivingEntityTransformer.java	(date 1605114289866)
-@@ -3,11 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.AbstractInsnNode;
--import org.objectweb.asm.tree.ClassNode;
--import org.objectweb.asm.tree.MethodInsnNode;
--import org.objectweb.asm.tree.MethodNode;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java b/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java
---- a/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(date 1605114290172)
-@@ -53,9 +53,7 @@
-         drawRect(this.xPosition, this.yPosition, this.xPosition+this.width, this.yPosition+this.height, main.getUtils().getDefaultColor(boxAlpha));
-         this.mouseDragged(mc, mouseX, mouseY);
-         int j = 14737632;
--        if (packedFGColour != 0) {
--            j = packedFGColour;
--        } else if (!this.enabled) {
-+        if (!this.enabled) {
-             j = 10526880;
-         } else if (this.hovered) {
-             j = 16777120;
+--- src/main/resources/pack.mcmeta	(date 1605114290681)
++++ src/main/resources/pack.mcmeta	(date 1605114290681)
+@@ -0,0 +1,6 @@
++{
++  "pack": {
++    "description": "SBA Resources",
++    "pack_format": 1
++   }
++}
+\ No newline at end of file
 Index: src/main/java/codes/biscuit/skyblockaddons/Reflector.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/Reflector.java b/src/main/java/codes/biscuit/skyblockaddons/Reflector.java
-new file mode 100644
---- /dev/null	(date 1605114290526)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/Reflector.java	(date 1605114290526)
+--- src/main/java/codes/biscuit/skyblockaddons/Reflector.java	(date 1605114290526)
++++ src/main/java/codes/biscuit/skyblockaddons/Reflector.java	(date 1605114290526)
 @@ -0,0 +1,52 @@
 +package codes.biscuit.skyblockaddons;
 +
@@ -4260,321 +3727,150 @@ new file mode 100644
 +        return o;
 +    }
 +}
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java
+Index: src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiIngameCustomTransformer.java	(date 1605727742110)
-@@ -2,8 +2,8 @@
+--- src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/listeners/NetworkListener.java	(date 1605114402481)
+@@ -1,14 +1,14 @@
+ package codes.biscuit.skyblockaddons.listeners;
  
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
++import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
+ import codes.biscuit.skyblockaddons.SkyblockAddons;
+-import codes.biscuit.skyblockaddons.core.Feature;
+ import codes.biscuit.skyblockaddons.events.SkyblockJoinedEvent;
+ import codes.biscuit.skyblockaddons.events.SkyblockLeftEvent;
+-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+-import net.minecraftforge.fml.common.network.FMLNetworkEvent;
+ import org.apache.logging.log4j.Logger;
  
- import java.util.Iterator;
+-import static net.minecraftforge.common.MinecraftForge.EVENT_BUS;
++import cc.hyperium.event.EventBus;
++import cc.hyperium.event.InvokeEvent;
++import cc.hyperium.event.network.server.ServerLeaveEvent;
  
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiDisconnectedTransformer.java
+ public class NetworkListener {
+     private final SkyblockAddons main;
+@@ -19,27 +19,27 @@
+         logger = main.getLogger();
+     }
+ 
+-    @SubscribeEvent
+-    public void onDisconnect(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
++    @InvokeEvent
++    public void onLeave(ServerLeaveEvent event) {
+         // Leave Skyblock when the player disconnects
+-        EVENT_BUS.post(new SkyblockLeftEvent());
++        EventBus.INSTANCE.post(new SkyblockLeftEvent());
+     }
+ 
+-    @SubscribeEvent
++    @InvokeEvent
+     public void onSkyblockJoined(SkyblockJoinedEvent event) {
+         logger.info("Joined Skyblock");
+         main.getUtils().setOnSkyblock(true);
+-        if (main.getConfigValues().isEnabled(Feature.DISCORD_RPC)) {
+-            main.getDiscordRPCManager().start();
+-        }
+     }
+ 
+-    @SubscribeEvent
++    @InvokeEvent
+     public void onSkyblockLeft(SkyblockLeftEvent event) {
+         logger.info("Left Skyblock");
+         main.getUtils().setOnSkyblock(false);
+-        if (main.getDiscordRPCManager().isActive()) {
+-            main.getDiscordRPCManager().stop();
+-        }
++        HyperiumGuiIngame.renderAir = true;
++        HyperiumGuiIngame.renderArmor = true;
++        HyperiumGuiIngame.renderHealth = true;
++        HyperiumGuiIngame.renderHealthMount = true;
++        HyperiumGuiIngame.renderScoreboard = true;
++        HyperiumGuiIngame.renderFood = true;
+     }
+ }
+\ No newline at end of file
+Index: src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiDisconnectedTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiDisconnectedTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiDisconnectedTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiDisconnectedTransformer.java	(date 1605727726369)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/hooks/PlayerControllerMPHook.java	(date 1605114289685)
+--- src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/features/tabtimers/TabEffectManager.java	(date 1605114290148)
 @@ -1,5 +1,6 @@
- package codes.biscuit.skyblockaddons.asm.hooks;
+ package codes.biscuit.skyblockaddons.features.tabtimers;
  
 +import codes.biscuit.skyblockaddons.Reflector;
  import codes.biscuit.skyblockaddons.SkyblockAddons;
- import codes.biscuit.skyblockaddons.asm.utils.ReturnValue;
  import codes.biscuit.skyblockaddons.core.Feature;
-@@ -11,7 +12,6 @@
- import codes.biscuit.skyblockaddons.features.cooldowns.CooldownManager;
- import codes.biscuit.skyblockaddons.features.craftingpatterns.CraftingPattern;
- import codes.biscuit.skyblockaddons.features.craftingpatterns.CraftingPatternResult;
--import codes.biscuit.skyblockaddons.utils.EnumUtils;
- import codes.biscuit.skyblockaddons.utils.InventoryUtils;
- import codes.biscuit.skyblockaddons.utils.ItemUtils;
- import codes.biscuit.skyblockaddons.utils.Utils;
-@@ -238,7 +238,7 @@
-                                 returnValue.cancel();
-                             }
-                         } else {
--                            if (slotIn.getSlotIndex() == CraftingPattern.CRAFTING_RESULT_INDEX
-+                            if ((int) Reflector.getFieldValue(Slot.class, slotIn, "slotIndex") == CraftingPattern.CRAFTING_RESULT_INDEX
-                                     && !result.isSatisfied()
-                                     && main.getPersistentValues().isBlockCraftingIncompletePatterns()) {
-                                 // cancel clicking the result if the pattern isn't satisfied
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/WorldClientTransformer.java	(date 1605114289896)
-@@ -3,8 +3,8 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.*;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.*;
+ import codes.biscuit.skyblockaddons.gui.buttons.ButtonLocation;
+@@ -7,8 +8,8 @@
+ import codes.biscuit.skyblockaddons.utils.TextUtils;
+ import lombok.Getter;
+ import net.minecraft.client.Minecraft;
++import net.minecraft.client.gui.GuiPlayerTabOverlay;
+ import net.minecraft.util.IChatComponent;
+-import net.minecraftforge.fml.common.gameevent.TickEvent;
  
- public class WorldClientTransformer implements ITransformer {
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java b/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java
---- a/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/events/SkyblockJoinedEvent.java	(date 1605114290085)
-@@ -1,7 +1,7 @@
- package codes.biscuit.skyblockaddons.events;
- 
-+import cc.hyperium.event.Event;
- import codes.biscuit.skyblockaddons.utils.Utils;
--import net.minecraftforge.fml.common.eventhandler.Event;
- 
- /**
-  * This is fired by {@link Utils#checkGameLocationDate()} when the player joins Hypixel Skyblock.
-Index: src/main/java/codes/biscuit/skyblockaddons/asm/GuiNewChatTransformer.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiNewChatTransformer.java b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiNewChatTransformer.java
---- a/src/main/java/codes/biscuit/skyblockaddons/asm/GuiNewChatTransformer.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/asm/GuiNewChatTransformer.java	(date 1605727794106)
-@@ -3,11 +3,11 @@
- import codes.biscuit.skyblockaddons.asm.utils.TransformerClass;
- import codes.biscuit.skyblockaddons.asm.utils.TransformerMethod;
- import codes.biscuit.skyblockaddons.tweaker.transformer.ITransformer;
--import org.objectweb.asm.Opcodes;
--import org.objectweb.asm.tree.AbstractInsnNode;
--import org.objectweb.asm.tree.ClassNode;
--import org.objectweb.asm.tree.MethodInsnNode;
--import org.objectweb.asm.tree.MethodNode;
-+import org.spongepowered.asm.lib.Opcodes;
-+import org.spongepowered.asm.lib.tree.AbstractInsnNode;
-+import org.spongepowered.asm.lib.tree.ClassNode;
-+import org.spongepowered.asm.lib.tree.MethodInsnNode;
-+import org.spongepowered.asm.lib.tree.MethodNode;
- 
- import java.util.Iterator;
- 
-Index: src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java b/src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java
---- a/src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/features/EnchantedItemBlacklist.java	(date 1605114290157)
-@@ -5,8 +5,6 @@
- import codes.biscuit.skyblockaddons.core.Location;
- import codes.biscuit.skyblockaddons.utils.ItemUtils;
- import net.minecraft.item.ItemStack;
--import net.minecraftforge.event.entity.player.FillBucketEvent;
--import net.minecraftforge.event.entity.player.PlayerInteractEvent;
- 
- public enum EnchantedItemBlacklist {
- 
-@@ -38,13 +36,13 @@
-         this.onlyBlockPlacement = onlyBlockPlacement;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+@@ -88,13 +89,12 @@
      }
- 
--    /**
-+    /*
-      * Determine if the usage of this item should be blocked.
-      *
-      * @param itemStack the item being used
-      * @param action the action the player is doing with the item
-      * @return true if the usage should be blocked, false otherwise.
--     */
-+     *
-     public static boolean shouldBlockUsage(ItemStack itemStack, PlayerInteractEvent.Action action) {
-         SkyblockAddons main = SkyblockAddons.getInstance();
-         boolean blockUsage = false;
-@@ -63,13 +61,13 @@
-         }
-         return blockUsage;
-     }
-+    */
  
      /**
-      * Checks if the given item from this blacklist is a bucket.
-      * This is used to handle buckets separately from other blocks and items.
-      *
-      * @return true if the item is a bucket, false otherwise
--     * @see codes.biscuit.skyblockaddons.listeners.PlayerListener#onBucketEvent(FillBucketEvent)
+-     * Called by {@link codes.biscuit.skyblockaddons.listeners.PlayerListener#onTick(TickEvent.ClientTickEvent)} every second
+      * to update the list of current effect timers.
       */
-     private boolean isBucket() {
-         return itemId.contains("BUCKET");
-Index: src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java
+     public void updatePotionEffects() {
+         potionTimers.clear();
+         powerupTimers.clear();
+-        IChatComponent tabFooterChatComponent = Minecraft.getMinecraft().ingameGUI.getTabList().footer;
++        IChatComponent tabFooterChatComponent = (IChatComponent) Reflector.getFieldValue(GuiPlayerTabOverlay.class, Minecraft.getMinecraft().ingameGUI.getTabList(), "footer");
+ 
+         // Convert tab footer to a String
+         StringBuilder tabFooterStringBuilder = new StringBuilder();
+Index: src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java
 IDEA additional info:
 Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
 <+>UTF-8
 ===================================================================
-diff --git a/src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java b/src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java
---- a/src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
-+++ b/src/main/java/codes/biscuit/skyblockaddons/gui/SettingsGui.java	(date 1605114290182)
-@@ -6,16 +6,16 @@
- import codes.biscuit.skyblockaddons.core.Message;
- import codes.biscuit.skyblockaddons.gui.buttons.*;
- import codes.biscuit.skyblockaddons.utils.*;
--import codes.biscuit.skyblockaddons.features.discordrpc.DiscordStatus;
- import net.minecraft.client.Minecraft;
- import net.minecraft.client.gui.GuiButton;
- import net.minecraft.client.gui.GuiScreen;
- import net.minecraft.client.gui.ScaledResolution;
- import net.minecraft.client.renderer.GlStateManager;
- import net.minecraft.util.ResourceLocation;
--import net.minecraftforge.client.GuiIngameForge;
- import org.lwjgl.input.Keyboard;
+--- src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/features/backpacks/BackpackManager.java	(date 1605114290134)
+@@ -9,7 +9,6 @@
+ import net.minecraft.nbt.CompressedStreamTools;
+ import net.minecraft.nbt.NBTTagCompound;
+ import net.minecraft.nbt.NBTTagList;
+-import net.minecraftforge.common.util.Constants;
  
-+import cc.hyperium.mixinsimp.gui.HyperiumGuiIngame;
-+
- import java.awt.*;
+ import java.io.ByteArrayInputStream;
  import java.io.IOException;
- import java.util.Arrays;
-@@ -135,26 +135,6 @@
-             int width = halfWidth+90+boxWidth;
-             width -= x;
-             float numSettings = settings.size();
--            if (settings.contains(EnumUtils.FeatureSetting.DISCORD_RP_STATE)) {
--                if (main.getConfigValues().getDiscordStatus() == DiscordStatus.CUSTOM) numSettings++;
--                if (main.getConfigValues().getDiscordStatus() == DiscordStatus.AUTO_STATUS) {
--                    numSettings ++;
--                    if (main.getConfigValues().getDiscordAutoDefault() == DiscordStatus.CUSTOM) {
--                        numSettings ++;
--                    }
--                }
--                numSettings += 0.4;
--            }
--            if (settings.contains(EnumUtils.FeatureSetting.DISCORD_RP_DETAILS)) {
--                if (main.getConfigValues().getDiscordDetails() == DiscordStatus.CUSTOM) numSettings++;
--                if (main.getConfigValues().getDiscordDetails() == DiscordStatus.AUTO_STATUS) {
--                    numSettings ++;
--                    if (main.getConfigValues().getDiscordAutoDefault() == DiscordStatus.CUSTOM) {
--                        numSettings ++;
--                    }
--                }
--                numSettings += 0.4;
--            }
-             int height = (int)(getRowHeightSetting(numSettings)-50);
-             int y =(int)getRowHeight(1);
-             GlStateManager.enableBlend();
-@@ -177,7 +157,6 @@
-             Language language = ((ButtonLanguage)abstractButton).getLanguage();
-             main.getConfigValues().setLanguage(language);
-             main.getUtils().loadLanguageFile(true);
--            main.setKeyBindingDescriptions();
-             returnToGui();
-         } else if (abstractButton instanceof ButtonSwitchTab) {
-             ButtonSwitchTab tab = (ButtonSwitchTab)abstractButton;
-@@ -194,9 +173,9 @@
-             } else {
-                 main.getConfigValues().getDisabledFeatures().add(feature);
-                 if (feature == Feature.HIDE_FOOD_ARMOR_BAR) { // Reset the vanilla bars when disabling these two features.
--                    GuiIngameForge.renderArmor = true; // The food gets automatically enabled, no need to include it.
-+                    HyperiumGuiIngame.renderArmor = true; // The food gets automatically enabled, no need to include it.
-                 } else if (feature == Feature.HIDE_HEALTH_BAR) {
--                    GuiIngameForge.renderHealth = true;
-+                    HyperiumGuiIngame.renderHealth = true;
-                 } else if (feature == Feature.REPEAT_FULL_INVENTORY_WARNING) {
-                     // Remove queued warnings when the repeat setting is turned off.
-                     main.getScheduler().removeQueuedFullInventoryWarnings();
-@@ -304,64 +283,6 @@
-             boxWidth = 140;
-             x = halfWidth-(boxWidth/2);
-             buttonList.add(new ButtonSolid(x, y, 140, 20, Message.SETTING_POWER_ORB_DISPLAY_STYLE.getMessage(), main, feature));
--        } else if(setting == EnumUtils.FeatureSetting.DISCORD_RP_DETAILS || setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
--            boxWidth = 140;
--            x = halfWidth-(boxWidth/2);
--            DiscordStatus currentStatus;
--            if(setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
--                currentStatus = main.getConfigValues().getDiscordStatus();
--            } else {
--                currentStatus = main.getConfigValues().getDiscordDetails();
--            }
--
--            buttonList.add(new ButtonTextNew(halfWidth, (int)y-10, setting == EnumUtils.FeatureSetting.DISCORD_RP_DETAILS ? Message.MESSAGE_FIRST_STATUS.getMessage() :
--                    Message.MESSAGE_SECOND_STATUS.getMessage(), true, 0xFFFFFFFF));
--            buttonList.add(new ButtonSelect(x, (int)y, boxWidth, 20, Arrays.asList(DiscordStatus.values()), currentStatus.ordinal(), index -> {
--                final DiscordStatus selectedStatus = DiscordStatus.values()[index];
--                if(setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
--                    main.getDiscordRPCManager().setStateLine(selectedStatus);
--                    main.getConfigValues().setDiscordStatus(selectedStatus);
--                } else {
--                    main.getDiscordRPCManager().setDetailsLine(selectedStatus);
--                    main.getConfigValues().setDiscordDetails(selectedStatus);
--                }
--                SettingsGui.this.reInit = true;
--            }));
--
--            if (currentStatus == DiscordStatus.AUTO_STATUS) {
--                row++;
--                row += 0.4;
--                boxWidth = 140;
--                x = halfWidth-(boxWidth/2);
--                y = getRowHeightSetting(row);
--
--                buttonList.add(new ButtonTextNew(halfWidth, (int)y-10, Message.MESSAGE_FALLBACK_STATUS.getMessage(), true, 0xFFFFFFFF));
--                currentStatus = main.getConfigValues().getDiscordAutoDefault();
--                buttonList.add(new ButtonSelect(x, (int)y, boxWidth, 20, Arrays.asList(DiscordStatus.values()), currentStatus.ordinal(), index -> {
--                    final DiscordStatus selectedStatus = DiscordStatus.values()[index];
--                    main.getConfigValues().setDiscordAutoDefault(selectedStatus);
--                    SettingsGui.this.reInit = true;
--                }));
--            }
--
--            if (currentStatus == DiscordStatus.CUSTOM) {
--                row++;
--                halfWidth = width/2;
--                boxWidth = 200;
--                x = halfWidth-(boxWidth/2);
--                y = getRowHeightSetting(row);
--
--                EnumUtils.DiscordStatusEntry discordStatusEntry = EnumUtils.DiscordStatusEntry.DETAILS;
--                if (setting == EnumUtils.FeatureSetting.DISCORD_RP_STATE) {
--                    discordStatusEntry = EnumUtils.DiscordStatusEntry.STATE;
--                }
--                final EnumUtils.DiscordStatusEntry finalDiscordStatusEntry = discordStatusEntry;
--                ButtonInputFieldWrapper inputField = new ButtonInputFieldWrapper(x, (int) y, 200, 20, main.getConfigValues().getCustomStatus(discordStatusEntry),
--                        null, 100, false, updatedValue -> main.getConfigValues().setCustomStatus(finalDiscordStatusEntry, updatedValue));
--                buttonList.add(inputField);
--            }
--
--            row += 0.4;
-         } else {
-             boxWidth = 31; // Default size and stuff.
-             x = halfWidth-(boxWidth/2);
+@@ -68,7 +67,7 @@
+                     ItemStack[] items = new ItemStack[length];
+                     if (bytes != null) {
+                         NBTTagCompound nbtTagCompound = CompressedStreamTools.readCompressed(new ByteArrayInputStream(bytes));
+-                        NBTTagList list = nbtTagCompound.getTagList("i", Constants.NBT.TAG_COMPOUND);
++                        NBTTagList list = nbtTagCompound.getTagList("i", 10);
+ 
+                         if (list.tagCount() > length) {
+                             length = list.tagCount();
+Index: src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(revision c3d6b11fe147f2d92a69af279db203cd25083599)
++++ src/main/java/codes/biscuit/skyblockaddons/gui/buttons/ButtonSlider.java	(date 1605114290172)
+@@ -53,9 +53,7 @@
+         drawRect(this.xPosition, this.yPosition, this.xPosition+this.width, this.yPosition+this.height, main.getUtils().getDefaultColor(boxAlpha));
+         this.mouseDragged(mc, mouseX, mouseY);
+         int j = 14737632;
+-        if (packedFGColour != 0) {
+-            j = packedFGColour;
+-        } else if (!this.enabled) {
++        if (!this.enabled) {
+             j = 10526880;
+         } else if (this.hovered) {
+             j = 16777120;
